@@ -1,0 +1,21 @@
+.logo{
+    width: 268px;
+    height: 93px;
+}
+#searchbar{
+    background-color: #e7e7e7;
+    height: 69px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #000000;
+    opacity: 0.25;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+.bi-search{
+    position: absolute;
+    left: 94%;
+    top: 23%;
+    bottom: 14.63%;
+    font-size: 18px;
+}
