@@ -1,16 +1,64 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 .logo{
     width: 268px;
     height: 93px;
 }
-#searchbar{
+#searchbar {
     background-color: #e7e7e7;
     height: 69px;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     font-size: 18px;
     color: #000000;
     opacity: 0.25;
     box-shadow: none;
     margin-bottom: 20px;
+    align-self: center;
+    border: none;
+}
+
+#searchbar, #icon :hover {
+    border: none;
+}
+
+#icon {
+    color: #000000;
+    padding-top: 15px;
+    text-align: center;
+    background-color: hsla(0, 0%, 90%, .25);
+    height: 69px;
+    border-radius: 0 5px 5px 0;
+    font-size: 18px;
+    color: #000000;
+    border: none;
+}
+
+#tag_ingredient, #tag_appareil, #tag_ustensiles {
+    width: 170px;
+    height: 69px;
+    border-radius: 5px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-right: 20px;
+}
+#tag_ingredient {
+    background: #3282F7;
+}
+
+#tag_appareil{
+    background: #68D9A4;
+}
+
+#tag_ustensiles{
+    background: #ED6454;
 }
 /* .bi-search{
     position: absolute;

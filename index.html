@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/styles.css" />
     <title>Les petits plats</title>
   </head>
@@ -18,9 +21,11 @@
       <div class="container">
         <form class="form-inline">
           <div class="input-group">
-            <input type="text" class="form-control" id="searchbar" placeholder="Recherche un ingrédient, appareil," />
-            <div class="input-group-append">
-              <i class="fas fa-search "></i>
+            <input type="text" class="form-control" id="searchbar" placeholder="Recherche un ingrédient, appareil, ustensiles ou une recette" />
+            <div  class="input-group-append" id="icon">
+              <button type="button" class="btn">
+                <i class="fas fa-search "></i>
+              </button>
             </div>
           </div>
         </form>
@@ -28,16 +33,16 @@
         <section class="tag">
           <div class="col">
             <div class="mb-3">
-              <input type="search" class="ingredients" id="tag_ingredient" value="Ingredients">          
-              <input type="search" class="appareil" id="tag_appareil" value="Appareil">
-              <input type="search" class="ustensiles" id="tag_ustensiles" value="Ustensiles">
+              <input type="search" class="ingredients px-3" id="tag_ingredient" value="Ingredients">          
+              <input type="search" class="appareil px-3" id="tag_appareil" value="Appareil">
+              <input type="search" class="ustensiles px-3" id="tag_ustensiles" value="Ustensiles">
             </div>
           </div>
         </section>
 
         <section class="recipes">
           <div class="row">
-            <div class="col mb-3" id="recettes-list">
+            <div class="col-md-4" id="recettes-list">
             </div>
           </div>
         </section>
