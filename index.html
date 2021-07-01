@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-    </svg>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Les petits plats</title>
   </head>
@@ -19,29 +16,32 @@
         </div>
       </nav>
       <div class="container">
-        <div class="row">
-          <input type="text" class="form-control" id="searchbar" value="Recherche un ingrédient, appareil, ustensiles ou une recette">
-          <i class="bi bi-search"></i>
-          <div class="col">
-            <div class="mb-3">          
-              <button>Ingredients</button>
-              <button>Appareil</button>
-              <button>Ustensiles</button>
+        <form class="form-inline">
+          <div class="input-group">
+            <input type="text" class="form-control" id="searchbar" placeholder="Recherche un ingrédient, appareil," />
+            <div class="input-group-append">
+              <i class="fas fa-search "></i>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col" id="recettes-list">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam dignissimos, quidem pariatur magnam rerum earum corrupti quos rem placeat reprehenderit magni, in excepturi facere molestiae quia mollitia, illum iure.</p>
-          
-            <article class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui officia laudantium deserunt dicta nulla esse iure. Corrupti, illum ullam. Quam, sed dolor! Dolorem voluptas natus dignissimos aspernatur distinctio optio molestiae.</article>
-            <article class="col">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, vero! Numquam, fugit illo architecto totam assumenda fuga corporis officiis. Vero sit rerum eaque distinctio tempore, asperiores voluptas sint veritatis dicta?</article>
-            <article class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorum rem ducimus, aliquid minima magnam maiores assumenda sunt numquam doloremque ut accusantium consectetur repellendus possimus, ex quod! Nam, quisquam sint.</article>
-            <article class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui officia laudantium deserunt dicta nulla esse iure. Corrupti, illum ullam. Quam, sed dolor! Dolorem voluptas natus dignissimos aspernatur distinctio optio molestiae.</article>
-            <article class="col">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, vero! Numquam, fugit illo architecto totam assumenda fuga corporis officiis. Vero sit rerum eaque distinctio tempore, asperiores voluptas sint veritatis dicta?</article>
-            <article class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorum rem ducimus, aliquid minima magnam maiores assumenda sunt numquam doloremque ut accusantium consectetur repellendus possimus, ex quod! Nam, quisquam sint.</article>
+        </form>
+
+        <section class="tag">
+          <div class="col">
+            <div class="mb-3">
+              <input type="search" class="ingredients" id="tag_ingredient" value="Ingredients">          
+              <input type="search" class="appareil" id="tag_appareil" value="Appareil">
+              <input type="search" class="ustensiles" id="tag_ustensiles" value="Ustensiles">
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section class="recipes">
+          <div class="row">
+            <div class="col mb-3" id="recettes-list">
+            </div>
+          </div>
+        </section>
+
       </div>
     <script src="https://kit.fontawesome.com/ef8e5078a4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
