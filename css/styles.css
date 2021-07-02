@@ -35,6 +35,74 @@ body{
     border: none;
 }
 
+.tag_ingredients, #tag_ingredient {
+    position: relative;
+    background: #3282F7;
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: 170px;
+    max-width: auto;
+    height: 69px;
+    max-height: auto;
+    padding: 0 0 0 10px;
+}
+
+.search_ingredient input{
+    outline: none;
+    border: none;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+input::placeholder{
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 18px;
+    text-align: left;
+}
+
+.search_ingredient .icon_tag{
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    top: 23px;
+    right: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fa-chevron-up{
+    position: absolute;
+    display: none;
+}
+
+.search_ingredient .motion{
+    padding: 10px;
+    max-height: 397px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.motion li{
+    list-style: none;
+    display: flex;
+    width: auto;
+    cursor: default;
+}
+
+/* #tag_appareil{
+    background: #68D9A4;
+}
+
+#tag_ustensiles{
+    background: #ED6454;
+}
+
 #tag_ingredient, #tag_appareil, #tag_ustensiles {
     width: 170px;
     height: 69px;
@@ -48,18 +116,7 @@ body{
     color: #FFFFFF;
     border: none;
     margin-right: 20px;
-}
-#tag_ingredient {
-    background: #3282F7;
-}
-
-#tag_appareil{
-    background: #68D9A4;
-}
-
-#tag_ustensiles{
-    background: #ED6454;
-}
+} */
 /* .bi-search{
     position: absolute;
     left: 94%;
