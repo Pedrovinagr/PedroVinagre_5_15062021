@@ -12,9 +12,10 @@ tagIngredient.onkeyup = (e) =>{
             return data.toLocaleLowerCase().startsWith(ingredientData.toLocaleLowerCase());
         });
         emptyArray = emptyArray.map((data)=>{
-            return data = '<li>'+ data +'<li>';
+            return data = '<li>'+ data +'</li>';
         });
         console.log(emptyArray);
+        searchTagIngredients.classList.add('active');
     }
     showIngredients(emptyArray);
 }
