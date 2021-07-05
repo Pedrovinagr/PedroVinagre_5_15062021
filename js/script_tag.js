@@ -16,14 +16,28 @@ tagIngredient.onkeyup = (e) =>{
         });
         console.log(emptyArray);
         searchTagIngredients.classList.add('active');
+        showIngredients(emptyArray);
+        let allList = tagMotion.querySelectorAll('li');
+        for (let i = 0; i < allList.length; i++){
+            allList[i].setAttribute('onclick', 'select(this)');
+        }
+    }else{
+        searchTagIngredients.classList.remove('active');
     }
-    showIngredients(emptyArray);
+    
+}
+
+function select(element){
+    let selectUserData = element.textContent;
+    tagIngredient.value = selectUserData;
+    searchTagIngredients.classList.remove('active');
 }
 
 function showIngredients(list){
     let listData;
     if(!list.length){
-
+        userValue = tagIngredient.value;
+        listData = '<li>' + userValue + '</li>';
     }
     else{
         listData = list.join('');
