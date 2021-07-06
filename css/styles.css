@@ -34,17 +34,21 @@ body{
     color: #000000;
     border: none;
 }
-
-.tag_ingredients, #tag_ingredient {
+.tag{
+    display: flex;
+    
+}
+/* tag ingredients */
+.tag_ingredients, #tag_ingredient, .motion {
     position: relative;
     background: #3282F7;
     color: #FFFFFF;
     border-radius: 5px;
-    width: 170px;
-    max-width: auto;
-    height: 69px;
+    min-width: auto;
+    max-width: 300px;
+    min-height: auto;
     max-height: auto;
-    padding: 0 0 0 10px;
+    padding-left: 5px;
 }
 
 .search_ingredient input{
@@ -54,7 +58,6 @@ body{
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-
 }
 
 input::placeholder{
@@ -68,8 +71,8 @@ input::placeholder{
     position: absolute;
     font-weight: bold;
     font-size: 18px;
-    top: 23px;
-    right: 10px;
+    top: 5px;
+    right: 25px;
     text-align: center;
     cursor: pointer;
 }
@@ -77,6 +80,11 @@ input::placeholder{
 .fa-chevron-up{
     position: absolute;
     display: none;
+    
+}
+
+.fa-chevron-down{
+    position: absolute;
 }
 
 .search_ingredient .motion{
@@ -105,7 +113,46 @@ input::placeholder{
     background: #3282F7;
     
 }
+/* tag appareil */
+.tag_appareils, #tag_appareil, .motion {
+    margin-left: 50px;
+    position: relative;
+    background: #68D9A4;
+    color: #FFFFFF;
+    border-radius: 5px;
+    min-width: auto;
+    max-width: 300px;
+    min-height: auto;
+    max-height: auto;
+    padding-left: 5px;
+}
 
+.search_appareil input{
+    outline: none;
+    border: none;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.search_appareil .icon_tag{
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    top: 5px;
+    right: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search_appareil .motion{
+    padding: 0px;
+    max-height: 397px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+}
 /* #tag_appareil{
     background: #68D9A4;
 }

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eca0626862.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Les petits plats</title>
   </head>
@@ -31,26 +32,43 @@
         </form>
 
         <section class="tag">
-          <div class="tag_ingredients col">
+          <div class="tag_ingredients">
             <div class="search_ingredient">
               <input type="text" class="ingredients" id="tag_ingredient" placeholder="Ingredients">
+              <div class="icon_tag">
+                <i class="fas fa-chevron-up"></i>
+                <i class="fas fa-chevron-down"></i>
+              </div>
               <div class="motion">
                 <li class="ingredient">Tomates</li>
                 <li class="ingredient">Mozzarella</li>
                 <li class="ingredient">Pennes</li>
                 <li class="ingredient">Banane</li>
               </div>
+            </div>
+          </div>
+
+          <div class="tag_appareils">
+            <div class="search_appareil">
+              <input type="text" class="appareils" id="tag_appareil" placeholder="Appareils">
               <div class="icon_tag">
                 <i class="fas fa-chevron-up"></i>
                 <i class="fas fa-chevron-down"></i>
               </div>
+              <div class="motion">
+                <li class="appareil">cuillière</li>
+                <li class="appareil">poele</li>
+                <li class="appareil">casserole</li>
+                <li class="appareil">four</li>
+              </div>
             </div>
           </div>
+        </section>
               <!-- <input type="search" class="appareil" id="tag_appareil" placeholder="Appareil">
               <input type="search" class="ustensiles" id="tag_ustensiles" placeholder="Ustensiles">
             </div>
           </div> -->
-        </section>
+        
 
         <section class="recipes">
           <div class="row">

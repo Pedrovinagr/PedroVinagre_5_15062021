@@ -15,13 +15,16 @@ tagIngredient.onkeyup = (e) =>{
             return data = '<li>'+ data +'</li>';
         });
         console.log(emptyArray);
+
         searchTagIngredients.classList.add('active');
         showIngredients(emptyArray);
+
         let allList = tagMotion.querySelectorAll('li');
         for (let i = 0; i < allList.length; i++){
             allList[i].setAttribute('onclick', 'select(this)');
         }
-    }else{
+    }
+    else{
         searchTagIngredients.classList.remove('active');
     }
     
