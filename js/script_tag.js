@@ -1,22 +1,22 @@
 //DOM
-const searchTagIngredients = document.querySelector('.search_ingredient');
-const tagIngredient = document.getElementById('tag_ingredient');
-const tagMotion = document.querySelector('.motion');
+const searchTag = document.querySelectorAll('.search_input');
+const tag = searchTag.getElementById('input');
+const tagMotion = searchTag.querySelectorAll('.motion');
 
-tagIngredient.onkeyup = (e) =>{
-    let ingredientData = e.target.value;
+tag.onkeyup = (e) =>{
+    let tagsData = e.target.value;
     let emptyArray = [];
 
-    if(ingredientData){
-        emptyArray = ingredient.filter((data)=>{
-            return data.toLocaleLowerCase().startsWith(ingredientData.toLocaleLowerCase());
+    if(tagsData){
+        emptyArray = ingredients.filter((data)=>{
+            return data.toLocaleLowerCase().startsWith(tagsData.toLocaleLowerCase());
         });
         emptyArray = emptyArray.map((data)=>{
             return data = '<li>'+ data +'</li>';
         });
         console.log(emptyArray);
 
-        searchTagIngredients.classList.add('active');
+        searchTag.classList.add('active');
         showIngredients(emptyArray);
 
         let allList = tagMotion.querySelectorAll('li');
@@ -25,21 +25,21 @@ tagIngredient.onkeyup = (e) =>{
         }
     }
     else{
-        searchTagIngredients.classList.remove('active');
+        searchTag.classList.remove('active');
     }
     
 }
 
 function select(element){
     let selectUserData = element.textContent;
-    tagIngredient.value = selectUserData;
-    searchTagIngredients.classList.remove('active');
+    tags.value = selectUserData;
+    searchTag.classList.remove('active');
 }
 
 function showIngredients(list){
     let listData;
     if(!list.length){
-        userValue = tagIngredient.value;
+        userValue = tags.value;
         listData = '<li>' + userValue + '</li>';
     }
     else{

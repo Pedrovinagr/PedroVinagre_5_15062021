@@ -1,4 +1,4 @@
-let ingredient = [
+let ingredients = [
     "Lait de coco",
     "Jus de citron",
     "Crème de coco",
