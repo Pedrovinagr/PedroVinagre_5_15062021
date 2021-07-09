@@ -103,7 +103,7 @@ body{
 }
 
 .tag{
-    /* display: none; */
+    display: none;
 }
 
 /* filters */
