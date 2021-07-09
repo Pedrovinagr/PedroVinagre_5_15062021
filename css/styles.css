@@ -34,12 +34,69 @@ body{
     color: #000000;
     border: none;
 }
-.filters{
+
+/* tags */
+.tags{
     display: flex;
+    width: 361px;
+    max-width: auto;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.tag{
+    position: relative;
+    width: 107px;
+    line-height: 37px;
+    max-width: auto;
+}
+
+.tag_ingredient .ingredients_tag,
+.tag_appareil .appareils_tag,
+.tag_ustensile .ustensiles_tag{
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: left;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    padding-left: 5px;    
+}
+
+.tag .icon_tag{
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+    color: #FFFFFF;
+    top: 0;
+    right: 5px;
+    text-align: center;
+
     
 }
 
-/* filter ingredients */
+.tag li{
+    list-style: none;
+    border-radius: 5px;
+}
+
+.ingredients_tag{
+    background: #3282F7;
+}
+
+.appareils_tag{
+    background: #68D9A4;
+}
+
+.ustensiles_tag{
+    background: #ED6454;
+}
+
+/* filters */
+.filters{
+    display: flex;
+    margin-bottom: 25px; 
+}
 
 .filter .search_input, #search_ingredients, #search_appareils, #search_ustensiles{
     position: relative;
@@ -126,5 +183,61 @@ input::placeholder{
 .search_input.active, .motion li{
     display: block;
     background: #3282F7;
+}
+
+/* card recipes */
+.card1{
+    margin-bottom: 50px;    
+}
+.card-img-top{
+    background: #C7BEBE;
+    height: 178px;
+    margin: 0;
+    border-radius: 5px 5px 0px 0px;
+}
+.card-body{
+    background: #E7E7E7;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+}
+.title_card{
+    font-size: 18px;
+}
+.part1, .part2, .timing{
+    display: flex;
+}
+.listing{
+    width: 171px;
+    height: 105px;
+    font-size: 11px;
+}
+.description{
+    width: 171px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 0;
+    text-align: justify;
+    -webkit-line-clamp: 8;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.listing i{
+    font-style: normal;
+}
+.part1{
+    position: relative;
+}
+.part1 .timing{
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.fa-clock{
+    margin: 4px 5px 0 0;
+
+    
+    
+    
 }
 
