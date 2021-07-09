@@ -1,22 +1,30 @@
 body{
     font-family: 'Lato', sans-serif;
+    margin: auto;
 }
-
+.container{
+    padding: 0;
+}
 .logo{
     width: 268px;
     height: 93px;
 }
+
+/* searchbar */
 #searchbar {
-    background-color: #e7e7e7;
+    background: hsla(0, 0%, 90%, 1);
     height: 69px;
     border-radius: 5px 0 0 5px;
     font-size: 18px;
-    color: #000000;
-    opacity: 0.25;
     box-shadow: none;
     margin-bottom: 20px;
     align-self: center;
     border: none;
+}
+
+#searchbar::placeholder{
+    color: #000000;
+    opacity: 0.25;
 }
 
 #searchbar, #icon :hover {
@@ -27,12 +35,14 @@ body{
     color: #000000;
     padding-top: 15px;
     text-align: center;
-    background-color: hsla(0, 0%, 90%, .25);
+    background: #E7E7E7;
     height: 69px;
     border-radius: 0 5px 5px 0;
-    font-size: 18px;
-    color: #000000;
     border: none;
+}
+
+.fa-search{
+    font-size: 25px;
 }
 
 /* tags */
@@ -92,10 +102,14 @@ body{
     background: #ED6454;
 }
 
+.tag{
+    /* display: none; */
+}
+
 /* filters */
 .filters{
     display: flex;
-    margin-bottom: 25px; 
+    margin: 0 0 -25px 0;
 }
 
 .filter .search_input, #search_ingredients, #search_appareils, #search_ustensiles{
@@ -106,7 +120,6 @@ body{
     max-width: 300px;
     min-height: 69px;
     max-height: auto;
-    padding-left: 5px;
 }
 
 .ingredients{
@@ -130,6 +143,7 @@ body{
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
+    padding-left: 5px;
 }
 
 input::placeholder{
@@ -186,13 +200,16 @@ input::placeholder{
 }
 
 /* card recipes */
-.card1{
-    margin-bottom: 50px;    
+.cards{
+    margin-bottom: 50px;
+    width: 380px;
+    margin: 0 auto;
+   justify-content: space-between;
 }
 .card-img-top{
     background: #C7BEBE;
     height: 178px;
-    margin: 0;
+    margin: 50px 0 0 0;
     border-radius: 5px 5px 0px 0px;
 }
 .card-body{
