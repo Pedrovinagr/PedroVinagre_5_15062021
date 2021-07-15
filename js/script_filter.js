@@ -2,6 +2,7 @@
 const searchIngredients = document.querySelector('.search_input');
 const boxIngredients = document.getElementById('search_ingredients');
 const boxMotion = document.querySelector('.motion');
+const tagMotion = document.querySelector('.ingredients_tag');
 
 // const searchAppareils = document.querySelector('search_input');
 // const boxAppareils = document.getElementById('search_appareils');
@@ -37,7 +38,7 @@ boxIngredients.onkeyup = (e) =>{
 
 function select(element){
     let selectUserDataIng = element.textContent;
-    boxIngredients.value = selectUserDataIng;
+    tagMotion.value = selectUserDataIng;
     searchIngredients.classList.remove('active');
 }
 
@@ -46,11 +47,14 @@ function showIngredients(list){
     if(!list.length){
         userValue = boxIngredients.value;
         listDataIng = '<li>' + userValue + '</li>';
+        
     }
     else{
         listDataIng = list.join('');
     }
+    
     boxMotion.innerHTML = listDataIng;
+    
 }
 
 // // box appareil
