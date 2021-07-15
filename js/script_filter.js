@@ -38,7 +38,7 @@ boxIngredients.onkeyup = (e) =>{
 
 function select(element){
     let selectUserDataIng = element.textContent;
-    tagMotion.value = selectUserDataIng;
+    boxIngredients.value = selectUserDataIng;
     searchIngredients.classList.remove('active');
 }
 
