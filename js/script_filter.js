@@ -2,7 +2,8 @@
 const searchIngredients = document.querySelector('.search_input');
 const boxIngredients = document.getElementById('search_ingredients');
 const boxMotion = document.querySelector('.motion');
-const tagMotion = document.querySelector('.ingredients_tag');
+const tagMotion = document.getElementById('ingredients_tag');
+const tagIngredients = document.getElementById('ingredients__tag');
 
 // const searchAppareils = document.querySelector('search_input');
 // const boxAppareils = document.getElementById('search_appareils');
@@ -38,7 +39,8 @@ boxIngredients.onkeyup = (e) =>{
 
 function select(element){
     let selectUserDataIng = element.textContent;
-    boxIngredients.value = selectUserDataIng;
+    tagMotion.value = selectUserDataIng;
+    tagIngredients.style.display = "block"
     searchIngredients.classList.remove('active');
 }
 
