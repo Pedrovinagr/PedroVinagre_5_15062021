@@ -55,8 +55,11 @@ body{
 .tag{
     position: relative;
     line-height: 37px;
-    margin-right: 10px;
+    margin-right: 20px;
     max-width: auto;
+}
+
+.tag_input{
     border-radius: 5px;
 }
 
@@ -96,7 +99,7 @@ body{
 }
 
 .tag{
-    display: none;
+    display: block;
 }
 
 /* filters */
