@@ -21,6 +21,7 @@ boxIngredients.onkeyup = (e) =>{
         emptyArrayIng = emptyArrayIng.map((dataIng)=>{
             return dataIng = '<li>'+ dataIng +'</li>';
         });
+        console.log('liste des ingredients :')
         console.log(emptyArrayIng);
 
         searchIngredients.classList.add('active');
