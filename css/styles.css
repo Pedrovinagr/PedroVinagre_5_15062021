@@ -99,7 +99,7 @@ body{
 }
 
 .tag{
-    display: block;
+    display: none;
 }
 
 /* filters */
