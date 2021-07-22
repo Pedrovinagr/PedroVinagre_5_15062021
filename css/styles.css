@@ -103,7 +103,7 @@ body{
 }
 
 /* filters */
-.filters{
+/* .filters{
     display: flex;
     margin: 0 0 -25px 0;
 }
@@ -193,7 +193,7 @@ input::placeholder{
 .search_input.active, .motion li{
     display: block;
     background: #3282F7;
-}
+} */
 
 /* card recipes */
 .cards{
