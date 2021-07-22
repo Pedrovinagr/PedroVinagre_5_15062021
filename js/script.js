@@ -1,3 +1,7 @@
+let ingredientsArray = [];
+let applianceArray = [];
+let ustensilsArray = [];
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log(recipes);
 
@@ -15,6 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
     createUstensilesList(ustensilsArray);
     console.log("Liste des ustensiles");
     console.log(ustensilsArray);
+
+    let ingredientFilter = document.getElementById('ingredients_list');
+    var ingredientListHtml = document.createElement('ul');
+
+    console.log('valeur li')
+    console.log(ingredientListHtml)
+
+    for(var i = 0; i < ingredientsArray.lenght - 1; i++) {
+        var ingredientItemHtml = document.createElement('li');
+        ingredientItemHtml.textContent = ingredientsArray[i];
+        ingredientItemHtml.classList = "ingredients";
+        ingredientListHtml.appendChild(ingredientItemHtml);
+    }
+
+    ingredientFilter.appendChild(ingredientListHtml);
+
+    console.log('filtre ingredient')
+    console.log(ingredientItemHtml)
 
     let searchFilterIngredients = document.getElementById('search_ingredients');
     searchFilterIngredients.addEventListener('change', function(event){
@@ -42,8 +64,6 @@ function createIngredientsList(ingredientArrayToAgregate) {
             if(!ingredientArrayToAgregate.includes(ingredient)) {
                 ingredientArrayToAgregate.push(ingredient);
             }
-            console.log('list ingredient')
-            console.log(ingredient)
         }
     }
     
