@@ -144,6 +144,7 @@ body{
 
 input::placeholder{
     color: #FFFFFF;
+    font-family: Lato;
     opacity: 0.5;
     font-size: 18px;
     text-align: left;

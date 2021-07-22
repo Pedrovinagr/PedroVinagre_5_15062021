@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('valeur li')
     console.log(ingredientListHtml)
 
-    for(var i = 0; i < ingredientsArray.lenght - 1; i++) {
+    for(var i = 0; i < ingredientsArray.length - 1; i++) {
         var ingredientItemHtml = document.createElement('li');
         ingredientItemHtml.textContent = ingredientsArray[i];
         ingredientItemHtml.classList = "ingredients";
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('filtre ingredient')
     console.log(ingredientItemHtml)
 
-    
+
     let searchBarInput = document.getElementById("searchbar");
     searchBarInput.addEventListener("change", function(event) {
         let searchText = event.target.value;
