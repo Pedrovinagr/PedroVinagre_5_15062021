@@ -35,43 +35,43 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('filtre ingredient')
     console.log(ingredientItemHtml)
 
-    // Ajout tableau dans le filtre appareils
-    let applianceFilter = document.getElementById('appareils_list');
-    var applianceListHtml = document.createElement('ul');
+    // // Ajout tableau dans le filtre appareils
+    // let applianceFilter = document.getElementById('appareils_list');
+    // var applianceListHtml = document.createElement('ul');
 
-    console.log('valeur li')
-    console.log(applianceListHtml)
+    // console.log('valeur li')
+    // console.log(applianceListHtml)
 
-    for(var i = 0; i < applianceArray.length - 1; i++) {
-        var applianceItemHtml = document.createElement('li');
-        applianceItemHtml.textContent = applianceArray[i];
-        applianceItemHtml.classList = "appareils";
-        applianceListHtml.appendChild(applianceItemHtml);
-    }
+    // for(var i = 0; i < applianceArray.length - 1; i++) {
+    //     var applianceItemHtml = document.createElement('li');
+    //     applianceItemHtml.textContent = applianceArray[i];
+    //     applianceItemHtml.classList = "appareils";
+    //     applianceListHtml.appendChild(applianceItemHtml);
+    // }
 
-    applianceFilter.appendChild(applianceListHtml);
+    // applianceFilter.appendChild(applianceListHtml);
 
-    console.log('filtre appareil')
-    console.log(applianceItemHtml)
+    // console.log('filtre appareil')
+    // console.log(applianceItemHtml)
 
-    // Ajout tableau dans le filtre ustensiles
-    let ustensilsFilter = document.getElementById('ustensiles_list');
-    var ustensilsListHtml = document.createElement('ul');
+    // // Ajout tableau dans le filtre ustensiles
+    // let ustensilsFilter = document.getElementById('ustensiles_list');
+    // var ustensilsListHtml = document.createElement('ul');
 
-    console.log('valeur li')
-    console.log(ustensilsListHtml)
+    // console.log('valeur li')
+    // console.log(ustensilsListHtml)
 
-    for(var i = 0; i < ustensilsArray.length - 1; i++) {
-        var ustensilsItemHtml = document.createElement('li');
-        ustensilsItemHtml.textContent = ustensilsArray[i];
-        ustensilsItemHtml.classList = "ustensiles";
-        ustensilsListHtml.appendChild(ustensilsItemHtml);
-    }
+    // for(var i = 0; i < ustensilsArray.length - 1; i++) {
+    //     var ustensilsItemHtml = document.createElement('li');
+    //     ustensilsItemHtml.textContent = ustensilsArray[i];
+    //     ustensilsItemHtml.classList = "ustensiles";
+    //     ustensilsListHtml.appendChild(ustensilsItemHtml);
+    // }
 
-    ustensilsFilter.appendChild(ustensilsListHtml);
+    // ustensilsFilter.appendChild(ustensilsListHtml);
 
-    console.log('filtre ustensile')
-    console.log(ustensilsItemHtml)
+    // console.log('filtre ustensile')
+    // console.log(ustensilsItemHtml)
 
     // boucle de la barre de recherche
     let searchBarInput = document.getElementById("searchbar");
