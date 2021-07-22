@@ -103,7 +103,7 @@ body{
 }
 
 /* filters */
-/* .filters{
+.filters{
     display: flex;
     margin: 0 0 -25px 0;
 }
@@ -169,12 +169,16 @@ input::placeholder{
     position: absolute;
 }
 
-.search_input .motion{
-    padding: 0px;
-    max-height: 397px;
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
+.search_input .ul{
+    border-radius: 0 0 5px 5px;
+    font-size: 18px;
+    /* overflow-y: auto; */
+    /* opacity: 0; */
+    /* pointer-events: none; */
+}
+
+.search_input .li{
+    margin: 0;
 }
 
 .search_input.active .motion{
@@ -183,15 +187,20 @@ input::placeholder{
     pointer-events: auto;
 }
 
+.motion ul{
+    padding: 0;
+}
+
 .motion li{
     list-style: none;
     display: flex;
     width: auto;
     cursor: default;
-    display: none;
+    display: block;
+    margin: 0;
 }
 
-.search_input.active, .motion li{
+/* .search_input.active, .motion li{
     display: block;
     background: #3282F7;
 } */
