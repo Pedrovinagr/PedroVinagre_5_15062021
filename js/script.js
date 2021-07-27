@@ -56,37 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // ustensilsFilter.appendChild(ustensilsListHtml);
 
     // Condition de la recherche "filtre ingredient"
-    let searchFilterIngredient = document.getElementById('search_ingredients');
-    
-    searchFilterIngredient.addEventListener('change',function(event) {
-        let searchTextIngredient = event.target.value;
-        let ingredientResult = []
-        
-        console.log('valeur de la recherche')
-        console.log(searchTextIngredient)
-
-        if(searchTextIngredient !==""){
-            if(searchTextIngredient > 3){
-                let searchValueIngredient = searchTextIngredient.toLowerCase();
-                if(searchValueIngredient.indexOf("") != -1) {
-                    let searchArrayIngredient = searchValueIngredient.split(" ");
-                    for(var i = 0; i < searchArrayIngredient.length; i++) {
-                        let wordIngredient = searchArrayIngredient[i];
-                        if(wordIngredient.length > 2) {
-                            for(var j = 0; j < ingredientsArray.length - 1; j++) {
-                                let ingredientOfSearch = ingredientsArray[j];
-                                if(ingredientOfSearch === wordIngredient) {
-                                    ingredientResult.push(j);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        console.log(ingredientResult)
-    });
-
     // let searchFilterIngredient = document.getElementById('search_ingredients');
     
     // searchFilterIngredient.addEventListener('change',function(event) {
@@ -97,17 +66,50 @@ document.addEventListener("DOMContentLoaded", function() {
     //     console.log(searchTextIngredient)
 
     //     if(searchTextIngredient !==""){
-    //         for(var i = 0; i < ingredientsArray.length; i++) {
-    //             let ingredientValue = ingredientsArray[i];
-    //             if(ingredientValue === searchTextIngredient) {
-    //                 ingredientResult.push(i);
+    //         if(searchTextIngredient > 3){
+    //             let searchValueIngredient = searchTextIngredient.toLowerCase();
+    //             if(searchValueIngredient.indexOf("") != -1) {
+    //                 let searchArrayIngredient = searchValueIngredient.split(" ");
+    //                 for(var i = 0; i < searchArrayIngredient.length; i++) {
+    //                     let wordIngredient = searchArrayIngredient[i];
+    //                     if(wordIngredient.length > 2) {
+    //                         for(var j = 0; j < ingredientsArray.length - 1; j++) {
+    //                             let ingredientOfSearch = ingredientsArray[j];
+    //                             if(ingredientOfSearch === wordIngredient) {
+    //                                 ingredientResult.push(j);
+    //                             }
+    //                         }
+    //                     }
+    //                 }
     //             }
-    //             console.log('résultat :')
-    //             console.log(ingredientResult.includes(i))
     //         }
-            
     //     }
+    //     console.log(ingredientResult)
     // });
+
+    let searchFilterIngredient = document.getElementById('search_ingredients');
+    
+    searchFilterIngredient.addEventListener('change',function(event) {
+        let texteSaisiePourLaRecherche = event.target.value;
+        let ingredientResult = []
+        
+        console.log('valeur de la recherche')
+        console.log(texteSaisiePourLaRecherche)
+
+        if(texteSaisiePourLaRecherche !==""){
+            for(var index = 0; index < ingredientsArray.length; index++) {
+                let ingredientAMonIndex = ingredientsArray[index];
+                if (ingredientAMonIndex === texteSaisiePourLaRecherche) {
+                    ingredientResult.push(index);
+                }
+            }
+            for(var index = 0; index < ingredientResult.length; index++) {
+                var indexDeMonIngredient = ingredientResult[index];
+                var monIngredient = ingredientsArray[indexDeMonIngredient];
+            }
+            console.log(monIngredient)
+        }
+    });
 
     // // fonction de recherche dans "filtre ingredient"
     // function searchIngredientsFromFilter(ingredient) {
