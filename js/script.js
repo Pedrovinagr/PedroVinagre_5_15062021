@@ -64,8 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                         tableauDeRecherche.push(j);
                                     }
                                 }
-                            }else(ingredientRecherche === motDeRecherche) {
-                                tableauDeRecherche.push(j);
+                            } else {
+                                if(ingredientRecherche === motDeRecherche) {
+                                    tableauDeRecherche.push(j);
+                                }
                             }
                         }
                     }
