@@ -44,27 +44,76 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('valeur de la recherche')
         console.log(texteSaisiePourLaRecherche)
 
-        if(texteSaisiePourLaRecherche !==""){
-            var valeurDeRecherche = texteSaisiePourLaRecherche.tolowerCase();
-            if(valeurDeRecherche.indexOf("") != -1) {
-                var valeurSpliter = valeurDeRecherche.split(" ")
-                for(var i = 0; i < valeurSpliter.length; i++) {
-                    let motDeRecherche = valeurSpliter[i];
-                    if (motDeRecherche > 2) {
-                        for(var j = 0; j < tableauDesIngredients; j++) {
-                            var ingredientVarJ = tableauDesIngredients[j].tolowerCase();
+        if(texteSaisiePourLaRecherche !=="") {
+            var valeurDeRechercheMinuscule = texteSaisiePourLaRecherche.tolowerCase();
+            // saisie de recheche mis en minuscule, découper en mot et contient un index
+            if(valeurDeRechercheMinuscule.indexOf("") != -1) {
+                var valeurDeRechercheMiseDansUnTableau = valeurDeRechercheMinuscule.split(" ");
+                for (var i = 0; i < valeurDeRechercheMiseDansUnTableau.length; i++) {
+                    let motDeRecherche = valeurDeRechercheMiseDansUnTableau[i];
+                    // rechercher dans le tableau d'ingredient la valeur recherchée
+                    if(motDeRecherche!=="") {
+                        for (var j = 0; j  < tableauDesIngredients.length -1; j++) {
+                            let ingredientRecherche = tableauDesIngredients[j].tolowerCase();
+                            // découper les groupes de mot du tableau de recherche verifier s'ils ont un index et pusher dans le tableauDeRecherche
+                            if(ingredientRecherche.indexOf("") != -1) {
+                                let motIngredientRecherche = ingredientRecherche.split(" ");
+                                for (var k = 0; k < motIngredientRecherche.length; k++) {
+                                    let motRecherche = motIngredientRecherche[k];
+                                    if(motRecherche === motDeRecherche) {
+                                        tableauDeRecherche.push(j);
+                                    }
+                                }
+                            }else(ingredientRecherche === motDeRecherche) {
+                                tableauDeRecherche.push(j);
+                            }
                         }
-                        tableauDeRecherche.push(i);
                     }
                 }
+                console.log('resultat de la recherche ingredient');
+                console.log(tableauDeRecherche)
             }
-            for(var j = 0; j < tableauDeRecherche.length; j++) {
-                var indexDeMonIngredient = tableauDeRecherche[j];
-                var monIngredient = tableauDesIngredients[indexDeMonIngredient];
-            }
-            console.log('résultat de la recherche')
-            console.log(monIngredient)
+
+            //     for(var i = 0; i < tableauDesIngredients.length; i++) {
+            //         let ingredientAMonIndex = tableauDesIngredients[i];
+            //         if (ingredientAMonIndex === texteSaisiePourLaRecherche) {
+            //             tableauDeRecherche.push(i);
+            //         }
+            //     }
+            //     for(var j = 0; j < tableauDeRecherche.length; j++) {
+            //         var indexDeMonIngredient = tableauDeRecherche[j];
+            //         var monIngredient = tableauDesIngredients[indexDeMonIngredient];
+            //     }
+
+            //     console.log('résultat de la recherche');
+            //     console.log(monIngredient);
+            // }
         }
     });
 });
 
+var chevronDown = document.querySelector('.fa-chevron-down');
+var chevronUp = document.querySelector('.fa-chevron-up');
+
+function menuDéroulant() {
+    document.getElementById('ingredients_list').classList.toggle('is_visible')
+}
+
+// if(texteSaisiePourLaRecherche !==""){
+    //     var valeurDeRecherche = texteSaisiePourLaRecherche.tolowerCase();
+    //     if(valeurDeRecherche.indexOf("") != -1) {
+    //         var valeurSpliter = valeurDeRecherche.split(" ")
+    //         for(var i = 0; i < valeurSpliter.length; i++) {
+    //             let motDeRecherche = valeurSpliter[i];
+    //             if (motDeRecherche > 2) {
+    //                 for(var j = 0; j < tableauDesIngredients; j++) {
+    //                     var ingredientVarJ = tableauDesIngredients[j].tolowerCase();
+    //                     if(ingredientVarJ.indexOf("") != -1) {
+    //                         var ingredientAttendu = ingredientVarJ.split("");
+    //                     }
+    //                     console.log(ingredientAttendu)
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }

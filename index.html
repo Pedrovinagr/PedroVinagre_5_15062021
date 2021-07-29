@@ -63,9 +63,9 @@
             <div class="search_input">
               <input type="text" class="ingredients" id="search_ingredients" placeholder="Ingredients">
               <div class="icon_filter">
-                <button type="button" class="btn btn_filter_ingredient">
-                  <i class="fas fa-chevron-up"></i>
-                  <i class="fas fa-chevron-down"></i>
+                <button onclick="menuDéroulant()" id="btn_filter" class="btn_filter btn">
+                  <i class="icon_filter fas fa-chevron-up"></i>
+                  <i class="icon_filter fas fa-chevron-down"></i>
                 </button>
               </div>
               <div class="motion" id="ingredients_list">
@@ -77,8 +77,8 @@
             <div class="search_input">
               <input type="text" class="appareils" id="search_appareils" placeholder="Appareils">
               <div class="icon_filter">
-                <i class="fas fa-chevron-up"></i>
-                <i class="fas fa-chevron-down"></i>
+                <i  class="fas fa-chevron-up"></i>
+                <i id="down" class="fas fa-chevron-down"></i>
               </div>
               <div class="motion" id="appareils_list">
               </div>
