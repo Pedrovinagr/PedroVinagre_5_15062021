@@ -1,121 +1,78 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // Tableau des ingredients
-    let tableauDesIngredients = [];
-    
+    let IngredientsArray = [];
+    console.log('Liste des ingredients:');
+    console.log(IngredientsArray);
 
-    console.log('Liste des ingredient dans le tableau :');
-    console.log(tableauDesIngredients);
-
-    function creerLeTableauDesIngredients(regroupementDesIngredients) {
+    // fonction de recherche dans recipes de tous les ingredients
+    function concatenateIngredientRecipes(concatenateIngredient) {
         for(var i = 0; i < recipes.length; i++) {
-            let listeDesIngredients = recipes[i].ingredients;
-            for(var j = 0; j < listeDesIngredients.length; j++) {
-                let ingredient = listeDesIngredients[j].ingredient;
-                if(!regroupementDesIngredients.includes(ingredient)) {
-                    regroupementDesIngredients.push(ingredient);
+            let IngredientsList = recipes[i].ingredients;
+            for(var j = 0; j < IngredientsList.length; j++) {
+                let ingredient = IngredientsList[j].ingredient;
+                if(!concatenateIngredient.includes(ingredient)) {
+                    concatenateIngredient.push(ingredient);
                 }
             }
         }
     }
     
-    creerLeTableauDesIngredients(tableauDesIngredients);
+    concatenateIngredientRecipes(IngredientsArray);
 
-    // Insérer le tableau dans le filtre
-    let menuIngredient = document.getElementById('ingredients_list');
-    var listeDesIngredientsHtml = document.createElement('ul');
+    // Tableau des appareils
+    let appliancesArray = [];
+    console.log('Liste des appareils:');
+    console.log(appliancesArray);
 
-    for(var i = 0; i < tableauDesIngredients.length - 1; i++) {
-        var IngredientDansLeMenu = document.createElement('li');
-        IngredientDansLeMenu.textContent = tableauDesIngredients[i];
-        IngredientDansLeMenu.classList = "ingredients";
-        listeDesIngredientsHtml.appendChild(IngredientDansLeMenu);
-    }
-
-    menuIngredient.appendChild(listeDesIngredientsHtml);
-
-    // Recheche sur le filtre ingredient
-    let searchFilterIngredient = document.getElementById('search_ingredients');
-    
-    searchFilterIngredient.addEventListener('change',function(event) {
-        let texteSaisiePourLaRecherche = event.target.value;
-        let tableauDeRecherche = []
-        
-        console.log('valeur de la recherche')
-        console.log(texteSaisiePourLaRecherche)
-
-        if(texteSaisiePourLaRecherche !=="") {
-            var valeurDeRechercheMinuscule = texteSaisiePourLaRecherche.tolowerCase();
-            // saisie de recheche mis en minuscule, découper en mot et contient un index
-            if(valeurDeRechercheMinuscule.indexOf("") != -1) {
-                var valeurDeRechercheMiseDansUnTableau = valeurDeRechercheMinuscule.split(" ");
-                for (var i = 0; i < valeurDeRechercheMiseDansUnTableau.length; i++) {
-                    let motDeRecherche = valeurDeRechercheMiseDansUnTableau[i];
-                    // rechercher dans le tableau d'ingredient la valeur recherchée
-                    if(motDeRecherche!=="") {
-                        for (var j = 0; j  < tableauDesIngredients.length -1; j++) {
-                            let ingredientRecherche = tableauDesIngredients[j].tolowerCase();
-                            // découper les groupes de mot du tableau de recherche verifier s'ils ont un index et pusher dans le tableauDeRecherche
-                            if(ingredientRecherche.indexOf("") != -1) {
-                                let motIngredientRecherche = ingredientRecherche.split(" ");
-                                for (var k = 0; k < motIngredientRecherche.length; k++) {
-                                    let motRecherche = motIngredientRecherche[k];
-                                    if(motRecherche === motDeRecherche) {
-                                        tableauDeRecherche.push(j);
-                                    }
-                                }
-                            } else {
-                                if(ingredientRecherche === motDeRecherche) {
-                                    tableauDeRecherche.push(j);
-                                }
-                            }
-                        }
-                    }
-                }
-                console.log('resultat de la recherche ingredient');
-                console.log(tableauDeRecherche)
+    // fonction de recherche dans recipes de tous les appareils
+    function concatenateApplianceRecipes(concatenateAppliance) {
+        for(var i = 0; i < recipes.length; i++) {
+            let appliance = recipes[i].appliance;
+            if(!concatenateAppliance.includes(appliance)) {
+                concatenateAppliance.push(appliance);
             }
+        }
+    }
+    
+    concatenateApplianceRecipes(appliancesArray);
 
-            //     for(var i = 0; i < tableauDesIngredients.length; i++) {
-            //         let ingredientAMonIndex = tableauDesIngredients[i];
-            //         if (ingredientAMonIndex === texteSaisiePourLaRecherche) {
-            //             tableauDeRecherche.push(i);
-            //         }
-            //     }
-            //     for(var j = 0; j < tableauDeRecherche.length; j++) {
-            //         var indexDeMonIngredient = tableauDeRecherche[j];
-            //         var monIngredient = tableauDesIngredients[indexDeMonIngredient];
-            //     }
+    // Tableau des ustensiles
+    let ustensilsArray = [];
+    console.log('Liste des ustensiles:');
+    console.log(ustensilsArray);
 
-            //     console.log('résultat de la recherche');
-            //     console.log(monIngredient);
-            // }
+    // fonction de recherche dans recipes de tous les ustensiles
+    function concatenateUstensilRecipes(concatenateUstensil) {
+        for(var i = 0; i < recipes.length; i++) {
+            let ustensilsList = recipes[i].ustensils;
+            for(var j = 0; j < ustensilsList.length; j++) {
+                let ustensil = ustensilsList[j];
+                if(!concatenateUstensil.includes(ustensil)) {
+                    concatenateUstensil.push(ustensil);
+                }
+            }
+        }
+    }
+    
+    concatenateUstensilRecipes(ustensilsArray);
+
+    const centralSearchBar = document.getElementById('searchbar');
+    let cleanIngredientArray = []
+
+    centralSearchBar.addEventListener('change', function(event) {
+        let researchValue = event.target.value;
+        console.log(researchValue)
+        let cleanValue = researchValue.toLowerCase();
+        console.log(cleanValue)
+        if(cleanValue !=="") {
+            for (var i = 0; i < IngredientsArray.length; i++) {
+                let ingredient = IngredientsArray[i].toLowerCase();
+                if(cleanValue === ingredient) {
+                    cleanIngredientArray.push(ingredient)
+                    console.log(cleanIngredientArray)
+                }
+            }
         }
     });
 });
-
-var chevronDown = document.querySelector('.fa-chevron-down');
-var chevronUp = document.querySelector('.fa-chevron-up');
-
-function menuDéroulant() {
-    document.getElementById('ingredients_list').classList.toggle('is_visible')
-}
-
-// if(texteSaisiePourLaRecherche !==""){
-    //     var valeurDeRecherche = texteSaisiePourLaRecherche.tolowerCase();
-    //     if(valeurDeRecherche.indexOf("") != -1) {
-    //         var valeurSpliter = valeurDeRecherche.split(" ")
-    //         for(var i = 0; i < valeurSpliter.length; i++) {
-    //             let motDeRecherche = valeurSpliter[i];
-    //             if (motDeRecherche > 2) {
-    //                 for(var j = 0; j < tableauDesIngredients; j++) {
-    //                     var ingredientVarJ = tableauDesIngredients[j].tolowerCase();
-    //                     if(ingredientVarJ.indexOf("") != -1) {
-    //                         var ingredientAttendu = ingredientVarJ.split("");
-    //                     }
-    //                     console.log(ingredientAttendu)
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
