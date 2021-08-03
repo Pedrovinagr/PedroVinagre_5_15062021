@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // Tableau des ingredients
-    let IngredientsArray = [];
+    let ingredientsArray = [];
     console.log('Liste des ingredients:');
-    console.log(IngredientsArray);
+    console.log(ingredientsArray);
 
     // fonction de recherche dans recipes de tous les ingredients
     function concatenateIngredientRecipes(concatenateIngredient) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     
-    concatenateIngredientRecipes(IngredientsArray);
+    concatenateIngredientRecipes(ingredientsArray);
 
     // Tableau des appareils
     let appliancesArray = [];
@@ -67,16 +67,25 @@ document.addEventListener("DOMContentLoaded", function() {
         let cleanValue = researchValue.toLowerCase();
         console.log('Valeur de la recherche en minuscule')
         console.log(cleanValue);
+        console.log(cleanValue.indexOf(""))
         if(cleanValue.length >= 3){
-            for (var i = 0; i < IngredientsArray.length; i++) {
-                let ingredient = IngredientsArray[i].toLowerCase();
-                if(cleanValue === ingredient) {
-                    cleanIngredientArray.push(ingredient);
-                    console.log('résultat de la recherche');
-                    console.log(cleanIngredientArray);
-                    console.log(cleanIngredientArray.indexOf(""));
+            if(cleanValue.indexOf("") != -1) {
+                let searchArray = cleanValue.split(" ");
+                console.log(searchArray);
+                for (var i = 0; i < searchArray.length; i++) {
+                    let searchWord = searchArray[i];
+                    console.log('tableau des mots de recherche');
+                    console.log(searchWord)
+                    if(searchWord.length > 2) {
+                        for (let j = 0; j < ingredientsArray.length; j++) {
+                            var resultIngredient = ingredientsArray[j];
+                            console.log('resultat de recherche');
+                            console.log(resultIngredient);
+                        }
+                    }
                 }
             }
+
         }
 
 
@@ -89,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         
         // if(cleanValue !=="") {
-        //     for (var i = 0; i < IngredientsArray.length; i++) {
-        //         let ingredient = IngredientsArray[i].toLowerCase();
+        //     for (var i = 0; i < ingredientsArray.length; i++) {
+        //         let ingredient = ingredientsArray[i].toLowerCase();
         //         if(cleanValue === ingredient) {
         //             cleanIngredientArray.push(ingredient)
         //             console.log(cleanIngredientArray)
