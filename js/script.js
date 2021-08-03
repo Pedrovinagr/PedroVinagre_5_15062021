@@ -58,22 +58,45 @@ document.addEventListener("DOMContentLoaded", function() {
     concatenateUstensilRecipes(ustensilsArray);
 
     const centralSearchBar = document.getElementById('searchbar');
-    let cleanIngredientArray = []
+    let cleanIngredientArray = [];
 
     centralSearchBar.addEventListener('change', function(event) {
         let researchValue = event.target.value;
-        console.log(researchValue)
+        console.log('Valeur de la recherche')
+        console.log(researchValue);
         let cleanValue = researchValue.toLowerCase();
-        console.log(cleanValue)
-        if(cleanValue !=="") {
+        console.log('Valeur de la recherche en minuscule')
+        console.log(cleanValue);
+        if(cleanValue.length >= 3){
             for (var i = 0; i < IngredientsArray.length; i++) {
                 let ingredient = IngredientsArray[i].toLowerCase();
                 if(cleanValue === ingredient) {
-                    cleanIngredientArray.push(ingredient)
-                    console.log(cleanIngredientArray)
+                    cleanIngredientArray.push(ingredient);
+                    console.log('résultat de la recherche');
+                    console.log(cleanIngredientArray);
+                    console.log(cleanIngredientArray.indexOf(""));
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+        
+        // if(cleanValue !=="") {
+        //     for (var i = 0; i < IngredientsArray.length; i++) {
+        //         let ingredient = IngredientsArray[i].toLowerCase();
+        //         if(cleanValue === ingredient) {
+        //             cleanIngredientArray.push(ingredient)
+        //             console.log(cleanIngredientArray)
+        //         }
+        //     }
+        // }
     }); 
 });
 
