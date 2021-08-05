@@ -58,35 +58,66 @@ document.addEventListener("DOMContentLoaded", function() {
     concatenateUstensilRecipes(ustensilsArray);
 
     const centralSearchBar = document.getElementById('searchbar');
-    let cleanIngredientArray = [];
+    let searchResultArrayFromIngredient = [];
+    let resultForsearchIngredient = []
 
     centralSearchBar.addEventListener('change', function(event) {
         let researchValue = event.target.value;
         console.log('Valeur de la recherche')
         console.log(researchValue);
         let cleanValue = researchValue.toLowerCase();
-        console.log('Valeur de la recherche en minuscule')
-        console.log(cleanValue);
-        console.log(cleanValue.indexOf(""))
+        // console.log('Valeur de la recherche en minuscule')
+        // console.log(cleanValue);
+        // console.log(cleanValue.indexOf(""))
+        // condition > à 3 caractères et découpage des ingrédients à mots composés
         if(cleanValue.length >= 3){
             if(cleanValue.indexOf("") != -1) {
                 let searchArray = cleanValue.split(" ");
-                console.log(searchArray);
+                // console.log(searchArray);
                 for (var i = 0; i < searchArray.length; i++) {
                     let searchWord = searchArray[i];
-                    console.log('tableau des mots de recherche');
-                    console.log(searchWord)
+                    // console.log('tableau des mots de recherche');
+                    // console.log(searchWord);
+                    // condition des mots supérieur à 2 caractères + recherche dans la liste des ingredients
                     if(searchWord.length > 2) {
-                        for (let j = 0; j < ingredientsArray.length; j++) {
-                            var resultIngredient = ingredientsArray[j];
-                            console.log('resultat de recherche');
-                            console.log(resultIngredient);
+                        for (var j = 0; j < ingredientsArray.length -1; j++) {
+                            let ingredientList = ingredientsArray[j].toLowerCase();
+                            // console.log('resultat de recherche');
+                            // console.log(ingredientList);
+                            if(ingredientList.indexOf("") != -1) {
+                                let wordIngredientList = ingredientList.split(" ");
+                                // console.log('liste des mots spliter');
+                                // console.log(wordIngredientList);
+                                for (var K = 0; K < wordIngredientList.length; K++) {
+                                    let ingredientWord = wordIngredientList[K];
+                                    // console.log('liste de mot de recherche');
+                                    // console.log(ingredientWord);
+                                    if(ingredientWord === searchWord) {
+                                        resultForsearchIngredient.push(j);
+                                        // console.log('tableau de recherche')
+                                        // console.log(resultForsearchIngredient)
+                                    }
+                                }
+                            }
+                            else { if(ingredientList === searchWord) {
+                                resultForsearchIngredient.push(j);
+                                // console.log('tableau de recherche else')
+                                // console.log(resultForsearchIngredient)
+                                }
+                            }
                         }
                     }
                 }
             }
-
+            for (var i = 0; i < resultForsearchIngredient.length; i++) {
+                let indexForResultSearchIngredient = resultForsearchIngredient[i];
+                let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
+                searchResultArrayFromIngredient.push(ingredientByIndex);
+                                 
+            }
         }
+        console.log('tableau des ingredients suite à la recherche');
+        console.log(searchResultArrayFromIngredient); 
 
 
 
