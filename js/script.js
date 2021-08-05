@@ -57,52 +57,68 @@ document.addEventListener("DOMContentLoaded", function() {
     
     concatenateUstensilRecipes(ustensilsArray);
 
+
+    // Algo  de recherhce par ingredient sur la barre de recherche
     const centralSearchBar = document.getElementById('searchbar');
-    let searchResultArrayFromIngredient = [];
-    let resultForsearchIngredient = []
+    var searchResultArrayFromIngredient = [];
+    var resultForsearchIngredient = []
 
     centralSearchBar.addEventListener('change', function(event) {
         let researchValue = event.target.value;
         console.log('Valeur de la recherche')
         console.log(researchValue);
         let cleanValue = researchValue.toLowerCase();
-        // console.log('Valeur de la recherche en minuscule')
+        // console.log('Valeur de la recherche en minuscule');
         // console.log(cleanValue);
-        // console.log(cleanValue.indexOf(""))
-        // condition > à 3 caractères et découpage des ingrédients à mots composés
+        // console.log(cleanValue.indexOf(""));
+
+        // condition > à 3 caractères
         if(cleanValue.length >= 3){
+            // mots connu dans le tableau
             if(cleanValue.indexOf("") != -1) {
+                // séparation des mots composés de la recherche en plusieurs mots de recherche
                 let searchArray = cleanValue.split(" ");
                 // console.log(searchArray);
                 for (var i = 0; i < searchArray.length; i++) {
+                    // tableau des mots de recherche
                     let searchWord = searchArray[i];
                     // console.log('tableau des mots de recherche');
                     // console.log(searchWord);
-                    // condition des mots supérieur à 2 caractères + recherche dans la liste des ingredients
+
+                    // recherche sur des mots > à 2 caractères
                     if(searchWord.length > 2) {
                         for (var j = 0; j < ingredientsArray.length -1; j++) {
+
+                            // liste des ingredients en minuscule
                             let ingredientList = ingredientsArray[j].toLowerCase();
                             // console.log('resultat de recherche');
                             // console.log(ingredientList);
+
+                            // indexliste des ingredients connu
                             if(ingredientList.indexOf("") != -1) {
+
+                                // séparation des mots composés de la liste des ingredients en plusieurs mots
                                 let wordIngredientList = ingredientList.split(" ");
                                 // console.log('liste des mots spliter');
                                 // console.log(wordIngredientList);
+
                                 for (var K = 0; K < wordIngredientList.length; K++) {
+
+                                    // tableau de liste des mots d'ingredients
                                     let ingredientWord = wordIngredientList[K];
                                     // console.log('liste de mot de recherche');
                                     // console.log(ingredientWord);
                                     if(ingredientWord === searchWord) {
                                         resultForsearchIngredient.push(j);
-                                        // console.log('tableau de recherche')
-                                        // console.log(resultForsearchIngredient)
+                                        // console.log('tableau de recherche');
+                                        // console.log(resultForsearchIngredient);
                                     }
                                 }
                             }
                             else { if(ingredientList === searchWord) {
                                 resultForsearchIngredient.push(j);
-                                // console.log('tableau de recherche else')
-                                // console.log(resultForsearchIngredient)
+                                // console.log('tableau de recherche else');
+                                // console.log(resultForsearchIngredient);
                                 }
                             }
                         }
@@ -112,31 +128,11 @@ document.addEventListener("DOMContentLoaded", function() {
             for (var i = 0; i < resultForsearchIngredient.length; i++) {
                 let indexForResultSearchIngredient = resultForsearchIngredient[i];
                 let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
-                searchResultArrayFromIngredient.push(ingredientByIndex);
-                                 
+                searchResultArrayFromIngredient.push(ingredientByIndex);                 
             }
         }
         console.log('tableau des ingredients suite à la recherche');
-        console.log(searchResultArrayFromIngredient); 
-
-
-
-
-
-
-
-
-
-        
-        // if(cleanValue !=="") {
-        //     for (var i = 0; i < ingredientsArray.length; i++) {
-        //         let ingredient = ingredientsArray[i].toLowerCase();
-        //         if(cleanValue === ingredient) {
-        //             cleanIngredientArray.push(ingredient)
-        //             console.log(cleanIngredientArray)
-        //         }
-        //     }
-        // }
+        console.log(searchResultArrayFromIngredient);
     }); 
 });
 
