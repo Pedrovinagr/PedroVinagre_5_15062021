@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // tableau des titres de recette
+    let recipeNameArray = [];
+    console.log('Liste des titres de recette:');
+    console.log(recipeNameArray);
+
+    // fonction de recherche des titres de recette
+    function concatenateNameRecipes(concatenateName) {
+        for(var i = 0; i < recipes.length; i++) {
+            let nameList = recipes[i].name;
+            if(!concatenateName.includes(nameList)) {
+                concatenateName.push(nameList);
+            }
+        }
+    }
+
+    concatenateNameRecipes(recipeNameArray);
+
+    // tableau des descriptions de toutes les recettes
+    let descriptionArray = [];
+    console.log('Liste des descriptions de toutes les recettes:');
+    console.log(descriptionArray);
+
+    // fonction de recherche des titres de recette
+    function concatenateDescriptionRecipes(concatenatedescription) {
+        for(var i = 0; i < recipes.length; i++) {
+            let descriptionList = recipes[i].description;
+            if(!concatenatedescription.includes(descriptionList)) {
+                concatenatedescription.push(descriptionList);
+            }
+        }
+    }
+
+    concatenateDescriptionRecipes(descriptionArray);
 
     // Tableau des ingredients
     let ingredientsArray = [];
