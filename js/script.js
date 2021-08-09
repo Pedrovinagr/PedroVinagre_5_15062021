@@ -155,14 +155,24 @@ document.addEventListener("DOMContentLoaded", function() {
                                 }
                             }
                         }
+                        for (var i = 0; i < resultForsearchIngredient.length; i++) {
+                            let indexForResultSearchIngredient = resultForsearchIngredient[i];
+                            let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
+                            searchResultArrayFromIngredient.push(ingredientByIndex);                 
+                        }
+                    }
+                    else { if(searchWord.length > 2) {
+                        for (let l = 0; l < recipeNameArray.length; l++) {
+                            const nameList = recipeNameArray[l].toLowerCase();
+                            console.log('resultat de recherche');
+                            console.log(nameList);
+                        }
+                    }
+
                     }
                 }
             }
-            for (var i = 0; i < resultForsearchIngredient.length; i++) {
-                let indexForResultSearchIngredient = resultForsearchIngredient[i];
-                let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
-                searchResultArrayFromIngredient.push(ingredientByIndex);                 
-            }
+            
         }
         console.log('tableau des ingredients suite à la recherche');
         console.log(searchResultArrayFromIngredient);
