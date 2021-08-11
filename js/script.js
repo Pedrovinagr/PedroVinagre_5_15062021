@@ -94,7 +94,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Algo  de recherhce par ingredient sur la barre de recherche
     const centralSearchBar = document.getElementById('searchbar');
     var searchResultArrayFromIngredient = [];
-    var resultForsearchIngredient = []
+    var resultForsearchIngredient = [];
+    var searchResultArrayFromNameRecipe = [];
+    var resultForSearchName = [];
 
     centralSearchBar.addEventListener('change', function(event) {
         let researchValue = event.target.value;
@@ -160,22 +162,42 @@ document.addEventListener("DOMContentLoaded", function() {
                             let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
                             searchResultArrayFromIngredient.push(ingredientByIndex);                 
                         }
+                        console.log('tableau des ingredients suite à la recherche');
+                        console.log(searchResultArrayFromIngredient);
                     }
-                    else { if(searchWord.length > 2) {
+                    // recherche dans le tableau de nom de recette
+                    if(searchWord.length > 2) {
                         for (let l = 0; l < recipeNameArray.length; l++) {
                             const nameList = recipeNameArray[l].toLowerCase();
-                            console.log('resultat de recherche');
-                            console.log(nameList);
+                            // console.log('resultat de recherche');
+                            // console.log(nameList);
+                            if(nameList.indexOf("") != -1) {
+                                let wordNameList = nameList.split(" ");
+                                for (var m = 0; m < wordNameList.length; m++) {
+                                    let nameWord = wordNameList[m];
+                                    if(nameWord === searchWord) {
+                                        resultForSearchName.push(l);
+                                        console.log('tableau de recherche des noms de recette');
+                                        console.log(resultForSearchName)
+                                    }
+                                }
+                            }
+                            else { if(nameList === searchWord) {
+                                resultForSearchName.push(l);
+                                }
+                            }
                         }
-                    }
-
+                        for (var i = 0; i < resultForSearchName.length; i++) {
+                            let indexForResultSearchName = resultForSearchName[i];
+                            let nameRecipeByIndex = recipeNameArray[indexForResultSearchName];
+                            searchResultArrayFromNameRecipe.push(nameRecipeByIndex);
+                        }
+                        console.log('tableau de nom de recette suite à la recherche');
+                        console.log(searchResultArrayFromNameRecipe)
                     }
                 }
             }
-            
         }
-        console.log('tableau des ingredients suite à la recherche');
-        console.log(searchResultArrayFromIngredient);
     }); 
 });
 
