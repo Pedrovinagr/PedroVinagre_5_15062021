@@ -177,8 +177,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                     let nameWord = wordNameList[m];
                                     if(nameWord === searchWord) {
                                         resultForSearchName.push(l);
-                                        console.log('tableau de recherche des noms de recette');
-                                        console.log(resultForSearchName)
+                                        // console.log('tableau de recherche des noms de recette');
+                                        // console.log(resultForSearchName);
                                     }
                                 }
                             }
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             searchResultArrayFromNameRecipe.push(nameRecipeByIndex);
                         }
                         console.log('tableau de nom de recette suite à la recherche');
-                        console.log(searchResultArrayFromNameRecipe)
+                        console.log(searchResultArrayFromNameRecipe);
                     }
                 }
             }
