@@ -93,10 +93,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Algo  de recherhce par ingredient sur la barre de recherche
     const centralSearchBar = document.getElementById('searchbar');
+
     var searchResultArrayFromIngredient = [];
     var resultForsearchIngredient = [];
+
     var searchResultArrayFromNameRecipe = [];
     var resultForSearchName = [];
+
+    var searchResultArrayFromDescriptionRecipe = [];
+    var resultForSearchDescription = [];
 
     centralSearchBar.addEventListener('change', function(event) {
         let researchValue = event.target.value;
@@ -194,6 +199,33 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                         console.log('tableau de nom de recette suite à la recherche');
                         console.log(searchResultArrayFromNameRecipe);
+                    }
+
+                    // recherche dans le tableau descrition de la recette
+                    if(searchWord.length > 2) {
+                        for (let n = 0; n < descriptionArray.length; n++) {
+                            const descriptionList = descriptionArray[n].toLowerCase();
+                            if(descriptionList.indexOf("") != -1) {
+                                let wordDescriptionList = descriptionList.split(" ");
+                                for (var o = 0; o < wordDescriptionList.length; o++) {
+                                    let descriptionWord = wordDescriptionList[o];
+                                    if(descriptionWord === searchWord) {
+                                        resultForSearchDescription.push(n);
+                                    }
+                                }
+                            }
+                            else { if(descriptionList === searchWord) {
+                                resultForSearchDescription.push(n);
+                                }
+                            }
+                        }
+                        for (var i = 0; i < resultForSearchDescription.length; i++) {
+                            let indexForResultSearchDescription = resultForSearchDescription[i];
+                            let descriptionRecipeByIndex = descriptionArray[indexForResultSearchDescription];
+                            searchResultArrayFromDescriptionRecipe.push(descriptionRecipeByIndex);
+                        }
+                        console.log('tableau des descriptions de recette suite à la recherche');
+                        console.log(searchResultArrayFromDescriptionRecipe);
                     }
                 }
             }
