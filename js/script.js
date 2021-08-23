@@ -230,6 +230,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         }
-    }); 
+        
+        // supprimer le recipes HTML
+        var recipesHtml = document.getElementById('recipes_html');
+        var recipesParent = document.getElementById('container');
+
+        recipesParent.removeChild(recipesHtml);
+
+        // Insérer le tableau des ingredients dans le filtre
+        let ingredientMenu = document.getElementById('ingredients_list');
+        let listOfIngredientsHtml = document.createElement('ul');
+
+        for(var i = 0; i < searchResultArrayFromIngredient.length; i++) {
+            var IngredientInTheMenu = document.createElement('li');
+            IngredientInTheMenu.textContent = searchResultArrayFromIngredient[i];
+            IngredientInTheMenu.classList = "ingredients";
+            listOfIngredientsHtml.appendChild(IngredientInTheMenu);
+        }
+
+        ingredientMenu.appendChild(listOfIngredientsHtml);
+    });
 });
 
+var chevronDown = document.querySelector('.fa-chevron-down');
+var chevronUp = document.querySelector('.fa-chevron-up');
+
+function menuDéroulant() {
+document.getElementById('ingredients_list').classList.toggle('is_visible')
+}
