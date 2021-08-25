@@ -277,23 +277,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         }
-
+        console.log('tableau recipeResult :');
         console.log(recipeResult);
         if(recipeResult.length > 0) {
             showRecipes(recipeResult);
+            createListFilter(recipeResult);
         } else {
             showRecipes(recipes);
         }
         
         // Insérer le tableau des ingredients dans le filtre
         
-        var filterArray = recipeResult;
-        var ingredientsInRecipeForFilter = filterArray.ingredients;
-        var ustensilsInRecipeForFilter = filterArray.ustensils;
-        var applianceInRecipeForFilter = filterArray.appliance;
+        // var filterArray = recipeResult;
+        // var ingredientsInRecipeForFilter = filterArray.ingredients;
+        // var ustensilsInRecipeForFilter = filterArray.ustensils;
+        // var applianceInRecipeForFilter = filterArray.appliance;
 
-        console.log(applianceInRecipeForFilter);
-        console.log(ustensilsInRecipeForFilter);
+        // console.log(applianceInRecipeForFilter);
+        // console.log(ustensilsInRecipeForFilter);
         
         // for(var i = 0; i < recipeResult.length - 1; i++) {
         //     for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
@@ -326,19 +327,36 @@ document.addEventListener("DOMContentLoaded", function() {
             //     }
             // }
         // }
-        // let ingredientMenu = document.getElementById('ingredients_list');
-        // let listOfIngredientsHtml = document.createElement('ul');
-
-        // for(var i = 0; i < searchResultArrayFromIngredient.length; i++) {
-        //     var IngredientInTheMenu = document.createElement('li');
-        //     IngredientInTheMenu.textContent = searchResultArrayFromIngredient[i];
-        //     IngredientInTheMenu.classList = "ingredients";
-        //     listOfIngredientsHtml.appendChild(IngredientInTheMenu);
-        // }
-
-        // ingredientMenu.appendChild(listOfIngredientsHtml);
+        // 
     });
 });
+
+// function filtres
+function createListFilter(dataIngredientInTheFilter) {
+    let ingredientMenu = document.getElementById('ingredients_list');
+    let listOfIngredientsHtml = document.createElement('ul');
+
+    for(var i = 0; i < recipeResult.length; i++) {
+        var dataFilter = recipeResult[i];
+        var dataFilterIngredients = dataFilter.ingredients;
+        var dataIngredient = [];
+        
+        for (var j = 0; j < dataFilterIngredients.length; j++) {
+            var dataFilterIngredient = dataFilterIngredients[j].ingredient;
+            console.log('list ingredient brut :' + dataFilterIngredient);
+            if(!dataIngredient.includes(dataFilterIngredient)) {
+                dataIngredient.push(dataFilterIngredient);
+                console.log('tableau des ingredient pour le filtre :' + dataFilterIngredient);
+            }
+        }
+        // var IngredientInTheMenu = document.createElement('li');
+        // IngredientInTheMenu.textContent = searchResultArrayFromIngredient[i];
+        // IngredientInTheMenu.classList = "ingredients";
+        // listOfIngredientsHtml.appendChild(IngredientInTheMenu);
+    }
+
+    // ingredientMenu.appendChild(listOfIngredientsHtml);
+}
 
 var chevronDown = document.querySelector('.fa-chevron-down');
 var chevronUp = document.querySelector('.fa-chevron-up');
