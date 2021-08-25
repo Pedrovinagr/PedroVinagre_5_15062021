@@ -244,6 +244,9 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < recipes.length - 1; i++) {
             var recipe = recipes[i];
             var ingredientsInRecipe = recipe.ingredients;
+            var nameInRecipe = recipe.name;
+            var descriptionInRecipe = recipe.description;
+
             for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
                 var resultSearchIngredient = searchResultArrayFromIngredient[j];
                 for(var k = 0; k < ingredientsInRecipe.length; k++) {
@@ -255,7 +258,26 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             }
+
+            for (var j = 0; j < searchResultArrayFromNameRecipe.length; j++) {
+                var resultSearchNameRecipe = searchResultArrayFromNameRecipe[j];
+                if (resultSearchNameRecipe == nameInRecipe) {
+                    if (!recipeResult.includes(recipe)) {
+                        recipeResult.push(recipe);
+                    }
+                }
+            }
+
+            for (var j = 0; j < searchResultArrayFromDescriptionRecipe.length; j++) {
+                var resultSearchDescriptionRecipe = searchResultArrayFromDescriptionRecipe[j];
+                if (resultSearchDescriptionRecipe == descriptionInRecipe) {
+                    if (!recipeResult.includes(recipe)) {
+                        recipeResult.push(recipe);
+                    }
+                }
+            }
         }
+
         console.log(recipeResult);
         if(recipeResult.length > 0) {
             showRecipes(recipeResult);
@@ -263,25 +285,58 @@ document.addEventListener("DOMContentLoaded", function() {
             showRecipes(recipes);
         }
         
-        
-        // supprimer le recipes HTML
-        var recipesHtml = document.getElementById('recipes_html');
-        var recipesParent = document.getElementById('container');
-
-        // recipesParent.removeChild(recipesHtml);
-
         // Insérer le tableau des ingredients dans le filtre
-        let ingredientMenu = document.getElementById('ingredients_list');
-        let listOfIngredientsHtml = document.createElement('ul');
+        
+        var filterArray = recipeResult;
+        var ingredientsInRecipeForFilter = filterArray.ingredients;
+        var ustensilsInRecipeForFilter = filterArray.ustensils;
+        var applianceInRecipeForFilter = filterArray.appliance;
 
-        for(var i = 0; i < searchResultArrayFromIngredient.length; i++) {
-            var IngredientInTheMenu = document.createElement('li');
-            IngredientInTheMenu.textContent = searchResultArrayFromIngredient[i];
-            IngredientInTheMenu.classList = "ingredients";
-            listOfIngredientsHtml.appendChild(IngredientInTheMenu);
-        }
+        console.log(applianceInRecipeForFilter);
+        console.log(ustensilsInRecipeForFilter);
+        
+        // for(var i = 0; i < recipeResult.length - 1; i++) {
+        //     for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
+        //         var resultSearchIngredient = searchResultArrayFromIngredient[j];
+        //         for(var k = 0; k < ingredientsInRecipe.length; k++) {
+        //             var ingredientInRecipe = ingredientsInRecipe[k];
+        //             if(ingredientInRecipe.ingredient == resultSearchIngredient) {
+        //                 if(!recipeResult.includes(recipe)) {
+        //                     recipeResult.push(recipe);
+        //                 }
+        //             }
+        //         }
+        //     }
 
-        ingredientMenu.appendChild(listOfIngredientsHtml);
+            // for (var j = 0; j < searchResultArrayFromNameRecipe.length; j++) {
+            //     var resultSearchNameRecipe = searchResultArrayFromNameRecipe[j];
+            //     if (resultSearchNameRecipe == nameInRecipe) {
+            //         if (!recipeResult.includes(recipe)) {
+            //             recipeResult.push(recipe);
+            //         }
+            //     }
+            // }
+
+            // for (var j = 0; j < searchResultArrayFromDescriptionRecipe.length; j++) {
+            //     var resultSearchDescriptionRecipe = searchResultArrayFromDescriptionRecipe[j];
+            //     if (resultSearchDescriptionRecipe == descriptionInRecipe) {
+            //         if (!recipeResult.includes(recipe)) {
+            //             recipeResult.push(recipe);
+            //         }
+            //     }
+            // }
+        // }
+        // let ingredientMenu = document.getElementById('ingredients_list');
+        // let listOfIngredientsHtml = document.createElement('ul');
+
+        // for(var i = 0; i < searchResultArrayFromIngredient.length; i++) {
+        //     var IngredientInTheMenu = document.createElement('li');
+        //     IngredientInTheMenu.textContent = searchResultArrayFromIngredient[i];
+        //     IngredientInTheMenu.classList = "ingredients";
+        //     listOfIngredientsHtml.appendChild(IngredientInTheMenu);
+        // }
+
+        // ingredientMenu.appendChild(listOfIngredientsHtml);
     });
 });
 
