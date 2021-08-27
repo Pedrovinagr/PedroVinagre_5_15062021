@@ -288,7 +288,9 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(recipeResult);
 
         // expore data de la recherche pour créer les filtres
-        
+        let filterIngredientsResultArray = [];
+        console.log('tableau filterIngredientsResultArray :');
+        console.log(filterIngredientsResultArray);
 
         for(var i = 0; i < recipeResult.length; i++) {
             var dataFilterIngredients = recipeResult[i].ingredients;
