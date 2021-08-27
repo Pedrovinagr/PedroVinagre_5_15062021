@@ -288,9 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(recipeResult);
 
         // expore data de la recherche pour créer les filtres
-        let filterIngredientsResultArray = [];
-        console.log('tableau filterIngredientsResultArray :');
-        console.log(filterIngredientsResultArray);
+        
 
         for(var i = 0; i < recipeResult.length; i++) {
             var dataFilterIngredients = recipeResult[i].ingredients;
@@ -335,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < filterIngredientsResultArray.length; i++) {
             var ingredientInFilterHtmlChild = document.createElement('li');
             ingredientInFilterHtmlChild.textContent = filterIngredientsResultArray[i];
-            ingredientInFilterHtmlChild.classList = "ingredients";
+            ingredientInFilterHtmlChild.className = "ingredients col-4";
             ingredientInFilterHtmlParent.appendChild(ingredientInFilterHtmlChild);
         }
         filterIngredient.appendChild(ingredientInFilterHtmlParent);
@@ -347,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < filterAppliancesResultArray.length; i++) {
             var applianceInFilterHtmlChild = document.createElement('li');
             applianceInFilterHtmlChild.textContent = filterAppliancesResultArray[i];
-            applianceInFilterHtmlChild.classList = "ingredients";
+            applianceInFilterHtmlChild.className = "ingredients";
             applianceInFilterHtmlParent.appendChild(applianceInFilterHtmlChild);
         }
         filterAppliance.appendChild(applianceInFilterHtmlParent);
@@ -359,11 +357,14 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < filterUstensilsResultArray.length; i++) {
             var ustensilsInFilterHtmlChild = document.createElement('li');
             ustensilsInFilterHtmlChild.textContent = filterUstensilsResultArray[i];
-            ustensilsInFilterHtmlChild.classList = "ingredients";
+            ustensilsInFilterHtmlChild.className = "ingredients";
             ustensilsInFilterHtmlParent.appendChild(ustensilsInFilterHtmlChild);
         }
         filterUstensils.appendChild(ustensilsInFilterHtmlParent);
     });
+
+    // Algo de recherche des filtres
+
 });
 
 

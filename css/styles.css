@@ -103,7 +103,7 @@ body{
 }
 
 /* filters */
-.filters{
+/* .filters{
     display: flex;
     margin: 0 0 -25px 0;
 }
@@ -175,8 +175,6 @@ input::placeholder{
 .search_input .ul{
     border-radius: 0 0 5px 5px;
     font-size: 18px;
-    /* overflow-y: auto; */
-    /* opacity: 0; */
 }
 
 .search_input.active .motion{
@@ -211,10 +209,6 @@ input::placeholder{
 }
 .ingredients{
     pointer-events: auto;
-}
-/* .search_input.active, .motion li{
-    display: block;
-    background: #3282F7;
 } */
 
 /* card recipes */
