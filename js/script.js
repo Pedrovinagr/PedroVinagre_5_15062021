@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < filterAppliancesResultArray.length; i++) {
             var applianceInFilterHtmlChild = document.createElement('li');
             applianceInFilterHtmlChild.textContent = filterAppliancesResultArray[i];
-            applianceInFilterHtmlChild.className = "ingredients";
+            applianceInFilterHtmlChild.className = "appliances col-4";
             applianceInFilterHtmlParent.appendChild(applianceInFilterHtmlChild);
         }
         filterAppliance.appendChild(applianceInFilterHtmlParent);
@@ -372,14 +372,14 @@ document.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < filterUstensilsResultArray.length; i++) {
             var ustensilsInFilterHtmlChild = document.createElement('li');
             ustensilsInFilterHtmlChild.textContent = filterUstensilsResultArray[i];
-            ustensilsInFilterHtmlChild.className = "ingredients";
+            ustensilsInFilterHtmlChild.className = "ustensils col-4";
             ustensilsInFilterHtmlParent.appendChild(ustensilsInFilterHtmlChild);
         }
         filterUstensils.appendChild(ustensilsInFilterHtmlParent);
     });
 
     // Algo de recherche des filtres
-    // filtre ingredient
+    
     const ingredientSearchBar = document.getElementById('search_ingredients');
     const applianceSearchBar = document.getElementById('search_appareils');
     const ustensilSearchBar = document.getElementById('search_ustensiles')
@@ -393,6 +393,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var searchResultArrayFromUstensilFilter = [];
     var resultForsearchUstensilInFilter = [];
 
+    // filtre ingredient
     ingredientSearchBar.addEventListener('change', function(event) {
         let valueresearchFilter = event.target.value;
         let cleanValueFilter = valueresearchFilter.toLowerCase();
@@ -527,8 +528,17 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('filtre ustensil après recherche : ');
         console.log(filterUstensilsResultArray);
     }
-    
+
+    // affichage du tag ingredient
+    var createTagIngredient = document.getElementById('tag_ingredient')
+    var valueChosenFilterIngredient = document.querySelector('.ingredients')
+
+    valueChosenFilterIngredient.addEventListener('onclick', function() {
+        
+    })
 });
+
+
 
 
 // fonction d'affichage des filtres

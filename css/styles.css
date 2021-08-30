@@ -98,7 +98,7 @@ body{
     right: 5px;
 }
 
-.tag{
+.ingredients-tag-hidden, .appareils-tag-hidden, .ustensils-tag-hidden {
     display: none;
 }
 
