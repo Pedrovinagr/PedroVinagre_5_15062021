@@ -530,11 +530,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // affichage du tag ingredient
-    var createTagIngredient = document.getElementById('tag_ingredient')
+    var createTagIngredient = document.getElementById('ingredients__tag')
     var valueChosenFilterIngredient = document.querySelector('.ingredients')
 
-    valueChosenFilterIngredient.addEventListener('onclick', function() {
-        
+    valueChosenFilterIngredient.addEventListener('click', function() {
+        createTagIngredient.classList.add("ingredients-tag-display");
+        createTagIngredient.appendChild();
+
     })
 });
 

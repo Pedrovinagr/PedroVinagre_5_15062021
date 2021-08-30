@@ -102,6 +102,10 @@ body{
     display: none;
 }
 
+.ingredients-tag-display, .appareils-tag-display, .ustensils-tag-display {
+    display: flex;
+}
+
 /* filters */
 /* .filters{
     display: flex;
