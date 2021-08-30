@@ -235,6 +235,7 @@ input::placeholder{
 }
 .title_card{
     font-size: 18px;
+    max-width: 250px;
 }
 .part1, .part2, .timing{
     display: flex;
