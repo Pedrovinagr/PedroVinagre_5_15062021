@@ -197,14 +197,14 @@ function showUstensils(usentils) {
 }
 
 function createIngredientFilterTag(event) {
-    console.log(event.target);
-    var ingredientSelectionnee = event.target.innerText;
+    var ingredientSelected = event.target.innerText;
+    collectValueTagIngredient(ingredientSelected)
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
     filterIngredient.classList.add("tag_input");
     filterIngredient.id = "ingredients_tag";
-    filterIngredient.textContent = ingredientSelectionnee;
+    filterIngredient.textContent = ingredientSelected;
     tagContainer.appendChild(filterIngredient);
 
     var iconTag = document.createElement("div");
@@ -214,10 +214,16 @@ function createIngredientFilterTag(event) {
     iconTag.appendChild(iconImage);
     tagContainer.appendChild(iconTag);
 
-    // var indexOfIngredients = ingredientArrayAffichee.indexOf(ingredientSelectionnee);
+    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
-    // ingredientArrayAffichee.splice(indexOfIngredients, 1);
-    // showIngredients(ingredientArrayAffichee);
+    // ingredientArrayShown.splice(indexOfIngredients, 1);
+    // showIngredients(ingredientArrayShown);
+}
+
+// COLLECT VALUE TAG
+function collectValueTagIngredient(value) {
+    var tagIngredientValue = [];
+    tagIngredientValue.push(value);
 }
 
 // fonction d'affichage des filtres

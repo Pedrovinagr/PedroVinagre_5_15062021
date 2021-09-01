@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var filterAppliancesResultArray = [];
     var filterUstensilsResultArray = [];
 
-    
-    var ingredientArrayAffichee = ingredientsArray;
+    // VARIOUS DATA 
+    var ingredientArrayShown = ingredientsArray;
 
     // SEARCH BAR ALGORITHM
     const centralSearchBar = document.getElementById('searchbar');
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // INSERT DATA INTO FILTERS
         showIngredients(filterIngredientsResultArray);
-        ingredientArrayAffichee = filterIngredientsResultArray;
+        ingredientArrayShown = filterIngredientsResultArray;
         showAppliance(filterAppliancesResultArray);
         showUstensils(filterUstensilsResultArray);
     });
