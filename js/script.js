@@ -25,9 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log('Liste des titres de recette:');
     // console.log(recipeNameArray);
 
-    var tagIngredientValue = [];
-    console.log("valeur du tag ingredient : " + tagIngredientValue);
-
     // fonction de recherche des titres de recette
     function concatenateNameRecipes(concatenateName) {
         for(var i = 0; i < recipes.length; i++) {
@@ -632,12 +629,19 @@ function showUstensils(usentils) {
         filterUstensils.appendChild(ustensilsInFilterHtmlParent);
 }
 
+var tagIngredientValue = [];
+var ingredientSelected = [];
+
+console.log("valeur du tag ingredient : " + ingredientSelected);
+
 function createIngredientFilterTag(event) {
     // console.log(event.target);
     
-    var ingredientSelected = event.target.innerText;
+    ingredientSelected = event.target.innerText;
+    console.log(ingredientSelected);
     tagIngredientValue.push(ingredientSelected);
     console.log("tag : " + tagIngredientValue);
+
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
@@ -666,7 +670,7 @@ function createIngredientFilterTag(event) {
     console.log(ingredientSelected)
 }
 // tagIngredientValue.push(ingredientSelected);
-console.log("tag : " + tagIngredientValue);
+console.log("tag ingredient : " + ingredientSelected);
 });
 
 // document.addEventListener("DOMContentLoaded", function() {
