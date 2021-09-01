@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log('Liste des titres de recette:');
     // console.log(recipeNameArray);
 
-    var tagIngredientValue = "";
+    var tagIngredientValue = [];
     console.log("valeur du tag ingredient : " + tagIngredientValue);
 
     // fonction de recherche des titres de recette
@@ -634,8 +634,10 @@ function showUstensils(usentils) {
 
 function createIngredientFilterTag(event) {
     // console.log(event.target);
-    var ingredientSelected = event.target.innerText;
     
+    var ingredientSelected = event.target.innerText;
+    tagIngredientValue.push(ingredientSelected);
+    console.log("tag : " + tagIngredientValue);
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
@@ -664,7 +666,7 @@ function createIngredientFilterTag(event) {
     console.log(ingredientSelected)
 }
 // tagIngredientValue.push(ingredientSelected);
-
+console.log("tag : " + tagIngredientValue);
 });
 
 // document.addEventListener("DOMContentLoaded", function() {
