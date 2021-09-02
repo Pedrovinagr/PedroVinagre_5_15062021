@@ -175,6 +175,7 @@ function showAppliance(appliances) {
 
         for(var i = 0; i < appliances.length; i++) {
             var applianceInFilterHtmlChild = document.createElement('li');
+            applianceInFilterHtmlChild.addEventListener("click", createApplianceFilterTag);
             applianceInFilterHtmlChild.textContent = appliances[i];
             applianceInFilterHtmlChild.className = "appliances col-4";
             applianceInFilterHtmlParent.appendChild(applianceInFilterHtmlChild);
@@ -189,6 +190,7 @@ function showUstensils(usentils) {
 
         for(var i = 0; i < usentils.length; i++) {
             var ustensilsInFilterHtmlChild = document.createElement('li');
+            ustensilsInFilterHtmlChild.addEventListener("click", createUstensilFilterTag);
             ustensilsInFilterHtmlChild.textContent = usentils[i];
             ustensilsInFilterHtmlChild.className = "ustensils col-4";
             ustensilsInFilterHtmlParent.appendChild(ustensilsInFilterHtmlChild);
@@ -196,6 +198,7 @@ function showUstensils(usentils) {
         filterUstensils.appendChild(ustensilsInFilterHtmlParent);
 }
 
+// FILTER INGREDIENT HTML
 function createIngredientFilterTag(event) {
     var ingredientSelected = event.target.innerText;
     collectValueTagIngredient(ingredientSelected)
@@ -204,7 +207,10 @@ function createIngredientFilterTag(event) {
     var filterIngredient = document.createElement("div");
     filterIngredient.classList.add("tag_input");
     filterIngredient.id = "ingredients_tag";
-    filterIngredient.textContent = ingredientSelected;
+    var textIngredient = document.createElement("p");
+    textIngredient.classList.add("text_ingredient");
+    textIngredient.textContent = ingredientSelected;
+    filterIngredient.appendChild(textIngredient);
     tagContainer.appendChild(filterIngredient);
 
     var iconTag = document.createElement("div");
@@ -212,7 +218,7 @@ function createIngredientFilterTag(event) {
     var iconImage = document.createElement("i");
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
-    tagContainer.appendChild(iconTag);
+    filterIngredient.appendChild(iconTag);
 
     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
@@ -220,10 +226,66 @@ function createIngredientFilterTag(event) {
     // showIngredients(ingredientArrayShown);
 }
 
+// FILTER APPLIANCE HTML
+function createApplianceFilterTag(event) {
+    var applianceSelected = event.target.innerText;
+    collectValueTagAppliance(applianceSelected)
+    var tagContainer = document.getElementById("appareils__tag");
+    // tagContainer.innerHTML = "";
+    var filterAppliance = document.createElement("div");
+    filterAppliance.classList.add("tag_input");
+    filterAppliance.id = "appareils_tag";
+    var textAppliance = document.createElement("p");
+    textAppliance.classList.add("text_appareil");
+    textAppliance.textContent = applianceSelected;
+    filterAppliance.appendChild(textAppliance);
+    tagContainer.appendChild(filterAppliance);
+
+    var iconTag = document.createElement("div");
+    iconTag.classList.add("icon_tag");
+    var iconImage = document.createElement("i");
+    iconImage.className = "far fa-times-circle";
+    iconTag.appendChild(iconImage);
+    filterAppliance.appendChild(iconTag);
+}
+
+// FILTER USTENSIL HTML
+function createUstensilFilterTag(event) {
+    var ustensilSelected = event.target.innerText;
+    collectValueTagUstensil(ustensilSelected)
+    var tagContainer = document.getElementById("ustensils__tag");
+    // tagContainer.innerHTML = "";
+    var filterUstensil = document.createElement("div");
+    filterUstensil.classList.add("tag_input");
+    filterUstensil.id = "ustensiles_tag";
+    var textUstensil = document.createElement("p");
+    textUstensil.classList.add("text_ustensile");
+    textUstensil.textContent = ustensilSelected;
+    filterUstensil.appendChild(textUstensil);
+    tagContainer.appendChild(filterUstensil);
+
+    var iconTag = document.createElement("div");
+    iconTag.classList.add("icon_tag");
+    var iconImage = document.createElement("i");
+    iconImage.className = "far fa-times-circle";
+    iconTag.appendChild(iconImage);
+    filterUstensil.appendChild(iconTag);
+}
+
 // COLLECT VALUE TAG
 function collectValueTagIngredient(value) {
     var tagIngredientValue = [];
     tagIngredientValue.push(value);
+}
+
+function collectValueTagAppliance(value) {
+    var tagApplianceValue = [];
+    tagApplianceValue.push(value);
+}
+
+function collectValueTagUstensil(value) {
+    var tagUstensilValue = [];
+    tagUstensilValue.push(value);
 }
 
 // fonction d'affichage des filtres

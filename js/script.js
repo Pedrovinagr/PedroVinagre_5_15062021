@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // RECIPE RESULT TO BE SHOWN
     var recipeResult = [];
+    var recipeResultFilter = [];
 
     // BACIC DATA
     var recipeNameArray = [];
@@ -361,4 +362,48 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+
+    // SEARCH INSIDE ALL RECIPES
+    // for(var i = 0; i < recipes.length - 1; i++) {
+    //     var recipe = recipes[i];
+    //     var ingredientsInRecipe = recipe.ingredients;
+    //     var nameInRecipe = recipe.name;
+    //     var descriptionInRecipe = recipe.description;
+
+    //     for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
+    //         var resultSearchIngredient = searchResultArrayFromIngredient[j];
+    //         for(var k = 0; k < ingredientsInRecipe.length; k++) {
+    //             var ingredientInRecipe = ingredientsInRecipe[k];
+    //             if(ingredientInRecipe.ingredient == resultSearchIngredient) {
+    //                 if(!recipeResult.includes(recipe)) {
+    //                     recipeResult.push(recipe);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     for (var j = 0; j < searchResultArrayFromNameRecipe.length; j++) {
+    //         var resultSearchNameRecipe = searchResultArrayFromNameRecipe[j];
+    //         if (resultSearchNameRecipe == nameInRecipe) {
+    //             if (!recipeResult.includes(recipe)) {
+    //                 recipeResult.push(recipe);
+    //             }
+    //         }
+    //     }
+
+    //     for (var j = 0; j < searchResultArrayFromDescriptionRecipe.length; j++) {
+    //         var resultSearchDescriptionRecipe = searchResultArrayFromDescriptionRecipe[j];
+    //         if (resultSearchDescriptionRecipe == descriptionInRecipe) {
+    //             if (!recipeResult.includes(recipe)) {
+    //                 recipeResult.push(recipe);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // if(recipeResult.length > 0) {
+    //     showRecipes(recipeResult);
+    // } else {
+    //     showRecipes(recipes);
+    // }
 });
