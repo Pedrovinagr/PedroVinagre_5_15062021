@@ -154,12 +154,12 @@ input::placeholder{
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(10px, auto);
     grid-auto-columns: min-content;
-    gr
-    
 }
 
 .motion li{
     list-style: none;
+    width: auto;
+
 }
 
 /* .filter .search_input, #search_ingredients, #search_appareils, #search_ustensiles{
