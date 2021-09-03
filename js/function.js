@@ -162,7 +162,7 @@ function showIngredients(ingredientArray) {
             var ingredientInFilterHtmlChild = document.createElement('li');
             ingredientInFilterHtmlChild.addEventListener("click", createIngredientFilterTag);
             ingredientInFilterHtmlChild.textContent = ingredientArray[i];
-            ingredientInFilterHtmlChild.className = "ingredients col-4";
+            ingredientInFilterHtmlChild.className = "ingredients";
             ingredientInFilterHtmlParent.appendChild(ingredientInFilterHtmlChild);
         }
         filterIngredient.appendChild(ingredientInFilterHtmlParent);
