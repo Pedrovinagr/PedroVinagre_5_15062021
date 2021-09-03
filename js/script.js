@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // CALL RECIPE FOR HTML
     showRecipes(recipes);
 
+    removeTagIngredient();
+
     // RECIPE RESULT TO BE SHOWN
     var recipeResult = [];
     var recipeResultFilter = [];
@@ -31,8 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var filterAppliancesResultArray = [];
     var filterUstensilsResultArray = [];
 
-    // VARIOUS DATA 
-    var ingredientArrayShown = ingredientsArray;
+    // VARIOUS DATA
+    // removeIngredientSelectedTag(ingredientsArray);
+    // var ingredientArrayShown = ingredientsArray;
+    // var ingredientTagShown = collectValueTagIngredient;
+    // console.log("tag ingredient visible : " + ingredientTagShown);
 
     // SEARCH BAR ALGORITHM
     const centralSearchBar = document.getElementById('searchbar');
@@ -223,7 +228,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // INSERT DATA INTO FILTERS
         showIngredients(filterIngredientsResultArray);
-        ingredientArrayShown = filterIngredientsResultArray;
+        // removeIngredientSelectedTag(filterIngredientsResultArray);
+        // ingredientArrayShown = filterIngredientsResultArray;
         showAppliance(filterAppliancesResultArray);
         showUstensils(filterUstensilsResultArray);
     });
@@ -276,6 +282,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             searchResultArrayFromIngredientFilter.push(ingredientFilterByIndex);                 
                         }
                         showIngredients(searchResultArrayFromIngredientFilter);
+                        // removeIngredientSelectedTag(searchResultArrayFromIngredientFilter);
+                        // ingredientArrayShown = searchResultArrayFromIngredientFilter;
                     }
                 }
             }

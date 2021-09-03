@@ -198,10 +198,10 @@ function showUstensils(usentils) {
         filterUstensils.appendChild(ustensilsInFilterHtmlParent);
 }
 
-// FILTER INGREDIENT HTML
+// TAG INGREDIENT HTML
 function createIngredientFilterTag(event) {
     var ingredientSelected = event.target.innerText;
-    collectValueTagIngredient(ingredientSelected)
+    collectValueTagIngredient(ingredientSelected);
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
@@ -215,18 +215,24 @@ function createIngredientFilterTag(event) {
 
     var iconTag = document.createElement("div");
     iconTag.classList.add("icon_tag");
+    iconTag.id = "remove_ingredient"
     var iconImage = document.createElement("i");
+    iconImage.addEventListener("click", removeTagIngredient);
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
-
-    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
-    // console.log(indexOfIngredients);
-    // ingredientArrayShown.splice(indexOfIngredients, 1);
-    // showIngredients(ingredientArrayShown);
 }
 
-// FILTER APPLIANCE HTML
+// REMOVE INGREDIENT INSIDE FILTER INGREDIENT WHY SELECTED IN TAG
+// function removeIngredientSelectedTag (ArrayIngredients) {
+//     var ingredientArrayShown = ArrayIngredients;
+//     var indexOfIngredients = ingredientArrayShown.indexOf(collectValueTagIngredient);
+//     // console.log(indexOfIngredients);
+//     ingredientArrayShown.splice(indexOfIngredients, 1);
+//     showIngredients(ingredientArrayShown);
+// }
+
+// TAG APPLIANCE HTML
 function createApplianceFilterTag(event) {
     var applianceSelected = event.target.innerText;
     collectValueTagAppliance(applianceSelected)
@@ -249,7 +255,7 @@ function createApplianceFilterTag(event) {
     filterAppliance.appendChild(iconTag);
 }
 
-// FILTER USTENSIL HTML
+// TAG USTENSIL HTML
 function createUstensilFilterTag(event) {
     var ustensilSelected = event.target.innerText;
     collectValueTagUstensil(ustensilSelected)
@@ -270,6 +276,20 @@ function createUstensilFilterTag(event) {
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterUstensil.appendChild(iconTag);
+}
+
+// REMOVE TAG INGREDIENT
+function removeTagIngredient() {
+    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
+    // console.log(indexOfIngredients);
+    // ingredientArrayShown.splice(indexOfIngredients, 1);
+    // showIngredients(ingredientArrayShown);
+    
+    // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
+    // // btnDeletedTagIngredient.addEventListener("click", function() {
+    // var tagIngredient = document.getElementById('ingredients_tag');
+    // tagIngredient = innerHTML = "";
+    // // });
 }
 
 // COLLECT VALUE TAG
@@ -293,5 +313,5 @@ var chevronDown = document.querySelector('.fa-chevron-down');
 var chevronUp = document.querySelector('.fa-chevron-up');
 
 function menuDéroulant() {
-document.getElementById('ingredients_list').classList.toggle('is_visible')
+document.getElementById('ingredients_list').classList.toggle('is_visible');
 }
