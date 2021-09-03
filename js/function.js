@@ -221,6 +221,22 @@ function createIngredientFilterTag(event) {
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
+
+    function removeTagIngredient() {
+        ingredientSelected.value = null;
+        // var ingredientArrayShown = textIngredient;
+        // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
+        // console.log(indexOfIngredients);
+        // ingredientArrayShown.splice(ingredientSelected, 1);
+        // createIngredientFilterTag();
+        
+        // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
+        // // btnDeletedTagIngredient.addEventListener("click", function() {
+        // var tagIngredient = document.getElementById('ingredients_tag');
+        // tagIngredient = innerHTML = "";
+        // // });
+    }
+    
 }
 
 // REMOVE INGREDIENT INSIDE FILTER INGREDIENT WHY SELECTED IN TAG
@@ -279,18 +295,19 @@ function createUstensilFilterTag(event) {
 }
 
 // REMOVE TAG INGREDIENT
-function removeTagIngredient() {
-    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
-    // console.log(indexOfIngredients);
-    // ingredientArrayShown.splice(indexOfIngredients, 1);
-    // showIngredients(ingredientArrayShown);
+// function removeTagIngredient() {
+
+//     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
+//     // console.log(indexOfIngredients);
+//     // ingredientArrayShown.splice(indexOfIngredients, 1);
+//     // showIngredients(ingredientArrayShown);
     
-    // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
-    // // btnDeletedTagIngredient.addEventListener("click", function() {
-    // var tagIngredient = document.getElementById('ingredients_tag');
-    // tagIngredient = innerHTML = "";
-    // // });
-}
+//     // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
+//     // // btnDeletedTagIngredient.addEventListener("click", function() {
+//     // var tagIngredient = document.getElementById('ingredients_tag');
+//     // tagIngredient = innerHTML = "";
+//     // // });
+// }
 
 // COLLECT VALUE TAG
 function collectValueTagIngredient(value) {

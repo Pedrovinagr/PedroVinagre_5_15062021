@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // CALL RECIPE FOR HTML
     showRecipes(recipes);
 
-    removeTagIngredient();
+    // removeTagIngredient();
 
     // RECIPE RESULT TO BE SHOWN
     var recipeResult = [];
