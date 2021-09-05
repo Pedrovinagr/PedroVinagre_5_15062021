@@ -113,8 +113,14 @@ body{
     display: flex;
     margin: auto;
 }
-
+@media screen and (max-width: 992px) {
+    .filters{
+        display: initial;
+        margin: content;
+    }
+}
 .filter{
+    position: relative;
     border-radius: 5px;
     color: #FFFFFF;
     margin-right: 10px;
@@ -133,12 +139,17 @@ body{
     background: #ED6454;
 }
 
-.ingredients, .appareils, .ustensiles{
+.ingredient, .appareil, .ustensile{
     background: none;
     border: none;
     padding-left: 10px;
     width: 100%;
     outline: none;
+    height: 71px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: bold;
 }
 
 input::placeholder{
@@ -160,6 +171,19 @@ input::placeholder{
     list-style: none;
     width: auto;
 
+}
+
+.search_input .icon_filter{
+    position: absolute;
+    top: 1em;
+    right: 10px;
+    
+}
+
+.chevron{
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
 }
 
 /* .filter .search_input, #search_ingredients, #search_appareils, #search_ustensiles{
