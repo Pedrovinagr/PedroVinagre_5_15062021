@@ -10,6 +10,12 @@ body{
     height: 93px;
 }
 
+.btn:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
 /* searchbar */
 #searchbar {
     background: hsla(0, 0%, 90%, 1);
@@ -116,8 +122,12 @@ body{
 @media screen and (max-width: 992px) {
     .filters{
         display: initial;
-        margin: content;
     }
+
+    .search_input{
+        margin-bottom: 20px;
+    }
+
 }
 .filter{
     position: relative;
@@ -161,21 +171,18 @@ input::placeholder{
 }
 
 .motion ul{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(10px, auto);
-    grid-auto-columns: min-content;
+    display: none;
 }
 
 .motion li{
     list-style: none;
     width: auto;
-
+    cursor: pointer;
 }
 
 .search_input .icon_filter{
     position: absolute;
-    top: 1em;
+    top: 1.2em;
     right: 10px;
     
 }
@@ -185,6 +192,15 @@ input::placeholder{
     font-size: 18px;
     color: #FFFFFF;
 }
+
+.is_visible ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    grid-auto-columns: min-content;
+}
+
+
 
 /* .filter .search_input, #search_ingredients, #search_appareils, #search_ustensiles{
     position: relative;

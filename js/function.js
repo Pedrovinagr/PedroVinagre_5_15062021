@@ -326,9 +326,28 @@ function collectValueTagUstensil(value) {
 }
 
 // fonction d'affichage des filtres
-var chevronDown = document.querySelector('.fa-chevron-down');
-var chevronUp = document.querySelector('.fa-chevron-up');
+    var chevronDown = document.querySelector('.fa-chevron-down');
+    var chevronUp = document.querySelector('.fa-chevron-up');
 
-function menuDéroulant() {
-document.getElementById('ingredients_list').classList.toggle('is_visible');
+function menuDéroulantIng() {
+    document.getElementById('ingredients_list').classList.toggle('is_visible');
+    var changeChevron = document.getElementById('btn_filter_ing');
+    changeChevron.innerHTML = "";
+    visibleList = document.getElementById('btn_filter_ing');
+    changeChevron = document.createElement("i");
+    changeChevron.className = "chevron fas fa-chevron-up";
+    visibleList.appendChild(changeChevron);
+
+
+    // document.getElementById('appareils_list').classList.toggle('is_visible');
+    // document.getElementById('ustensiles_list').classList.toggle('is_visible');
+}
+
+function menuDéroulantApp() {
+    document.getElementById('appareils_list').classList.toggle('is_visible');
+    // document.getElementById('ustensiles_list').classList.toggle('is_visible');
+}
+
+function menuDéroulantUst() {
+    document.getElementById('ustensiles_list').classList.toggle('is_visible');
 }
