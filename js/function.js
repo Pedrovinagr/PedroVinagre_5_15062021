@@ -295,19 +295,19 @@ function createUstensilFilterTag(event) {
 }
 
 // REMOVE TAG INGREDIENT
-// function removeTagIngredient() {
+function removeTagIngredient() {
 
-//     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
-//     // console.log(indexOfIngredients);
-//     // ingredientArrayShown.splice(indexOfIngredients, 1);
-//     // showIngredients(ingredientArrayShown);
+    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
+    // console.log(indexOfIngredients);
+    // ingredientArrayShown.splice(indexOfIngredients, 1);
+    // showIngredients(ingredientArrayShown);
     
-//     // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
-//     // // btnDeletedTagIngredient.addEventListener("click", function() {
-//     // var tagIngredient = document.getElementById('ingredients_tag');
-//     // tagIngredient = innerHTML = "";
-//     // // });
-// }
+    // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
+    // // btnDeletedTagIngredient.addEventListener("click", function() {
+    // var tagIngredient = document.getElementById('ingredients_tag');
+    // tagIngredient = innerHTML = "";
+    // // });
+}
 
 // COLLECT VALUE TAG
 function collectValueTagIngredient(value) {
