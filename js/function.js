@@ -310,10 +310,13 @@ function removeTagIngredient() {
 }
 
 // COLLECT VALUE TAG
+var tagIngredientValue = [];
 function collectValueTagIngredient(value) {
-    var tagIngredientValue = [];
     tagIngredientValue.push(value);
+    console.log('tag dans function : ' + tagIngredientValue);
 }
+
+
 
 function collectValueTagAppliance(value) {
     var tagApplianceValue = [];

@@ -331,47 +331,55 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // SEARCH FILTER USTENSIL
-    ustensilSearchBar.addEventListener('change', function(event) {
-        var valueresearchFilter = event.target.value;
-        var cleanValueFilter = valueresearchFilter.toLowerCase();
+    // SEARCH IN THE SELECTED TAG
+    // TAG INGREDIENT
+    // chosenTagIngredient = document.getElementById('ingredients__tag');
+    var chosenTagIngredient = tagIngredientValue;
+    console.log('valeur du tag ingredient : ' + chosenTagIngredient);
+    // chosenTagIngredient.addEventListener('change', function(event) {
+    //     valueTagIngredientcollected = event.target.value;
+    //     console.log('valeur du tag ingredient : ' + valueTagIngredientcollected);
 
-        if(cleanValueFilter.length >= 3){
-            if(cleanValueFilter.indexOf("") != -1) {
-                let searchArrayFilter = cleanValueFilter.split(" ");
-                for (var i = 0; i < searchArrayFilter.length; i++) {
-                let searchWordFilter = searchArrayFilter[i];
-                    if(searchWordFilter.length > 2) {
-                        for (var j = 0; j < filterUstensilsResultArray.length; j++) {
-                            let ustensilListFilter = filterUstensilsResultArray[j].toLowerCase();
-                            if(ustensilListFilter.indexOf("") != -1) {
-                                let wordUstensilListFilter = ustensilListFilter.split(" ");
-                                for (var K = 0; K < wordUstensilListFilter.length; K++) {
-                                    let ustensilWordInFilter = wordUstensilListFilter[K];
-                                    if(ustensilWordInFilter === searchWordFilter) {
-                                        resultForsearchUstensilInFilter.push(j);
-                                    }
-                                }
-                            }
-                            else { 
-                                if(ustensilListFilter === searchWordFilter) {
-                                    resultForsearchUstensilInFilter.push(j);
-                                }
-                            }
-                        }
-                        for (var i = 0; i < resultForsearchUstensilInFilter.length; i++) {
-                            let indexForResultSearchUstensilInFilter = resultForsearchUstensilInFilter[i];
-                            let ustensilFilterByIndex = filterUstensilsResultArray[indexForResultSearchUstensilInFilter];
-                            searchResultArrayFromUstensilFilter.push(ustensilFilterByIndex);                 
-                        }
-                        showUstensils(searchResultArrayFromUstensilFilter);
-                    }
-                }
-            }
-        }
-    });
+        // var valueresearchFilter = event.target.value;
+        // var cleanValueFilter = valueresearchFilter.toLowerCase();
+
+        // if(cleanValueFilter.length >= 3){
+        //     if(cleanValueFilter.indexOf("") != -1) {
+        //         let searchArrayFilter = cleanValueFilter.split(" ");
+        //         for (var i = 0; i < searchArrayFilter.length; i++) {
+        //         let searchWordFilter = searchArrayFilter[i];
+        //             if(searchWordFilter.length > 2) {
+        //                 for (var j = 0; j < filterUstensilsResultArray.length; j++) {
+        //                     let ustensilListFilter = filterUstensilsResultArray[j].toLowerCase();
+        //                     if(ustensilListFilter.indexOf("") != -1) {
+        //                         let wordUstensilListFilter = ustensilListFilter.split(" ");
+        //                         for (var K = 0; K < wordUstensilListFilter.length; K++) {
+        //                             let ustensilWordInFilter = wordUstensilListFilter[K];
+        //                             if(ustensilWordInFilter === searchWordFilter) {
+        //                                 resultForsearchUstensilInFilter.push(j);
+        //                             }
+        //                         }
+        //                     }
+        //                     else { 
+        //                         if(ustensilListFilter === searchWordFilter) {
+        //                             resultForsearchUstensilInFilter.push(j);
+        //                         }
+        //                     }
+        //                 }
+        //                 for (var i = 0; i < resultForsearchUstensilInFilter.length; i++) {
+        //                     let indexForResultSearchUstensilInFilter = resultForsearchUstensilInFilter[i];
+        //                     let ustensilFilterByIndex = filterUstensilsResultArray[indexForResultSearchUstensilInFilter];
+        //                     searchResultArrayFromUstensilFilter.push(ustensilFilterByIndex);                 
+        //                 }
+        //                 showUstensils(searchResultArrayFromUstensilFilter);
+        //             }
+        //         }
+        //     }
+        // }
+    // });
 
     // SEARCH INSIDE ALL RECIPES
+
     // for(var i = 0; i < recipes.length - 1; i++) {
     //     var recipe = recipes[i];
     //     var ingredientsInRecipe = recipe.ingredients;
