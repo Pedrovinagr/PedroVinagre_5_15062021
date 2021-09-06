@@ -222,8 +222,8 @@ function createIngredientFilterTag(event) {
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
 
-    function removeTagIngredient() {
-        ingredientSelected.value = null;
+    // function removeTagIngredient() {
+        // ingredientSelected.value = null;
         // var ingredientArrayShown = textIngredient;
         // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
         // console.log(indexOfIngredients);
@@ -235,7 +235,7 @@ function createIngredientFilterTag(event) {
         // var tagIngredient = document.getElementById('ingredients_tag');
         // tagIngredient = innerHTML = "";
         // // });
-    }
+    // }
     
 }
 
@@ -310,13 +310,37 @@ function removeTagIngredient() {
 }
 
 // COLLECT VALUE TAG
-var tagIngredientValue = [];
+
+// var tagIngredientValue = [];
+// collectValueTagIngredient(tagIngredientValue);
+var ingredientTagValue = [];
+
 function collectValueTagIngredient(value) {
-    tagIngredientValue.push(value);
-    console.log('tag dans function : ' + tagIngredientValue);
+    
+    ingredientTagValue.push(value);
+    console.log('tag dans function : ' + ingredientTagValue);
+    // for (var i = 0; i < ingredientTagValue.length; i++) {
+    //     let ingredientsValue = ingredientTagValue[i];
+    //     // console.log("tableau tag ingredient : " + ingredientTagValue);
+    //     if(!tagIngredientValue.includes(ingredientsValue)) {
+    //         tagIngredientValue.push(ingredientsValue);
+    //     }
+        
+    // }
+
+    if(ingredientTagValue != "") {
+        let wordTagIngredients = value.toLowerCase().split(" ");
+        console.log("mot du tag : " + wordTagIngredients);
+        for (var i = 0; i < wordTagIngredients.length; i++) {
+            let wordTagIngredient = wordTagIngredients[i];
+            console.log("mot du tag : " + wordTagIngredient);
+        }
+    }
+    
 }
 
 
+// console.log('tag en dehors de la function : ' + collectValueTagIngredient.value);
 
 function collectValueTagAppliance(value) {
     var tagApplianceValue = [];

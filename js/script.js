@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var filterUstensilsResultArray = [];
 
     // VARIOUS DATA
+    // var choisenTagIngredientArray = [];
+    // collectValueTagIngredient(choisenTagIngredientArray);
+    // console.log(choisenTagIngredientArray);
     // removeIngredientSelectedTag(ingredientsArray);
     // var ingredientArrayShown = ingredientsArray;
     // var ingredientTagShown = collectValueTagIngredient;
@@ -330,12 +333,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
+    
     // SEARCH IN THE SELECTED TAG
     // TAG INGREDIENT
+    // var chosenTagIngredient = [];
+    // collectValueTagIngredient(chosenTagIngredient);
+    // console.log('valeur du tag ingredient : ' + chosenTagIngredient);
+    // console.log('valeur de la function tag dans script : ' + collectValueTagIngredient);
+
     // chosenTagIngredient = document.getElementById('ingredients__tag');
-    var chosenTagIngredient = tagIngredientValue;
-    console.log('valeur du tag ingredient : ' + chosenTagIngredient);
+    
     // chosenTagIngredient.addEventListener('change', function(event) {
     //     valueTagIngredientcollected = event.target.value;
     //     console.log('valeur du tag ingredient : ' + valueTagIngredientcollected);
