@@ -193,7 +193,7 @@ input::placeholder{
     color: #FFFFFF;
 }
 
-.is_visible ul{
+.is_visible_ing ul, .is_visible_app ul, .is_visible_ust ul{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(10px, auto);

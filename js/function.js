@@ -215,7 +215,7 @@ function createIngredientFilterTag(event) {
 
     var iconTag = document.createElement("div");
     iconTag.classList.add("icon_tag");
-    iconTag.id = "remove_ingredient"
+    iconTag.id = "remove_ingredient";
     var iconImage = document.createElement("i");
     iconImage.addEventListener("click", removeTagIngredient);
     iconImage.className = "far fa-times-circle";
@@ -298,9 +298,7 @@ function createUstensilFilterTag(event) {
 function removeTagIngredient() {
     var ingredientTag = document.getElementById('remove_ingredient')
     var tagingredient = document.getElementById('ingredients_tag')
-    console.log(ingredientTag.id)
     var idParentOfIngredientTag = ingredientTag.parentElement.parentElement
-    console.log(idParentOfIngredientTag.id)
     idParentOfIngredientTag.removeChild(tagingredient);
 
     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
@@ -363,12 +361,12 @@ function collectValueTagUstensil(value) {
     var chevronUp = document.querySelector('.fa-chevron-up');
 
 function menuDéroulantIng() {
-    document.getElementById('ingredients_list').classList.toggle('is_visible');
+    document.getElementById('ingredients_list').classList.toggle('is_visible_ing');
     
     var idIconFilter = document.getElementById('ingredients_list');
     var classIconFilter = idIconFilter.classList;
 
-    if(classIconFilter.contains("is_visible")) {
+    if(classIconFilter.contains("is_visible_ing")) {
         var changeChevron = document.getElementById('btn_filter_ing');
         changeChevron.innerHTML = "";
         visibleList = document.getElementById('btn_filter_ing');
@@ -387,12 +385,12 @@ function menuDéroulantIng() {
 }
 
 function menuDéroulantApp() {
-    document.getElementById('appareils_list').classList.toggle('is_visible');
+    document.getElementById('appareils_list').classList.toggle('is_visible_app');
 
     var idIconFilter = document.getElementById('appareils_list');
     var classIconFilter = idIconFilter.classList;
 
-    if(classIconFilter.contains("is_visible")) {
+    if(classIconFilter.contains("is_visible_app")) {
         var changeChevron = document.getElementById('btn_filter_app');
         changeChevron.innerHTML = "";
         visibleList = document.getElementById('btn_filter_app');
@@ -411,12 +409,12 @@ function menuDéroulantApp() {
 }
 
 function menuDéroulantUst() {
-    document.getElementById('ustensiles_list').classList.toggle('is_visible');
+    document.getElementById('ustensiles_list').classList.toggle('is_visible_ust');
 
     var idIconFilter = document.getElementById('ustensiles_list');
     var classIconFilter = idIconFilter.classList;
 
-    if(classIconFilter.contains("is_visible")) {
+    if(classIconFilter.contains("is_visible_ust")) {
         var changeChevron = document.getElementById('btn_filter_ust');
         changeChevron.innerHTML = "";
         visibleList = document.getElementById('btn_filter_ust');
@@ -430,6 +428,6 @@ function menuDéroulantUst() {
         visibleList = document.getElementById('btn_filter_ust');
         changeChevron = document.createElement("i");
         changeChevron.className = "chevron fas fa-chevron-down";
-        visibleList.appendChild(changeChevron);   
+        visibleList.appendChild(changeChevron);
     }
 }
