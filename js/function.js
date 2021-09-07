@@ -295,7 +295,10 @@ function createUstensilFilterTag(event) {
 }
 
 // REMOVE TAG INGREDIENT
-function removeTagIngredient() {
+function removeTagIngredient(event) {
+    var ingredientTag = document.getElementById('remove_ingredient')
+    ingredientTag.parentElement.parentElement()
+    ingredientTag.removeChild(event);
 
     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
@@ -357,13 +360,23 @@ function collectValueTagUstensil(value) {
     var chevronUp = document.querySelector('.fa-chevron-up');
 
 function menuDéroulantIng() {
-    document.getElementById('ingredients_list').classList.toggle('is_visible');
-    var changeChevron = document.getElementById('btn_filter_ing');
-    changeChevron.innerHTML = "";
-    visibleList = document.getElementById('btn_filter_ing');
-    changeChevron = document.createElement("i");
-    changeChevron.className = "chevron fas fa-chevron-up";
-    visibleList.appendChild(changeChevron);
+    var iconVisible = document.getElementById('ingredients_list').classList.toggle('is_visible');
+    if(iconVisible.classList.contains('is_visible')) {
+        var changeChevron = document.getElementById('btn_filter_ing');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ing');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-up";
+        visibleList.appendChild(changeChevron);  
+    }
+    else{
+        var changeChevron = document.getElementById('btn_filter_ing');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ing');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);   
+    }
 
 
     // document.getElementById('appareils_list').classList.toggle('is_visible');
