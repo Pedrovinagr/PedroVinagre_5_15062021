@@ -54,6 +54,33 @@ function concatenateUstensilRecipes(concatenateUstensil) {
     }
 }
 
+// fonction resultat du besoin de recherche
+function resultOfResearchNeed(needValue){
+
+    // var researchValue = needValue.target.value;
+    var cleanValue = needValue.toLowerCase();
+    console.log(cleanValue)
+    var resultsearchWords = [];
+    console.log(resultsearchWords)
+    // SEARCH WORD VALUE
+    if(cleanValue.length >= 3){
+        if(cleanValue.indexOf("") != -1) {
+            let searchArray = cleanValue.split(" ");
+            console.log(searchArray)
+            for (var i = 0; i < searchArray.length; i++) {
+                var searchWords = searchArray[i];
+                console.log(searchWords)
+                // if(!resultsearchWords.includes(searchWords)) {
+                //     resultsearchWords.push(searchWords);
+                // }
+            }
+        }
+    }
+    return searchWords;
+}
+
+
+
 // SHOW RECIPES IN HTML
 function showRecipes(recipes) {
     
