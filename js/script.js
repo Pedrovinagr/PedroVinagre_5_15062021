@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         recipeResult = [];
 
         var researchValue = event.target.value;
+        
         var cleanValue = researchValue.toLowerCase();
 
         // SEARCH WORD VALUE

@@ -295,10 +295,13 @@ function createUstensilFilterTag(event) {
 }
 
 // REMOVE TAG INGREDIENT
-function removeTagIngredient(event) {
+function removeTagIngredient() {
     var ingredientTag = document.getElementById('remove_ingredient')
-    ingredientTag.parentElement.parentElement()
-    ingredientTag.removeChild(event);
+    var tagingredient = document.getElementById('ingredients_tag')
+    console.log(ingredientTag.id)
+    var idParentOfIngredientTag = ingredientTag.parentElement.parentElement
+    console.log(idParentOfIngredientTag.id)
+    idParentOfIngredientTag.removeChild(tagingredient);
 
     // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
@@ -321,7 +324,7 @@ var ingredientTagValue = [];
 function collectValueTagIngredient(value) {
     
     ingredientTagValue.push(value);
-    console.log('tag dans function : ' + ingredientTagValue);
+    // console.log('tag dans function : ' + ingredientTagValue);
     // for (var i = 0; i < ingredientTagValue.length; i++) {
     //     let ingredientsValue = ingredientTagValue[i];
     //     // console.log("tableau tag ingredient : " + ingredientTagValue);
@@ -331,14 +334,14 @@ function collectValueTagIngredient(value) {
         
     // }
 
-    if(ingredientTagValue != "") {
-        let wordTagIngredients = value.toLowerCase().split(" ");
-        console.log("mot du tag : " + wordTagIngredients);
-        for (var i = 0; i < wordTagIngredients.length; i++) {
-            let wordTagIngredient = wordTagIngredients[i];
-            console.log("mot du tag : " + wordTagIngredient);
-        }
-    }
+    // if(ingredientTagValue != "") {
+    //     let wordTagIngredients = value.toLowerCase().split(" ");
+    //     console.log("mot du tag : " + wordTagIngredients);
+    //     for (var i = 0; i < wordTagIngredients.length; i++) {
+    //         let wordTagIngredient = wordTagIngredients[i];
+    //         console.log("mot du tag : " + wordTagIngredient);
+    //     }
+    // }
     
 }
 
@@ -360,8 +363,12 @@ function collectValueTagUstensil(value) {
     var chevronUp = document.querySelector('.fa-chevron-up');
 
 function menuDéroulantIng() {
-    var iconVisible = document.getElementById('ingredients_list').classList.toggle('is_visible');
-    if(iconVisible.classList.contains('is_visible')) {
+    document.getElementById('ingredients_list').classList.toggle('is_visible');
+    
+    var idIconFilter = document.getElementById('ingredients_list');
+    var classIconFilter = idIconFilter.classList;
+
+    if(classIconFilter.contains("is_visible")) {
         var changeChevron = document.getElementById('btn_filter_ing');
         changeChevron.innerHTML = "";
         visibleList = document.getElementById('btn_filter_ing');
@@ -377,17 +384,52 @@ function menuDéroulantIng() {
         changeChevron.className = "chevron fas fa-chevron-down";
         visibleList.appendChild(changeChevron);   
     }
-
-
-    // document.getElementById('appareils_list').classList.toggle('is_visible');
-    // document.getElementById('ustensiles_list').classList.toggle('is_visible');
 }
 
 function menuDéroulantApp() {
     document.getElementById('appareils_list').classList.toggle('is_visible');
-    // document.getElementById('ustensiles_list').classList.toggle('is_visible');
+
+    var idIconFilter = document.getElementById('appareils_list');
+    var classIconFilter = idIconFilter.classList;
+
+    if(classIconFilter.contains("is_visible")) {
+        var changeChevron = document.getElementById('btn_filter_app');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_app');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-up";
+        visibleList.appendChild(changeChevron);  
+    }
+    else{
+        var changeChevron = document.getElementById('btn_filter_app');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_app');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);   
+    }
 }
 
 function menuDéroulantUst() {
     document.getElementById('ustensiles_list').classList.toggle('is_visible');
+
+    var idIconFilter = document.getElementById('ustensiles_list');
+    var classIconFilter = idIconFilter.classList;
+
+    if(classIconFilter.contains("is_visible")) {
+        var changeChevron = document.getElementById('btn_filter_ust');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ust');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-up";
+        visibleList.appendChild(changeChevron);  
+    }
+    else{
+        var changeChevron = document.getElementById('btn_filter_ust');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ust');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);   
+    }
 }
