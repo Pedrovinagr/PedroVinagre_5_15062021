@@ -74,13 +74,10 @@ function resultOfResearchNeed(needValue){
                     resultSearchWords.push(searchWords);
                 }
             }
+            return resultSearchWords
         }
-        // return searchWords
+        
     }
-    else{ 
-        return resultSearchWords;  
-    }
-    console.log(resultSearchWords);
 }
 
 
