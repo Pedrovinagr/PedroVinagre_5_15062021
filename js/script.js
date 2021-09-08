@@ -1,3 +1,24 @@
+// BACIC DATA
+var recipeNameArray = [];
+concatenateNameRecipes(recipeNameArray);
+
+var descriptionArray = [];
+concatenateDescriptionRecipes(descriptionArray);
+
+var ingredientsArray = [];
+concatenateIngredientRecipes(ingredientsArray);
+showIngredients(ingredientsArray);
+
+var ingredientArrayAffichee = ingredientsArray;
+
+var appliancesArray = [];
+concatenateApplianceRecipes(appliancesArray);
+showAppliance(appliancesArray);
+
+var ustensilsArray = [];
+concatenateUstensilRecipes(ustensilsArray);
+showUstensils(ustensilsArray);
+
 // var searchWord = searchWords[i];
 // console.log(searchWord)
 
@@ -12,24 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var recipeResult = [];
     var recipeResultFilter = [];
 
-    // BACIC DATA
-    var recipeNameArray = [];
-    concatenateNameRecipes(recipeNameArray);
-
-    var descriptionArray = [];
-    concatenateDescriptionRecipes(descriptionArray);
-
-    var ingredientsArray = [];
-    concatenateIngredientRecipes(ingredientsArray);
-    showIngredients(ingredientsArray);
-
-    let appliancesArray = [];
-    concatenateApplianceRecipes(appliancesArray);
-    showAppliance(appliancesArray);
-
-    let ustensilsArray = [];
-    concatenateUstensilRecipes(ustensilsArray);
-    showUstensils(ustensilsArray);
+    
 
     // DATA FILTER
     var filterIngredientsResultArray = [];
@@ -72,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
         //         for (var i = 0; i < searchArray.length; i++) {
         //             let searchWord = searchArray[i];
         var searchWord = event.target.value;
-        console.log(searchWord)
+        // console.log(searchWord)
         searchWord = resultOfResearchNeed(searchWord);
-        console.log("début de la boucle : ")
-        console.log(searchWord)
+        // console.log("début de la boucle : ")
+        // console.log(searchWord)
         
         if(searchWord != '') {
             for (var i = 0; i < searchWord.length; i++) {
@@ -246,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // INSERT DATA INTO FILTERS
         showIngredients(filterIngredientsResultArray);
+        ingredientArrayAffichee = filterIngredientsResultArray;
         // removeIngredientSelectedTag(filterIngredientsResultArray);
         // ingredientArrayShown = filterIngredientsResultArray;
         showAppliance(filterAppliancesResultArray);
@@ -300,6 +305,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             searchResultArrayFromIngredientFilter.push(ingredientFilterByIndex);                 
                         }
                         showIngredients(searchResultArrayFromIngredientFilter);
+                        ingredientArrayAffichee = searchResultArrayFromIngredientFilter;
                         // removeIngredientSelectedTag(searchResultArrayFromIngredientFilter);
                         // ingredientArrayShown = searchResultArrayFromIngredientFilter;
                     }

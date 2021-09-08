@@ -1,3 +1,5 @@
+// import de variable
+// import {ingredientArrayAffichee} from '.script/js'
 // fonction de recherche des titres de recette
 function concatenateNameRecipes(concatenateName) {
     for(var i = 0; i < recipes.length; i++) {
@@ -59,17 +61,17 @@ function resultOfResearchNeed(needValue){
 
     // var researchValue = needValue.target.value;
     var cleanValue = needValue.toLowerCase();
-    console.log(cleanValue)
+    // console.log(cleanValue)
     var resultSearchWords = [];
-    console.log(resultSearchWords)
+    // console.log(resultSearchWords)
     // SEARCH WORD VALUE
     if(cleanValue.length >= 3){
         if(cleanValue.indexOf("") != -1) {
             let searchArray = cleanValue.split(" ");
-            console.log(searchArray)
+            // console.log(searchArray)
             for (var i = 0; i < searchArray.length; i++) {
                 var searchWords = searchArray[i];
-                console.log(searchWords)
+                // console.log(searchWords)
                 if(!resultSearchWords.includes(searchWords)) {
                     resultSearchWords.push(searchWords);
                 }
@@ -249,6 +251,13 @@ function createIngredientFilterTag(event) {
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
+
+    var ingredientArrayDisplayed = [];
+    console.log(ingredientArrayDisplayed)
+    // var indexOfIngredients = ingredientArrayDisplayed.indexOf(ingredientSelected);
+    // console.log(indexOfIngredients);
+    // ingredientArrayAffichee.splice(indexOfIngredients, 1);
+    // showIngredients(ingredientArrayAffichee);
 
     // function removeTagIngredient() {
         // ingredientSelected.value = null;

@@ -178,6 +178,7 @@ input::placeholder{
     list-style: none;
     width: auto;
     cursor: pointer;
+    padding-right: 10px;
 }
 
 .search_input .icon_filter{
