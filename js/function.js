@@ -60,8 +60,8 @@ function resultOfResearchNeed(needValue){
     // var researchValue = needValue.target.value;
     var cleanValue = needValue.toLowerCase();
     console.log(cleanValue)
-    var resultsearchWords = [];
-    console.log(resultsearchWords)
+    var resultSearchWords = [];
+    console.log(resultSearchWords)
     // SEARCH WORD VALUE
     if(cleanValue.length >= 3){
         if(cleanValue.indexOf("") != -1) {
@@ -70,13 +70,17 @@ function resultOfResearchNeed(needValue){
             for (var i = 0; i < searchArray.length; i++) {
                 var searchWords = searchArray[i];
                 console.log(searchWords)
-                // if(!resultsearchWords.includes(searchWords)) {
-                //     resultsearchWords.push(searchWords);
-                // }
+                if(!resultSearchWords.includes(searchWords)) {
+                    resultSearchWords.push(searchWords);
+                }
             }
         }
+        // return searchWords
     }
-    return searchWords;
+    else{ 
+        return resultSearchWords;  
+    }
+    console.log(resultSearchWords);
 }
 
 
