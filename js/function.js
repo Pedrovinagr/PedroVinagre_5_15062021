@@ -182,6 +182,8 @@ function showRecipes(recipes) {
         recipeList.appendChild(recipeCard);
     }
 }
+// var valueFiteringredientArray = [];
+// console.log(valueFiteringredientArray)
 
 function showIngredients(ingredientArray) {
     var filterIngredient = document.getElementById('ingredients_list');
@@ -192,6 +194,9 @@ function showIngredients(ingredientArray) {
             var ingredientInFilterHtmlChild = document.createElement('li');
             ingredientInFilterHtmlChild.addEventListener("click", createIngredientFilterTag);
             ingredientInFilterHtmlChild.textContent = ingredientArray[i];
+            // if (!ingredientArray.includes(valueFiteringredientArray)) {
+            //     ingredientArray.push(valueFiteringredientArray);
+            // }
             ingredientInFilterHtmlChild.className = "ingredients";
             ingredientInFilterHtmlParent.appendChild(ingredientInFilterHtmlChild);
         }
@@ -254,6 +259,8 @@ function createIngredientFilterTag(event) {
 
     var ingredientArrayDisplayed = [];
     console.log(ingredientArrayDisplayed)
+    console.log(ingredientSelected)
+    console.log()
     // var indexOfIngredients = ingredientArrayDisplayed.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
     // ingredientArrayAffichee.splice(indexOfIngredients, 1);
