@@ -1,23 +1,10 @@
 // BACIC DATA
-var recipeNameArray = [];
-concatenateNameRecipes(recipeNameArray);
-
-var descriptionArray = [];
-concatenateDescriptionRecipes(descriptionArray);
-
-var ingredientsArray = [];
-concatenateIngredientRecipes(ingredientsArray);
-showIngredients(ingredientsArray);
-
-var ingredientArrayDisplay = ingredientsArray;
-
-var appliancesArray = [];
-concatenateApplianceRecipes(appliancesArray);
-showAppliance(appliancesArray);
-
-var ustensilsArray = [];
-concatenateUstensilRecipes(ustensilsArray);
-showUstensils(ustensilsArray);
+var ingredientArrayDisplayInFilter = [];
+// console.log(showIngredients(ingredientArrayDisplayInFilter))
+var applianceArrayDisplayInFilter = [];
+// console.log(showAppliance(applianceArrayDisplayInFilter))
+var ustensilArrayDisplayInFilter = [];
+// console.log(showUstensils(ustensilArrayDisplayInFilter))
 
 // var searchWord = searchWords[i];
 // console.log(searchWord)
@@ -28,6 +15,30 @@ document.addEventListener("DOMContentLoaded", function() {
     showRecipes(recipes);
 
     // removeTagIngredient();
+
+    var recipeNameArray = [];
+    concatenateNameRecipes(recipeNameArray);
+
+    var descriptionArray = [];
+    concatenateDescriptionRecipes(descriptionArray);
+
+    var ingredientsArray = [];
+    concatenateIngredientRecipes(ingredientsArray);
+    ingredientArrayDisplayInFilter = ingredientsArray;
+    // console.log(ingredientArrayDisplayInFilter);
+    showIngredients(ingredientArrayDisplayInFilter);
+    
+
+    var appliancesArray = [];
+    concatenateApplianceRecipes(appliancesArray);
+    applianceArrayDisplayInFilter = appliancesArray;
+    // console.log(applianceArrayDisplayInFilter)
+    showAppliance(applianceArrayDisplayInFilter);
+
+    var ustensilsArray = [];
+    concatenateUstensilRecipes(ustensilsArray);
+    ustensilArrayDisplayInFilter = ustensilsArray;
+    showUstensils(ustensilArrayDisplayInFilter);
 
     // RECIPE RESULT TO BE SHOWN
     var recipeResult = [];
@@ -112,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         let indexForResultSearchIngredient = resultForsearchIngredient[i];
                         let ingredientByIndex = ingredientsArray[indexForResultSearchIngredient];
                         searchResultArrayFromIngredient.push(ingredientByIndex); 
-                        console.log(searchResultArrayFromIngredient)                
+                        // console.log(searchResultArrayFromIngredient)                
                     }
                 }
 
@@ -249,12 +260,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // INSERT DATA INTO FILTERS
-        showIngredients(filterIngredientsResultArray);
-        ingredientArrayAffichee = filterIngredientsResultArray;
+        
+        ingredientArrayDisplayInFilter = filterIngredientsResultArray;
+        // console.log(ingredientArrayDisplayInFilter)
+        showIngredients(ingredientArrayDisplayInFilter);
         // removeIngredientSelectedTag(filterIngredientsResultArray);
         // ingredientArrayShown = filterIngredientsResultArray;
-        showAppliance(filterAppliancesResultArray);
-        showUstensils(filterUstensilsResultArray);
+        applianceArrayDisplayInFilter = filterAppliancesResultArray;
+        showAppliance(applianceArrayDisplayInFilter);
+
+        ustensilArrayDisplayInFilter = filterUstensilsResultArray;
+        showUstensils(ustensilArrayDisplayInFilter);
     });
 
     // SEARCH FILTERS ALGORITHM
@@ -304,8 +320,10 @@ document.addEventListener("DOMContentLoaded", function() {
                             let ingredientFilterByIndex = filterIngredientsResultArray[indexForResultSearchIngredientInFilter];
                             searchResultArrayFromIngredientFilter.push(ingredientFilterByIndex);                 
                         }
+                        
+                        ingredientArrayDisplayInFilter = searchResultArrayFromIngredientFilter;
+                        // console.log(ingredientArrayDisplayInFilter)
                         showIngredients(searchResultArrayFromIngredientFilter);
-                        ingredientArrayAffichee = searchResultArrayFromIngredientFilter;
                         // removeIngredientSelectedTag(searchResultArrayFromIngredientFilter);
                         // ingredientArrayShown = searchResultArrayFromIngredientFilter;
                     }
@@ -347,7 +365,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             let applianceFilterByIndex = filterAppliancesResultArray[indexForResultSearchApplianceInFilter];
                             searchResultArrayFromApplianceFilter.push(applianceFilterByIndex);                 
                         }
-                        showAppliance(searchResultArrayFromApplianceFilter);
+                        applianceArrayDisplayInFilter = searchResultArrayFromApplianceFilter;
+                        showAppliance(applianceArrayDisplayInFilter);
 
                     }
                 }
@@ -355,56 +374,46 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     
-    // SEARCH IN THE SELECTED TAG
-    // TAG INGREDIENT
-    // var chosenTagIngredient = [];
-    // collectValueTagIngredient(chosenTagIngredient);
-    // console.log('valeur du tag ingredient : ' + chosenTagIngredient);
-    // console.log('valeur de la function tag dans script : ' + collectValueTagIngredient);
+    // SEARCH FILTER USTENSIL
+    ustensilSearchBar.addEventListener('change', function(event) {
+        let valueresearchFilter = event.target.value;
+        let cleanValueFilter = valueresearchFilter.toLowerCase();
 
-    // chosenTagIngredient = document.getElementById('ingredients__tag');
-    
-    // chosenTagIngredient.addEventListener('change', function(event) {
-    //     valueTagIngredientcollected = event.target.value;
-    //     console.log('valeur du tag ingredient : ' + valueTagIngredientcollected);
-
-        // var valueresearchFilter = event.target.value;
-        // var cleanValueFilter = valueresearchFilter.toLowerCase();
-
-        // if(cleanValueFilter.length >= 3){
-        //     if(cleanValueFilter.indexOf("") != -1) {
-        //         let searchArrayFilter = cleanValueFilter.split(" ");
-        //         for (var i = 0; i < searchArrayFilter.length; i++) {
-        //         let searchWordFilter = searchArrayFilter[i];
-        //             if(searchWordFilter.length > 2) {
-        //                 for (var j = 0; j < filterUstensilsResultArray.length; j++) {
-        //                     let ustensilListFilter = filterUstensilsResultArray[j].toLowerCase();
-        //                     if(ustensilListFilter.indexOf("") != -1) {
-        //                         let wordUstensilListFilter = ustensilListFilter.split(" ");
-        //                         for (var K = 0; K < wordUstensilListFilter.length; K++) {
-        //                             let ustensilWordInFilter = wordUstensilListFilter[K];
-        //                             if(ustensilWordInFilter === searchWordFilter) {
-        //                                 resultForsearchUstensilInFilter.push(j);
-        //                             }
-        //                         }
-        //                     }
-        //                     else { 
-        //                         if(ustensilListFilter === searchWordFilter) {
-        //                             resultForsearchUstensilInFilter.push(j);
-        //                         }
-        //                     }
-        //                 }
-        //                 for (var i = 0; i < resultForsearchUstensilInFilter.length; i++) {
-        //                     let indexForResultSearchUstensilInFilter = resultForsearchUstensilInFilter[i];
-        //                     let ustensilFilterByIndex = filterUstensilsResultArray[indexForResultSearchUstensilInFilter];
-        //                     searchResultArrayFromUstensilFilter.push(ustensilFilterByIndex);                 
-        //                 }
-        //                 showUstensils(searchResultArrayFromUstensilFilter);
-        //             }
-        //         }
-        //     }
-        // }
-    // });
+        if(cleanValueFilter.length >= 3){
+            if(cleanValueFilter.indexOf("") != -1) {
+                let searchArrayFilter = cleanValueFilter.split(" ");
+                for (var i = 0; i < searchArrayFilter.length; i++) {
+                let searchWordFilter = searchArrayFilter[i];
+                    if(searchWordFilter.length > 2) {
+                        for (var j = 0; j < filterUstensilsResultArray.length; j++) {
+                            let ustensilListFilter = filterUstensilsResultArray[j].toLowerCase();
+                            if(ustensilListFilter.indexOf("") != -1) {
+                                let wordUstensilListFilter = ustensilListFilter.split(" ");
+                                for (var K = 0; K < wordUstensilListFilter.length; K++) {
+                                    let ustensilWordInFilter = wordUstensilListFilter[K];
+                                    if(ustensilWordInFilter === searchWordFilter) {
+                                        resultForsearchUstensilInFilter.push(j);
+                                    }
+                                }
+                            }
+                            else { 
+                                if(ustensilListFilter === searchWordFilter) {
+                                    resultForsearchUstensilInFilter.push(j);
+                                }
+                            }
+                        }
+                        for (var i = 0; i < resultForsearchUstensilInFilter.length; i++) {
+                            let indexForResultSearchUstensilInFilter = resultForsearchUstensilInFilter[i];
+                            let ustensilFilterByIndex = filterUstensilsResultArray[indexForResultSearchUstensilInFilter];
+                            searchResultArrayFromUstensilFilter.push(ustensilFilterByIndex);                 
+                        }
+                        ustensilArrayDisplayInFilter = searchResultArrayFromUstensilFilter;
+                        showUstensils(ustensilArrayDisplayInFilter);
+                    }
+                }
+            }
+        }
+    });
 
     // SEARCH INSIDE ALL RECIPES
 
@@ -450,4 +459,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // } else {
     //     showRecipes(recipes);
     // }
+    // console.log(ingredientArrayDisplayInFilter);
+
+
 });
+
