@@ -11,7 +11,7 @@ const recipes = [
             },
             {
                 "ingredient" : "Jus de citron",
-                "quantity" : 2
+                "quantity" : 2,
             },
             {
                 "ingredient" : "Crème de coco",
@@ -20,7 +20,7 @@ const recipes = [
             },
             {
                 "ingredient" : "Sucre",
-                "quantite" : 30,
+                "quantity" : 30,
                 "unit" : "grammes"
             },
             {
@@ -44,19 +44,19 @@ const recipes = [
             },
             {
                 "ingredient" : "Concombre",
-                "quantity" : 1
+                "quantity" : 1,
             },
             {
                 "ingredient" : "Tomate",
-                "quantity" : 2
+                "quantity" : 2,
             },
             {
                 "ingredient" : "Carotte",
-                "quantite" : 1
+                "quantity" : 1,
             },
             {
                 "ingredient" : "Citron Vert",
-                "quantity" : 5
+                "quantity" : 5,
             },
             {
                 "ingredient" : "Lait de coco",
@@ -75,7 +75,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Poulet",
-                "quantity" : 1          
+                "quantity" : 1,          
             },
             {
                 "ingredient": "Lait de coco",
@@ -89,11 +89,11 @@ const recipes = [
             },
             {
                 "ingredient": "Oignon",
-                "quantity" : 1
+                "quantity" : 1,
             },
             {
                 "ingredient": "Poivron rouge",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Huile d'olive"
@@ -119,11 +119,11 @@ const recipes = [
                 "unit": "grammes"
             },{
                 "ingredient": "Tomate",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Oeuf dur",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Maïs",
@@ -148,7 +148,7 @@ const recipes = [
         "ingredients":[
            {
                "ingredient": "Pâte feuilletée",
-               "quantity": 1 
+               "quantity": 1, 
            },
            {
                "ingredient": "Thon en miettes",
@@ -157,7 +157,7 @@ const recipes = [
            },
            {
                 "ingredient": "Tomate",
-                "quantity": 2
+                "quantity": 2,
            },
            {
                "ingredient": "Crème fraiche",
@@ -172,7 +172,7 @@ const recipes = [
            {
                 "ingredient": "Moutarde de Dijon",
                 "quantity": 1,
-                "unite": "cuillères à soupe"
+                "unit": "cuillères à soupe"
            }
         ],
         "time": 45,
@@ -187,15 +187,15 @@ const recipes = [
         "ingredients":[
             {
                 "ingredient": "Pâte brisée",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Pomme",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": "2"
+                "quantity": 2,
             },
             {
                 "ingredient":"Crème fraiche",
@@ -225,7 +225,7 @@ const recipes = [
         "ingredients":[
             {
                 "ingredient": "Pâte sablée",
-                "quantity": 1
+                "quantity": 1,
             }, 
             {
                 "ingredient": "Chocolat au lait",
@@ -239,12 +239,12 @@ const recipes = [
             },
             {
                 "ingredient": "Beurre",
-                "quantity": "30",
+                "quantity": 30,
                 "unit": "grammes"
             },
             {
                 "ingredient": "Fraise",
-                "quantity": 6
+                "quantity": 6,
             }
         ],
         "time": 50,
@@ -258,7 +258,7 @@ const recipes = [
         "ingredients":[
            {
                 "ingredient": "Noix",
-                "quantity": "180",
+                "quantity": 180,
                 "unit": "grammes"
            },
            {
@@ -273,11 +273,11 @@ const recipes = [
            },
            {
                 "ingredient": "Oeuf",
-                "quantity": 2
+                "quantity": 2,
            },
            {
                "ingredient": "Sucre en poudre",
-               "quantity": "110",
+               "quantity": 110,
                "unit": "grammes"
            },
            {
@@ -299,7 +299,7 @@ const recipes = [
         "ingredients":[
             {
                 "ingredient": "Concombre",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Olives"
@@ -331,7 +331,7 @@ const recipes = [
         "ingredients":[
             {
                 "ingredient": "Roblochon",
-                "quantity": "1"
+                "quantity": 1,
             },
             {
                 "ingredient": "Pommes de terre",
@@ -380,11 +380,11 @@ const recipes = [
             }, 
             {
                 "ingredient": "Pomme",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Salade Verte",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Vinaigrette",
@@ -408,7 +408,7 @@ const recipes = [
             },
             {
                 "ingredient": "Pomme",
-                "quantity": 8
+                "quantity": 8,
             },
             {
                 "ingredient": "Sucre vanillé",
@@ -417,7 +417,7 @@ const recipes = [
             },
             {
                 "ingredient": "Eau",
-                "quantity" : "0.5",
+                "quantity" : 0.5,
                 "unit" : "tasses"
             }
         ],
@@ -443,7 +443,7 @@ const recipes = [
             },
             {
                 "ingredient": "Échalote",
-                "quantity": 2
+                "quantity": 2,
 
             },
             {
@@ -469,7 +469,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Saucisse bretonne ou de toulouse",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Farine de blé noir",
@@ -478,7 +478,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 1
+                "quantity": 1,
 
             },
             {
@@ -488,7 +488,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oignon",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Beurre",
@@ -509,7 +509,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Farine",
@@ -533,7 +533,7 @@ const recipes = [
             },
             {
                 "ingredient": "Banane",
-                "quantity": 4
+                "quantity": 4,
             }
         ],
         "time": 60,
@@ -589,7 +589,7 @@ const recipes = [
             },
             {
                 "ingredient": "Pastèque",
-                "quantity": 0.5
+                "quantity": 0.5,
             },
             {
                 "ingredient": "Jus de citron",
@@ -598,7 +598,7 @@ const recipes = [
             },
             {
                 "ingredient": "Glaçons",
-                "quantity": 8
+                "quantity": 8,
             },
             {
                 "ingredient": "Menthe"
@@ -616,7 +616,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Ananas",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Glace à la vanille",
@@ -641,11 +641,11 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Kiwi",
-                "quantity": 4
+                "quantity": 4,
             },
             {
                 "ingredient": "Citron",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Lait",
@@ -659,7 +659,7 @@ const recipes = [
             },
             {
                 "ingredient": "Banane",
-                "quantity": 1
+                "quantity": 1,
             }
         ],
         "time": 0,
@@ -715,7 +715,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oignon",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Coulis de tomates",
@@ -765,7 +765,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 4
+                "quantity": 4,
             },
             {
                 "ingredient": "Sucre",
@@ -800,7 +800,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Crème fraiche",
@@ -835,11 +835,11 @@ const recipes = [
             },
             {
                 "ingredient": "Tomate",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Concombre",
-                "quantity": 0.5
+                "quantity": 0.5,
             },
             {
                 "ingredient": "Macaronis",
@@ -884,7 +884,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 1
+                "quantity": 1,
             }
         ],
         "time": 30,
@@ -899,18 +899,18 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Tomate",
-                "quantity": 6
+                "quantity": 6,
             },
             {
                 "ingredient": "Pommes de terre",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Huile d'olive"
             },
             {
                 "ingredient": "Oignon",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Ail",
@@ -930,11 +930,11 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Oseille",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Crème fraiche",
@@ -964,7 +964,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Poireau",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Pommes de terre",
@@ -1009,13 +1009,13 @@ const recipes = [
             },
             {
                 "ingredient": "Citron",
-                "quantity": 2
+                "quantity": 2,
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": "Huile d'olive",
             },
             {
-                "ingredient": "Paprika"
+                "ingredient": "Paprika",
             }
         ],
         "time": 30,
@@ -1055,11 +1055,11 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Carotte",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Pommes de terre",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Haricots verts",
@@ -1140,7 +1140,7 @@ const recipes = [
             },
             {
                 "ingredient": "Feuilles de laitue",
-                "quantity": 4
+                "quantity": 4,
             },
             {
                 "ingredient": "Fromage blanc",
@@ -1178,7 +1178,7 @@ const recipes = [
             },
             {
                 "ingredient": "Orange",
-                "quantity": 1
+                "quantity": 1,
             }
         ],
         "time": 25,
@@ -1193,11 +1193,11 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Carotte",
-                "quantity": 6
+                "quantity": 6,
             },
             {
                 "ingredient": "Pommes de terre",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Beurre",
@@ -1232,11 +1232,11 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Courgette",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Fromage de chèvre",
-                "quantity": 4
+                "quantity": 4,
             },
             {
                 "ingredient": "Lait",
@@ -1271,7 +1271,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Courgette",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Viande hachée",
@@ -1285,7 +1285,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oignon",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Coulis de tomates",
@@ -1321,7 +1321,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Sucre roux",
@@ -1341,7 +1341,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Pomme",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Farine",
@@ -1376,7 +1376,7 @@ const recipes = [
             },
             {
                 "ingredient": "Citron Vert",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Sucre en poudre",
@@ -1401,7 +1401,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Chocolat noir",
@@ -1431,7 +1431,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Poires au jus",
@@ -1440,7 +1440,7 @@ const recipes = [
             },
             {
                 "ingredient": "Boudoirs",
-                "quantity": 15
+                "quantity": 15,
             }
         ],
         "time": 60,
@@ -1470,7 +1470,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Citron"
@@ -1529,7 +1529,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Farine",
@@ -1569,7 +1569,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 4
+                "quantity": 4,
             },
             {
                 "ingredient": "Lait",
@@ -1625,7 +1625,7 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Pâte à pizza",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Tomates pelées",
@@ -1660,15 +1660,15 @@ const recipes = [
         "ingredients": [
             {
                 "ingredient": "Banane",
-                "quantity": 2
+                "quantity": 2,
             },
             {
                 "ingredient": "Kiwi",
-                "quantity": 3
+                "quantity": 3,
             },
             {
                 "ingredient": "Mangue",
-                "quantity": 1
+                "quantity": 1,
             },
             {
                 "ingredient": "Ananas",
@@ -1698,7 +1698,7 @@ const recipes = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": 6
+                "quantity": 6,
             },
             {
                 "ingredient": "Poudre d'amendes",

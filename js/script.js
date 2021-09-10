@@ -9,7 +9,7 @@ var ingredientsArray = [];
 concatenateIngredientRecipes(ingredientsArray);
 showIngredients(ingredientsArray);
 
-var ingredientArrayAffichee = ingredientsArray;
+var ingredientArrayDisplay = ingredientsArray;
 
 var appliancesArray = [];
 concatenateApplianceRecipes(appliancesArray);

@@ -143,24 +143,29 @@ function showRecipes(recipes) {
             recipeIngredientI.appendChild(recipeIngredientIStrong);
 
             var quantityAndUnit = "";
-
-            if(ingredientInRecipe.quantity) {
+            
+            if(ingredientInRecipe.quantity){
                 if(ingredientInRecipe.unit) {
                     quantityAndUnit = " " + ingredientInRecipe.quantity + " " + ingredientInRecipe.unit;
                 }
-                if(ingredientInRecipe.unite) {
-                    quantityAndUnit = " " + ingredientInRecipe.quantity + " " + ingredientInRecipe.unite;
-                }
-                
+                else{
+                    quantityAndUnit = " " + ingredientInRecipe.quantity
+                }           
             }
-            if(ingredientInRecipe.quantite) {
-                if(ingredientInRecipe.unit) {
-                    quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unit;
-                }
-                if(ingredientInRecipe.unite) {
-                    quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unite;
-                }
-            }
+
+            // if(ingredientInRecipe.quantite) {
+            //     if(ingredientInRecipe.unit) {
+            //         quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unit;
+            //     }
+            //     if(ingredientInRecipe.unite) {
+            //         quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unite;
+            //     }
+            // }
+
+            // else{
+            //     quantityAndUnit = " " + ingredientInRecipe.quantite
+            // }
+
             recipeIngredientI.append(quantityAndUnit);
             var recipeIngredientLineBreak = document.createElement("br");
             recipeCardPart2Listing.appendChild(recipeIngredientI);
@@ -184,6 +189,8 @@ function showRecipes(recipes) {
 }
 // var valueFiteringredientArray = [];
 // console.log(valueFiteringredientArray)
+
+console.log(ingredientArrayDisplay)
 
 function showIngredients(ingredientArray) {
     var filterIngredient = document.getElementById('ingredients_list');
@@ -365,7 +372,7 @@ var ingredientTagValue = [];
 
 function collectValueTagIngredient(value) {
     
-    ingredientTagValue.push(value);
+    // ingredientTagValue.push(value);
     // console.log('tag dans function : ' + ingredientTagValue);
     // for (var i = 0; i < ingredientTagValue.length; i++) {
     //     let ingredientsValue = ingredientTagValue[i];
