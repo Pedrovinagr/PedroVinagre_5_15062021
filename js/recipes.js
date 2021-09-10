@@ -119,7 +119,7 @@ const recipes = [
                 "unit": "grammes"
             },{
                 "ingredient": "Tomate",
-                "quantity": 2,
+                "quantite": 2,
             },
             {
                 "ingredient": "Oeuf dur",
@@ -307,7 +307,7 @@ const recipes = [
             {
                 "ingredient": "Fromage de chèvre",
                 "quantity": 150,
-                "unit": "grammes"
+                "unite": "grammes"
             },
             {
                 "ingredient": "Vinaigre Balsamic"

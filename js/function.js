@@ -150,21 +150,25 @@ function showRecipes(recipes) {
                 }
                 else{
                     quantityAndUnit = " " + ingredientInRecipe.quantity
-                }           
+                }
+
+                if(ingredientInRecipe.unite) {
+                    quantityAndUnit = " " + ingredientInRecipe.quantity + " " + ingredientInRecipe.unite;
+                }
+                       
             }
 
-            // if(ingredientInRecipe.quantite) {
-            //     if(ingredientInRecipe.unit) {
-            //         quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unit;
-            //     }
-            //     if(ingredientInRecipe.unite) {
-            //         quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unite;
-            //     }
-            // }
-
-            // else{
-            //     quantityAndUnit = " " + ingredientInRecipe.quantite
-            // }
+            if(ingredientInRecipe.quantite) {
+                if(ingredientInRecipe.unit) {
+                    quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unit;
+                }
+                else{
+                    quantityAndUnit = " " + ingredientInRecipe.quantite
+                }
+                if(ingredientInRecipe.unite) {
+                    quantityAndUnit = " " + ingredientInRecipe.quantite + " " + ingredientInRecipe.unite;
+                }
+            }
 
             recipeIngredientI.append(quantityAndUnit);
             var recipeIngredientLineBreak = document.createElement("br");
