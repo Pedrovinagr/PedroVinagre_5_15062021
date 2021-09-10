@@ -247,7 +247,7 @@ function showUstensils(usentils) {
 // TAG INGREDIENT HTML
 function createIngredientFilterTag(event) {
     var ingredientSelected = event.target.innerText;
-    collectValueTagIngredient(ingredientSelected);
+    // collectValueTagIngredient(ingredientSelected);
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
@@ -255,6 +255,7 @@ function createIngredientFilterTag(event) {
     filterIngredient.id = "ingredients_tag";
     var textIngredient = document.createElement("p");
     textIngredient.classList.add("text_ingredient");
+    textIngredient.id = "ingredient_text"
     textIngredient.textContent = ingredientSelected;
     filterIngredient.appendChild(textIngredient);
     tagContainer.appendChild(filterIngredient);
@@ -263,34 +264,27 @@ function createIngredientFilterTag(event) {
     iconTag.classList.add("icon_tag");
     iconTag.id = "remove_ingredient";
     var iconImage = document.createElement("i");
-    iconImage.addEventListener("click", removeTagIngredient);
+    iconImage.addEventListener("click", removeTagIngredient, addIngredientFilter);
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
 
-    console.log('avant :')
-    console.log(ingredientArrayDisplayInFilter)
+    // console.log('avant :')
+    // console.log(ingredientArrayDisplayInFilter)
     var indexOfIngredients = ingredientArrayDisplayInFilter.indexOf(ingredientSelected);
     // console.log(indexOfIngredients);
     ingredientArrayDisplayInFilter.splice(indexOfIngredients, 1);
     showIngredients(ingredientArrayDisplayInFilter);
-    console.log('après :')
-    console.log(ingredientArrayDisplayInFilter)   
-}
 
-// REMOVE INGREDIENT INSIDE FILTER INGREDIENT WHY SELECTED IN TAG
-// function removeIngredientSelectedTag (ArrayIngredients) {
-//     var ingredientArrayShown = ArrayIngredients;
-//     var indexOfIngredients = ingredientArrayShown.indexOf(collectValueTagIngredient);
-//     // console.log(indexOfIngredients);
-//     ingredientArrayShown.splice(indexOfIngredients, 1);
-//     showIngredients(ingredientArrayShown);
-// }
+    iconImage.addEventListener("click", addIngredientFilter);
+    // console.log('après :')
+    // console.log(ingredientArrayDisplayInFilter)   
+}
 
 // TAG APPLIANCE HTML
 function createApplianceFilterTag(event) {
     var applianceSelected = event.target.innerText;
-    collectValueTagAppliance(applianceSelected)
+    // collectValueTagAppliance(applianceSelected)
     var tagContainer = document.getElementById("appareils__tag");
     // tagContainer.innerHTML = "";
     var filterAppliance = document.createElement("div");
@@ -313,7 +307,7 @@ function createApplianceFilterTag(event) {
 // TAG USTENSIL HTML
 function createUstensilFilterTag(event) {
     var ustensilSelected = event.target.innerText;
-    collectValueTagUstensil(ustensilSelected)
+    // collectValueTagUstensil(ustensilSelected)
     var tagContainer = document.getElementById("ustensils__tag");
     // tagContainer.innerHTML = "";
     var filterUstensil = document.createElement("div");
@@ -335,95 +329,25 @@ function createUstensilFilterTag(event) {
 
 // REMOVE TAG INGREDIENT
 function removeTagIngredient() {
-    var ingredientTag = document.getElementById('remove_ingredient')
-    var tagingredient = document.getElementById('ingredients_tag')
-    var idParentOfIngredientTag = ingredientTag.parentElement.parentElement
+    var ingredientTag = document.getElementById('remove_ingredient');
+    var tagingredient = document.getElementById('ingredients_tag');
+    var idParentOfIngredientTag = ingredientTag.parentElement.parentElement;
     idParentOfIngredientTag.removeChild(tagingredient);
-
-    ingredientTag.addEventListener("click", addIngredientFilter);
-    
-    // var indexOfIngredients = ingredientArrayShown.indexOf(ingredientSelected);
-    // console.log(indexOfIngredients);
-    // ingredientArrayShown.splice(indexOfIngredients, 1);
-    // showIngredients(ingredientArrayShown);
-    
-    // // var btnDeletedTagIngredient = document.getElementById("remove_ingredient")
-    // // btnDeletedTagIngredient.addEventListener("click", function() {
-    // var tagIngredient = document.getElementById('ingredients_tag');
-    // tagIngredient = innerHTML = "";
-    // // });
 }
 
 function addIngredientFilter(event){
-    var ingredientOfTagRemove = event.target.innerText;
-    console.log(ingredientSelected)
-    // collectValueTagAppliance(applianceSelected)
-    // var tagContainer = document.getElementById("appareils__tag");
-    // // tagContainer.innerHTML = "";
-    // var filterAppliance = document.createElement("div");
-    // filterAppliance.classList.add("tag_input");
-    // filterAppliance.id = "appareils_tag";
-    // var textAppliance = document.createElement("p");
-    // textAppliance.classList.add("text_appareil");
-    // textAppliance.textContent = applianceSelected;
-    // filterAppliance.appendChild(textAppliance);
-    // tagContainer.appendChild(filterAppliance);
-    // iconImage.className = "far fa-times-circle";
-    // iconTag.appendChild(iconImage);
-    // filterIngredient.appendChild(iconTag);
-
-    // console.log('avant :')
+    var iconRemove = event.target
+    // console.log(iconRemove)
+    var iconRemoveParent = iconRemove.parentElement.parentElement;
+    // console.log(iconRemoveParent)
+    var valueTagRemove = iconRemoveParent.innerText
+    // console.log(valueTagRemove)
     // console.log(ingredientArrayDisplayInFilter)
-    // var indexOfIngredients = ingredientArrayDisplayInFilter.indexOf(ingredientSelected);
-    // // console.log(indexOfIngredients);
-    // ingredientArrayDisplayInFilter.splice(indexOfIngredients, 1);
-    // showIngredients(ingredientArrayDisplayInFilter);
-    // console.log('après :')
-    // console.log(ingredientArrayDisplayInFilter)
+    // var indexOfIngredientsRemove = ingredientArrayDisplayInFilter.indexOf(valueTagRemove);
+    ingredientArrayDisplayInFilter.push(valueTagRemove);
+    showIngredients(ingredientArrayDisplayInFilter);
+
 }
-// COLLECT VALUE TAG
-
-// var tagIngredientValue = [];
-// collectValueTagIngredient(tagIngredientValue);
-var ingredientTagValue = [];
-
-function collectValueTagIngredient(value) {
-    
-    // ingredientTagValue.push(value);
-    // console.log('tag dans function : ' + ingredientTagValue);
-    // for (var i = 0; i < ingredientTagValue.length; i++) {
-    //     let ingredientsValue = ingredientTagValue[i];
-    //     // console.log("tableau tag ingredient : " + ingredientTagValue);
-    //     if(!tagIngredientValue.includes(ingredientsValue)) {
-    //         tagIngredientValue.push(ingredientsValue);
-    //     }
-        
-    // }
-
-    // if(ingredientTagValue != "") {
-    //     let wordTagIngredients = value.toLowerCase().split(" ");
-    //     console.log("mot du tag : " + wordTagIngredients);
-    //     for (var i = 0; i < wordTagIngredients.length; i++) {
-    //         let wordTagIngredient = wordTagIngredients[i];
-    //         console.log("mot du tag : " + wordTagIngredient);
-    //     }
-    // }
-    
-}
-
-
-// console.log('tag en dehors de la function : ' + collectValueTagIngredient.value);
-
-function collectValueTagAppliance(value) {
-    var tagApplianceValue = [];
-    tagApplianceValue.push(value);
-}
-
-function collectValueTagUstensil(value) {
-    var tagUstensilValue = [];
-    tagUstensilValue.push(value);
-}
-
 // fonction d'affichage des filtres
     var chevronDown = document.querySelector('.fa-chevron-down');
     var chevronUp = document.querySelector('.fa-chevron-up');
@@ -499,3 +423,51 @@ function menuDéroulantUst() {
         visibleList.appendChild(changeChevron);
     }
 }
+
+// var ingredientTagValue = [];
+
+// function collectValueTagIngredient(value) {
+    
+    // ingredientTagValue.push(value);
+    // console.log('tag dans function : ' + ingredientTagValue);
+    // for (var i = 0; i < ingredientTagValue.length; i++) {
+    //     let ingredientsValue = ingredientTagValue[i];
+    //     // console.log("tableau tag ingredient : " + ingredientTagValue);
+    //     if(!tagIngredientValue.includes(ingredientsValue)) {
+    //         tagIngredientValue.push(ingredientsValue);
+    //     }
+        
+    // }
+
+    // if(ingredientTagValue != "") {
+    //     let wordTagIngredients = value.toLowerCase().split(" ");
+    //     console.log("mot du tag : " + wordTagIngredients);
+    //     for (var i = 0; i < wordTagIngredients.length; i++) {
+    //         let wordTagIngredient = wordTagIngredients[i];
+    //         console.log("mot du tag : " + wordTagIngredient);
+    //     }
+    // }
+    
+// }
+
+
+// console.log('tag en dehors de la function : ' + collectValueTagIngredient.value);
+
+// function collectValueTagAppliance(value) {
+//     var tagApplianceValue = [];
+//     tagApplianceValue.push(value);
+// }
+
+// function collectValueTagUstensil(value) {
+//     var tagUstensilValue = [];
+//     tagUstensilValue.push(value);
+// }
+
+// REMOVE INGREDIENT INSIDE FILTER INGREDIENT WHY SELECTED IN TAG
+// function removeIngredientSelectedTag (ArrayIngredients) {
+//     var ingredientArrayShown = ArrayIngredients;
+//     var indexOfIngredients = ingredientArrayShown.indexOf(collectValueTagIngredient);
+//     // console.log(indexOfIngredients);
+//     ingredientArrayShown.splice(indexOfIngredients, 1);
+//     showIngredients(ingredientArrayShown);
+// }
