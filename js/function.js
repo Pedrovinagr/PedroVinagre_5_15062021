@@ -346,8 +346,8 @@ function addIngredientFilter(event){
     // var indexOfIngredientsRemove = ingredientArrayDisplayInFilter.indexOf(valueTagRemove);
     ingredientArrayDisplayInFilter.push(valueTagRemove);
     showIngredients(ingredientArrayDisplayInFilter);
-
 }
+
 // fonction d'affichage des filtres
     var chevronDown = document.querySelector('.fa-chevron-down');
     var chevronUp = document.querySelector('.fa-chevron-up');
