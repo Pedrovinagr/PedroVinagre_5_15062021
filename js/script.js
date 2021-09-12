@@ -6,6 +6,7 @@ var applianceArrayDisplayInFilter = [];
 var ustensilArrayDisplayInFilter = [];
 // console.log(showUstensils(ustensilArrayDisplayInFilter))
 
+var newingredientArrayForFilter = [];
 // var searchWord = searchWords[i];
 // console.log(searchWord)
 
@@ -25,8 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var ingredientsArray = [];
     concatenateIngredientRecipes(ingredientsArray);
     ingredientArrayDisplayInFilter = ingredientsArray;
+    newingredientArrayForFilter = ingredientsArray;
     // console.log(ingredientArrayDisplayInFilter);
-    showIngredients(ingredientArrayDisplayInFilter);
+    showIngredients(newingredientArrayForFilter);
     
 
     var appliancesArray = [];
@@ -262,8 +264,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // INSERT DATA INTO FILTERS
         
         ingredientArrayDisplayInFilter = filterIngredientsResultArray;
+        newingredientArrayForFilter = filterIngredientsResultArray;
         // console.log(ingredientArrayDisplayInFilter)
-        showIngredients(ingredientArrayDisplayInFilter);
+        showIngredients(newingredientArrayForFilter);
         // removeIngredientSelectedTag(filterIngredientsResultArray);
         // ingredientArrayShown = filterIngredientsResultArray;
         applianceArrayDisplayInFilter = filterAppliancesResultArray;
@@ -322,8 +325,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                         
                         ingredientArrayDisplayInFilter = searchResultArrayFromIngredientFilter;
+                        newingredientArrayForFilter = searchResultArrayFromIngredientFilter;
                         // console.log(ingredientArrayDisplayInFilter)
-                        showIngredients(searchResultArrayFromIngredientFilter);
+                        showIngredients(newingredientArrayForFilter);
                         // removeIngredientSelectedTag(searchResultArrayFromIngredientFilter);
                         // ingredientArrayShown = searchResultArrayFromIngredientFilter;
                     }

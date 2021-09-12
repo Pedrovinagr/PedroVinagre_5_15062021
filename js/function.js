@@ -341,11 +341,13 @@ function addIngredientFilter(event){
     var iconRemoveParent = iconRemove.parentElement.parentElement;
     // console.log(iconRemoveParent)
     var valueTagRemove = iconRemoveParent.innerText
-    // console.log(valueTagRemove)
-    // console.log(ingredientArrayDisplayInFilter)
-    // var indexOfIngredientsRemove = ingredientArrayDisplayInFilter.indexOf(valueTagRemove);
-    ingredientArrayDisplayInFilter.push(valueTagRemove);
-    showIngredients(ingredientArrayDisplayInFilter);
+    console.log(valueTagRemove)
+    console.log(ingredientArrayDisplayInFilter)
+    console.log(newingredientArrayForFilter)
+    var indexOfIngredientsRemove = ingredientArrayDisplayInFilter.indexOf(valueTagRemove);
+    console.log(indexOfIngredientsRemove)
+    newingredientArrayForFilter.splice(indexOfIngredientsRemove);
+    showIngredients(newingredientArrayForFilter);
 }
 
 // fonction d'affichage des filtres
