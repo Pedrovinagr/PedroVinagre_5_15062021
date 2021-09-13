@@ -200,6 +200,7 @@ function showIngredients(ingredientArray) {
     var filterIngredient = document.getElementById('ingredients_list');
     filterIngredient.innerHTML = "";
         var ingredientInFilterHtmlParent = document.createElement('ul');
+        ingredientInFilterHtmlParent.id = "ingredients_ul"
         
         for(var i = 0; i < ingredientArray.length; i++) {
             var ingredientInFilterHtmlChild = document.createElement('li');
@@ -209,6 +210,7 @@ function showIngredients(ingredientArray) {
             //     ingredientArray.push(valueFiteringredientArray);
             // }
             ingredientInFilterHtmlChild.className = "ingredients";
+            ingredientInFilterHtmlChild.id = "ingredients"
             ingredientInFilterHtmlParent.appendChild(ingredientInFilterHtmlChild);
         }
         filterIngredient.appendChild(ingredientInFilterHtmlParent);
@@ -247,7 +249,7 @@ function showUstensils(usentils) {
 // TAG INGREDIENT HTML
 function createIngredientFilterTag(event) {
     var ingredientSelected = event.target.innerText;
-    // collectValueTagIngredient(ingredientSelected);
+    collectValueTagIngredient(ingredientSelected);
     var tagContainer = document.getElementById("ingredients__tag");
     // tagContainer.innerHTML = "";
     var filterIngredient = document.createElement("div");
@@ -264,7 +266,14 @@ function createIngredientFilterTag(event) {
     iconTag.classList.add("icon_tag");
     iconTag.id = "remove_ingredient";
     var iconImage = document.createElement("i");
-    iconImage.addEventListener("click", removeTagIngredient, addIngredientFilter);
+
+    var listIngredientbeforeTag = document.querySelectorAll('.ingredients');
+    for (var i = 0; i < listIngredientbeforeTag.length; i++) {
+       var ingredientListBeforeTag = listIngredientbeforeTag[i].innerText; 
+       filterIngredientArrayBeforeTag.push(ingredientListBeforeTag);
+    }
+
+    iconImage.addEventListener("click", removeTagIngredient);
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
@@ -275,6 +284,7 @@ function createIngredientFilterTag(event) {
     // console.log(indexOfIngredients);
     ingredientArrayDisplayInFilter.splice(indexOfIngredients, 1);
     showIngredients(ingredientArrayDisplayInFilter);
+
 
     iconImage.addEventListener("click", addIngredientFilter);
     // console.log('après :')
@@ -330,9 +340,12 @@ function createUstensilFilterTag(event) {
 // REMOVE TAG INGREDIENT
 function removeTagIngredient() {
     var ingredientTag = document.getElementById('remove_ingredient');
-    var tagingredient = document.getElementById('ingredients_tag');
+    var tagIngredient = document.getElementById('ingredients_tag');
     var idParentOfIngredientTag = ingredientTag.parentElement.parentElement;
-    idParentOfIngredientTag.removeChild(tagingredient);
+    idParentOfIngredientTag.removeChild(tagIngredient);
+    collectValueTagIngredient(ingredientSelected);
+
+
 }
 
 function addIngredientFilter(event){
@@ -341,12 +354,14 @@ function addIngredientFilter(event){
     var iconRemoveParent = iconRemove.parentElement.parentElement;
     // console.log(iconRemoveParent)
     var valueTagRemove = iconRemoveParent.innerText
-    console.log(valueTagRemove)
-    console.log(ingredientArrayDisplayInFilter)
-    console.log(newingredientArrayForFilter)
-    var indexOfIngredientsRemove = ingredientArrayDisplayInFilter.indexOf(valueTagRemove);
-    console.log(indexOfIngredientsRemove)
-    newingredientArrayForFilter.splice(indexOfIngredientsRemove);
+    // console.log(valueTagRemove)
+    // console.log(filterIngredientArrayBeforeTag)
+    // console.log(newingredientArrayForFilter)
+
+    var indexOfIngredientsRemove = filterIngredientArrayBeforeTag.indexOf(valueTagRemove);
+    // console.log(indexOfIngredientsRemove)
+    newingredientArrayForFilter.splice(indexOfIngredientsRemove, 0, valueTagRemove);
+    // console.log(newingredientArrayForFilter)
     showIngredients(newingredientArrayForFilter);
 }
 
@@ -426,10 +441,17 @@ function menuDéroulantUst() {
     }
 }
 
-// var ingredientTagValue = [];
 
-// function collectValueTagIngredient(value) {
-    
+function collectValueTagIngredient(value) {
+
+    ingredientTagValue.push(value);
+    if(ingredientTagValue !="") {
+        
+    }
+    // var listIngredientTag = document.getElementById('tags');
+    // console.log(listIngredientTag.innerText)
+
+
     // ingredientTagValue.push(value);
     // console.log('tag dans function : ' + ingredientTagValue);
     // for (var i = 0; i < ingredientTagValue.length; i++) {
@@ -450,7 +472,7 @@ function menuDéroulantUst() {
     //     }
     // }
     
-// }
+}
 
 
 // console.log('tag en dehors de la function : ' + collectValueTagIngredient.value);

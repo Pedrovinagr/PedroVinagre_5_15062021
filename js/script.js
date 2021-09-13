@@ -6,9 +6,17 @@ var applianceArrayDisplayInFilter = [];
 var ustensilArrayDisplayInFilter = [];
 // console.log(showUstensils(ustensilArrayDisplayInFilter))
 
+var filterIngredientArrayBeforeTag = [];
 var newingredientArrayForFilter = [];
 // var searchWord = searchWords[i];
 // console.log(searchWord)
+
+var ingredientTagValue = [];
+// console.log(ingredientTagValue)
+
+var tagIngredientsArray=[];
+var tagAppliancesArray = [];
+var tagUstensilsArray = [];
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -44,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // RECIPE RESULT TO BE SHOWN
     var recipeResult = [];
-    var recipeResultFilter = [];
+
 
     
 
@@ -191,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var ingredientsInRecipe = recipe.ingredients;
             var nameInRecipe = recipe.name;
             var descriptionInRecipe = recipe.description;
-
+            
             for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
                 var resultSearchIngredient = searchResultArrayFromIngredient[j];
                 for(var k = 0; k < ingredientsInRecipe.length; k++) {
@@ -229,7 +237,43 @@ document.addEventListener("DOMContentLoaded", function() {
             showRecipes(recipes);
         }
 
-        // EXPORT SEARCH DATA TO CREATE FILTERS
+        // FILTER RECIPES WITH TAGS
+        var recipeResultFilter = recipeResult;
+
+        for (var i = 0; i < recipeResultFilter.length; i++) {
+            var finalRecipe = recipeResultFilter[i];
+            // console.log("final :")
+            // console.log(finalRecipe)
+            var finalIngredientsInRecipe = finalRecipe.ingredients;
+            // console.log("final :")
+            // console.log(finalIngredientsInRecipe)
+            var finalApplianceInRecipe = finalRecipe.appliance;
+            // console.log("final :")
+            // console.log(finalApplianceInRecipe)
+            var finalUstensilsInRecipe = finalRecipe.ustensils;
+            // console.log("final :")
+            // console.log(finalUstensilsInRecipe)
+
+            for (var j = 0; j < ingredientTagValue.length; j++) {
+                var resultListTagIngredient = ingredientTagValue[j];
+        //         for (var K = 0; K < finalIngredientsInRecipe.length; K++) {
+        //             var finalIngredientInRecipe = finalIngredientsInRecipe[K];
+        //             if(finalIngredientInRecipe.ingredient == resultListTagIngredient) {
+        //                 if(!recipeResultFilter.includes(finalRecipe)) {
+        //                     recipeResultFilter.push(finalRecipe);
+        //                 }
+        //             }
+                    
+        //         }
+                
+        //     }
+        // }
+        // if(recipeResultFilter.length > 0) {
+        //     showRecipes(recipeResultFilter);
+        // } else {
+        //     showRecipes(recipeResult);
+        // }
+
 
         // FILTER INGREDIENT
         for(var i = 0; i < recipeResult.length; i++) {
@@ -418,53 +462,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
-    // SEARCH INSIDE ALL RECIPES
-
-    // for(var i = 0; i < recipes.length - 1; i++) {
-    //     var recipe = recipes[i];
-    //     var ingredientsInRecipe = recipe.ingredients;
-    //     var nameInRecipe = recipe.name;
-    //     var descriptionInRecipe = recipe.description;
-
-    //     for(var j = 0; j < searchResultArrayFromIngredient.length; j++) {
-    //         var resultSearchIngredient = searchResultArrayFromIngredient[j];
-    //         for(var k = 0; k < ingredientsInRecipe.length; k++) {
-    //             var ingredientInRecipe = ingredientsInRecipe[k];
-    //             if(ingredientInRecipe.ingredient == resultSearchIngredient) {
-    //                 if(!recipeResult.includes(recipe)) {
-    //                     recipeResult.push(recipe);
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     for (var j = 0; j < searchResultArrayFromNameRecipe.length; j++) {
-    //         var resultSearchNameRecipe = searchResultArrayFromNameRecipe[j];
-    //         if (resultSearchNameRecipe == nameInRecipe) {
-    //             if (!recipeResult.includes(recipe)) {
-    //                 recipeResult.push(recipe);
-    //             }
-    //         }
-    //     }
-
-    //     for (var j = 0; j < searchResultArrayFromDescriptionRecipe.length; j++) {
-    //         var resultSearchDescriptionRecipe = searchResultArrayFromDescriptionRecipe[j];
-    //         if (resultSearchDescriptionRecipe == descriptionInRecipe) {
-    //             if (!recipeResult.includes(recipe)) {
-    //                 recipeResult.push(recipe);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // if(recipeResult.length > 0) {
-    //     showRecipes(recipeResult);
-    // } else {
-    //     showRecipes(recipes);
-    // }
-    // console.log(ingredientArrayDisplayInFilter);
-
-
 });
 
