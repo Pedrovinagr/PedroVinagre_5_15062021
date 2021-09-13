@@ -266,8 +266,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     
         //         }
                 
-        //     }
-        // }
+            }
+        }
         // if(recipeResultFilter.length > 0) {
         //     showRecipes(recipeResultFilter);
         // } else {
