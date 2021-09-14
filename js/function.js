@@ -189,9 +189,6 @@ function showIngredients(ingredientArray) {
             var ingredientInFilterHtmlChild = document.createElement('li');
             ingredientInFilterHtmlChild.addEventListener("click", createIngredientFilterTag);
             ingredientInFilterHtmlChild.textContent = ingredientArray[i];
-            // if (!ingredientArray.includes(valueFiteringredientArray)) {
-            //     ingredientArray.push(valueFiteringredientArray);
-            // }
             ingredientInFilterHtmlChild.className = "ingredients";
             ingredientInFilterHtmlChild.id = "ingredients"
             ingredientInFilterHtmlParent.appendChild(ingredientInFilterHtmlChild);
