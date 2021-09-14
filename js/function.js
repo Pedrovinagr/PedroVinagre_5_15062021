@@ -340,11 +340,12 @@ function createUstensilFilterTag(event) {
 // REMOVE TAG INGREDIENT
 function removeTagIngredient(event) {
     var tag = event.target;
+    // console.log(tag)
     var tagIngredient = document.getElementById('ingredients__tag');
     var idParentOfIngredientTag = tag.parentElement.parentElement;
     tagIngredient.removeChild(idParentOfIngredientTag);
     var ingredientSelected = idParentOfIngredientTag.firstChild.innerText
-    // console.log(ingredientSelected)
+    console.log(ingredientSelected)
     collectValueTagIngredient(ingredientSelected);
 
 
@@ -359,7 +360,7 @@ function addIngredientFilter(event){
     // console.log(valueTagRemove)
     // console.log(filterIngredientArrayBeforeTag)
     // console.log(newingredientArrayForFilter)
-
+    console.log(ingredientArrayDisplayInFilter)
     var indexOfIngredientsRemove = filterIngredientArrayBeforeTag.indexOf(valueTagRemove);
     // console.log(indexOfIngredientsRemove)
     newingredientArrayForFilter.splice(indexOfIngredientsRemove, 0, valueTagRemove);
@@ -443,6 +444,8 @@ function menuDéroulantUst() {
     }
 }
 
+var ingredientTagValue = [];
+var recipeSearchBar = [];
 
 function collectValueTagIngredient(value) {
     if(ingredientTagValue.includes(value)) {
@@ -455,6 +458,37 @@ function collectValueTagIngredient(value) {
         ingredientTagValue.push(value);
     }
     // console.log(ingredientTagValue)
+
+    if(ingredientTagValue.length > 0) {
+        if(recipeResult.length > 0) {
+            console.log(recipeResult)
+            for(var i = 0; i < recipeResult.length; i++) {
+                var recipe = recipeResult[i];
+                // console.log(recipe)
+                var ingredientsInRecipe = recipe.ingredients;
+                // console.log(ingredientsInRecipe)
+                
+                for(var j = 0; j < ingredientTagValue.length; j++) {
+                    var resultTagIngredient = ingredientTagValue[j];
+                    console.log(resultTagIngredient)
+                    for(var k = 0; k < ingredientsInRecipe.length; k++) {
+                        var ingredientInRecipe = ingredientsInRecipe[k].ingredient;
+                        console.log(ingredientInRecipe)
+                        if(ingredientInRecipe === resultTagIngredient) {
+                            if(!recipeResultFilter.includes(recipe)) {
+                                recipeResultFilter.push(recipe);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(recipeResultFilter.length > 0) {
+        showRecipes(recipeResultFilter);
+    } else {
+        showRecipes(recipeResult);
+    }
 }
 
 
