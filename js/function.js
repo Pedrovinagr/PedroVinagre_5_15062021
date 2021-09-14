@@ -338,11 +338,13 @@ function createUstensilFilterTag(event) {
 }
 
 // REMOVE TAG INGREDIENT
-function removeTagIngredient() {
-    var ingredientTag = document.getElementById('remove_ingredient');
-    var tagIngredient = document.getElementById('ingredients_tag');
-    var idParentOfIngredientTag = ingredientTag.parentElement.parentElement;
-    idParentOfIngredientTag.removeChild(tagIngredient);
+function removeTagIngredient(event) {
+    var tag = event.target;
+    var tagIngredient = document.getElementById('ingredients__tag');
+    var idParentOfIngredientTag = tag.parentElement.parentElement;
+    tagIngredient.removeChild(idParentOfIngredientTag);
+    var ingredientSelected = idParentOfIngredientTag.firstChild.innerText
+    // console.log(ingredientSelected)
     collectValueTagIngredient(ingredientSelected);
 
 
@@ -443,35 +445,16 @@ function menuDéroulantUst() {
 
 
 function collectValueTagIngredient(value) {
-
-    ingredientTagValue.push(value);
-    if(ingredientTagValue !="") {
-        
+    if(ingredientTagValue.includes(value)) {
+        var indexOfValue = ingredientTagValue.indexOf(value);
+        // console.log(indexOfValue)
+        ingredientTagValue.splice(indexOfValue, 1);
     }
-    // var listIngredientTag = document.getElementById('tags');
-    // console.log(listIngredientTag.innerText)
 
-
-    // ingredientTagValue.push(value);
-    // console.log('tag dans function : ' + ingredientTagValue);
-    // for (var i = 0; i < ingredientTagValue.length; i++) {
-    //     let ingredientsValue = ingredientTagValue[i];
-    //     // console.log("tableau tag ingredient : " + ingredientTagValue);
-    //     if(!tagIngredientValue.includes(ingredientsValue)) {
-    //         tagIngredientValue.push(ingredientsValue);
-    //     }
-        
-    // }
-
-    // if(ingredientTagValue != "") {
-    //     let wordTagIngredients = value.toLowerCase().split(" ");
-    //     console.log("mot du tag : " + wordTagIngredients);
-    //     for (var i = 0; i < wordTagIngredients.length; i++) {
-    //         let wordTagIngredient = wordTagIngredients[i];
-    //         console.log("mot du tag : " + wordTagIngredient);
-    //     }
-    // }
-    
+    else{
+        ingredientTagValue.push(value);
+    }
+    // console.log(ingredientTagValue)
 }
 
 
