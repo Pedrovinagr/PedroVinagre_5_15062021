@@ -424,10 +424,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // FILTER RECIPES WITH TAGS
-    console.log(showRecipes(recipeResult))
-    var recipeResultFilter = recipeResult;
-    console.log(recipeResultFilter)
-    const tagIngredientsArray= ingredientTagValue;
+    // console.log(showRecipes(recipeResult))
+    // var recipeResultFilter = recipeResult;
+    // console.log(recipeResultFilter)
+    var tagIngredientsArray= collectValueTagIngredient(ingredientTagValue);
     console.log(tagIngredientsArray)
     var tagAppliancesArray = [];
     var tagUstensilsArray = [];
