@@ -7,6 +7,8 @@ var applianceArray = [];
 var ustensilArray = [];
 var timeArray = [];
 
+var resultSearchWords = [];
+
 // FONCTION D'AFFICHAGE DES FILTRES
 var chevronDown = document.querySelector('.fa-chevron-down');
 var chevronUp = document.querySelector('.fa-chevron-up');

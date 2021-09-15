@@ -1,21 +1,21 @@
 // FONCTION RESULTAT DU BESOIN DE RECHERCHE
 function resultOfResearchNeed(needValue){
     var cleanValue = needValue.toLowerCase();
-    var resultSearchWords = [];
-
     // SEARCH WORD VALUE
     if(cleanValue.length >= 3){
-        if(cleanValue.indexOf("") != -1) {
-            let searchArray = cleanValue.split(" ");
-            for (var i = 0; i < searchArray.length; i++) {
-                var searchWords = searchArray[i];
-                if(!resultSearchWords.includes(searchWords)) {
-                    resultSearchWords.push(searchWords);
-                }
+        let searchArray = cleanValue.split(" ");
+        for (var i = 0; i < searchArray.length; i++) {
+            var searchWords = searchArray[i];
+            if(!resultSearchWords.includes(searchWords)) {
+                resultSearchWords.push(searchWords);
             }
-            return resultSearchWords
         }
-        
+        return resultSearchWords
+    }
+    else{
+        document.getElementById('non_conf').innerHTML = 'Merci de renseigner suffisament de caractère'
+        document.getElementById('non_conf').style.color = 'red';
+        document.getElementById('non_conf').style.fontSize = '0.9rem';
     }
 }
 
