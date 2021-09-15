@@ -301,8 +301,7 @@ function createApplianceFilterTag(event) {
 
     var indexOfAppliances = applianceArrayDisplayInFilter.indexOf(applianceSelected);
     applianceArrayDisplayInFilter.splice(indexOfAppliances, 1);
-    showIngredients(applianceArrayDisplayInFilter);
-
+    showAppliance(applianceArrayDisplayInFilter);
     iconImage.addEventListener("click", addApplianceFilter);
 }
 
@@ -339,9 +338,9 @@ function createUstensilFilterTag(event) {
 
     var indexOfUstensils = ustensilArrayDisplayInFilter.indexOf(ustensilSelected);
     ustensilArrayDisplayInFilter.splice(indexOfUstensils, 1);
-    showIngredients(ustensilArrayDisplayInFilter);
+    showUstensils(ustensilArrayDisplayInFilter);
 
-    iconImage.addEventListener("click", addustensilFilter);
+    iconImage.addEventListener("click", addUstensilFilter);
 }
 
 // REMOVE TAG INGREDIENT
@@ -362,7 +361,6 @@ function removeTagAppliance(event) {
     var idParentOfApplianceTag = tag.parentElement.parentElement;
     tagAppliance.removeChild(idParentOfApplianceTag);
     var applianceSelected = idParentOfApplianceTag.firstChild.innerText
-
     collectValueTagAppliance(applianceSelected);
 }
 
@@ -396,7 +394,7 @@ function addApplianceFilter(event){
     var indexOfAppliancesRemove = filterApplianceArrayBeforeTag.indexOf(valueTagRemove);
 
     newApplianceArrayForFilter.splice(indexOfAppliancesRemove, 0, valueTagRemove);
-    showIngredients(newApplianceArrayForFilter);
+    showAppliance(newApplianceArrayForFilter);
 }
 
 // ADD TAG USTENSIL REMOVE IN THE FILTER
@@ -407,7 +405,7 @@ function addUstensilFilter(event){
     var indexOfUstensilsRemove = filterUstensilArrayBeforeTag.indexOf(valueTagRemove);
 
     newUstensilArrayForFilter.splice(indexOfUstensilsRemove, 0, valueTagRemove);
-    showIngredients(newUstensilArrayForFilter);
+    showUstensils(newUstensilArrayForFilter);
 }
 
 // FONCTION D'AFFICHAGE DES FILTRES
@@ -591,8 +589,8 @@ function collectValueTagAppliance(value) {
             }
         }
         else{
-            for(var i = 0; i < recipeResult.length; i++) {
-                let recipe = recipeResult[i];
+            for(var i = 0; i < recipes.length; i++) {
+                let recipe = recipes[i];
                 let applianceInRecipe = recipe.appliance;
                 
                 for(var j = 0; j < applianceTagValue.length; j++) {
@@ -651,8 +649,8 @@ function collectValueTagUstensil(value) {
             }
         }
         else{
-            for(var i = 0; i < recipeResult.length; i++) {
-                let recipe = recipeResult[i];
+            for(var i = 0; i < recipes.length; i++) {
+                let recipe = recipes[i];
                 let ustensilsInRecipe = recipe.ustensils;
                 
                 for(var j = 0; j < ustensilTagValue.length; j++) {

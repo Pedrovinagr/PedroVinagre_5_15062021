@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // SHOW FILTER
     showIngredients(newingredientArrayForFilter);
-    showAppliance(applianceArrayDisplayInFilter);
-    showUstensils(ustensilArrayDisplayInFilter);
+    showAppliance(newApplianceArrayForFilter);
+    showUstensils(newUstensilArrayForFilter);
 
     // SEARCH BAR ALGORITHM
     const centralSearchBar = document.getElementById('searchbar');
