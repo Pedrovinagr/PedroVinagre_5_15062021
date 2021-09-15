@@ -17,11 +17,16 @@
 // var recipeResultFilter = [];
 
 
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-//     // CALL RECIPE FOR HTML
-//     showRecipes(recipes);
+    // CALL RECIPE FOR HTML
+    showRecipes(recipes);
 
+    // SHOW FILTER
+    showIngredients(ingredientArray);
+    showAppliance(applianceArray);
+    showUstensils(ustensilArray);
+});
 //     var recipeNameArray = [];
 //     concatenateNameRecipes(recipeNameArray);
 
@@ -51,11 +56,6 @@
 
 //     ustensilArrayDisplayInFilter = ustensilsArray;
 //     newUstensilArrayForFilter = ustensilsArray;
-
-//     // SHOW FILTER
-//     showIngredients(newingredientArrayForFilter);
-//     showAppliance(newApplianceArrayForFilter);
-//     showUstensils(newUstensilArrayForFilter);
 
 //     // SEARCH BAR ALGORITHM
 //     const centralSearchBar = document.getElementById('searchbar');
