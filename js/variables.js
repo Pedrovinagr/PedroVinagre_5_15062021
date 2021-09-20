@@ -6,8 +6,9 @@ var ingredientArray = [];
 var applianceArray = [];
 var ustensilArray = [];
 var timeArray = [];
-
-var resultSearchWords = [];
+var recipeResult = [];
+var inputDataOfSearchBar = [];
+var resultOfResearch = [];
 
 // FONCTION D'AFFICHAGE DES FILTRES
 var chevronDown = document.querySelector('.fa-chevron-down');

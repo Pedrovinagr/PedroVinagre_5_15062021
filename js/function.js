@@ -6,17 +6,60 @@ function resultOfResearchNeed(needValue){
         let searchArray = cleanValue.split(" ");
         for (var i = 0; i < searchArray.length; i++) {
             var searchWords = searchArray[i];
-            if(!resultSearchWords.includes(searchWords)) {
-                resultSearchWords.push(searchWords);
-            }
+            if(searchWords.length > 2) {
+                if(!inputDataOfSearchBar.includes(searchWords)) {
+                inputDataOfSearchBar.push(searchWords);
+                }
+            } 
         }
-        return resultSearchWords
+        return inputDataOfSearchBar;
     }
     else{
-        document.getElementById('non_conf').innerHTML = 'Merci de renseigner suffisament de caractère'
+        document.getElementById('non_conf').innerHTML = 'Merci de renseigner suffisament de caractères'
         document.getElementById('non_conf').style.color = 'red';
-        document.getElementById('non_conf').style.fontSize = '0.9rem';
+        document.getElementById('non_conf').style.fontSize = '1.2rem';
     }
+}
+
+// SEARCH INSIDE ALL RECIPES
+function searchAllRecipes (dataSearchBar){
+    for(var i = 0; i < recipes.length - 1; i++) {
+        var recipe = recipes[i];    
+        var ingredientsInRecipe = recipe.ingredients;
+        var nameInRecipe = recipe.name;
+        var descriptionInRecipe = recipe.description;
+        
+        for(var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchIngredient = dataSearchBar[j];
+            for(var k = 0; k < ingredientsInRecipe.length; k++) {
+                var ingredientInRecipe = ingredientsInRecipe[k];
+                if(ingredientInRecipe.ingredient == resultSearchIngredient) {
+                    if(!recipeResult.includes(recipe)) {
+                        recipeResult.push(recipe);
+                    }
+                }
+            }
+        }
+        for (var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchNameRecipe = dataSearchBar[j];
+            if (resultSearchNameRecipe == nameInRecipe) {
+                if (!recipeResult.includes(recipe)) {
+                    recipeResult.push(recipe);
+                }
+            }
+        }
+
+        for (var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchDescriptionRecipe = dataSearchBar[j];
+            if (resultSearchDescriptionRecipe == descriptionInRecipe) {
+                if (!recipeResult.includes(recipe)) {
+                    recipeResult.push(recipe);
+                }
+            }
+        }
+        return recipeResult;
+    }
+    
 }
 
 // FILTER INGREDIENT
