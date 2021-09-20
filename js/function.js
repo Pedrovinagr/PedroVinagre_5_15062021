@@ -56,10 +56,9 @@ function searchAllRecipes (dataSearchBar){
                     recipeResult.push(recipe);
                 }
             }
-        }
-        return recipeResult;
+        } 
     }
-    
+    return recipeResult;
 }
 
 // FILTER INGREDIENT
