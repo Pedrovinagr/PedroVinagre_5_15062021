@@ -1,22 +1,3 @@
-// // BACIC DATA
-// var ingredientArrayDisplayInFilter = [];
-// var applianceArrayDisplayInFilter = [];
-// var ustensilArrayDisplayInFilter = [];
-
-// var filterIngredientArrayBeforeTag = [];
-// var newingredientArrayForFilter = [];
-
-// var filterApplianceArrayBeforeTag = [];
-// var newApplianceArrayForFilter = [];
-
-// var filterUstensilArrayBeforeTag = [];
-// var newUstensilArrayForFilter = [];
-
-// // RECIPE RESULT TO BE SHOWN
-// var recipeResult = [];
-// var recipeResultFilter = [];
-
-
 document.addEventListener("DOMContentLoaded", function() {
 
     // CALL RECIPE FOR HTML
@@ -27,46 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     showAppliance(applianceArray);
     showUstensils(ustensilArray);
 
-//     var recipeNameArray = [];
-//     concatenateNameRecipes(recipeNameArray);
-
-//     var descriptionArray = [];
-//     concatenateDescriptionRecipes(descriptionArray);
-
-//     var ingredientsArray = [];
-//     concatenateIngredientRecipes(ingredientsArray);
-    
-//     var appliancesArray = [];
-//     concatenateApplianceRecipes(appliancesArray);
-    
-//     var ustensilsArray = [];
-//     concatenateUstensilRecipes(ustensilsArray);
-    
-//     // DATA FILTER
-//     var filterIngredientsResultArray = [];
-//     var filterAppliancesResultArray = [];
-//     var filterUstensilsResultArray = [];
-
-//     // VARIOUS DATA
-//     ingredientArrayDisplayInFilter = ingredientsArray;
-//     newingredientArrayForFilter = ingredientsArray;
-
-//     applianceArrayDisplayInFilter = appliancesArray;
-//     newApplianceArrayForFilter = appliancesArray;
-
-//     ustensilArrayDisplayInFilter = ustensilsArray;
-//     newUstensilArrayForFilter = ustensilsArray;
-
     // SEARCH BAR ALGORITHM
     const centralSearchBar = document.getElementById('searchbar');
-
-    // var searchResultArrayFromIngredient = [];
     var resultForsearchIngredient = [];
-
-    // var searchResultArrayFromNameRecipe = [];
     var resultForSearchName = [];
-
-    // var searchResultArrayFromDescriptionRecipe = [];
     var resultForSearchDescription = [];
 
     centralSearchBar.addEventListener('change', function(event) {
@@ -99,12 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (var i = 0; i < resultForsearchIngredient.length; i++) {
                     let indexForResultSearchIngredient = resultForsearchIngredient[i];
                     let ingredientByIndex = ingredientArray[indexForResultSearchIngredient];
-                    // searchResultArrayFromIngredient.push(ingredientByIndex);
                     resultOfResearch.push(ingredientByIndex);                 
                 }
-                // console.log(searchResultArrayFromIngredient)
                 
-
                 // SEARCH DATA IN THE VALUE NAME RECIPE
                 for (var l = 0; l < nameArray.length; l++) {
                     let nameList = nameArray[l].toLowerCase().split(" ");
@@ -125,12 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (var i = 0; i < resultForSearchName.length; i++) {
                     let indexForResultSearchName = resultForSearchName[i];
                     let nameRecipeByIndex = nameArray[indexForResultSearchName];
-                    // searchResultArrayFromNameRecipe.push(nameRecipeByIndex);
                     resultOfResearch.push(nameRecipeByIndex);
                 }
-                // console.log(searchResultArrayFromNameRecipe)
                 
-
                 // SEARCH DATA IN THE VALUE DESCRIPTION RECIPE
                 for (var n = 0; n < descriptionArray.length; n++) {
                     let descriptionList = descriptionArray[n].toLowerCase().split(" ");
@@ -151,13 +90,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (var i = 0; i < resultForSearchDescription.length; i++) {
                     let indexForResultSearchDescription = resultForSearchDescription[i];
                     let descriptionRecipeByIndex = descriptionArray[indexForResultSearchDescription];
-                    // searchResultArrayFromDescriptionRecipe.push(descriptionRecipeByIndex);
                     resultOfResearch.push(descriptionRecipeByIndex);
                 }
             }
             searchAllRecipes(resultOfResearch);
         }
-        
+
         console.log(recipeResult)
         if(recipeResult.length > 0) {
             showRecipes(recipeResult);
