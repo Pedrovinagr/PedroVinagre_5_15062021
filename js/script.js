@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             searchAllRecipes(resultOfResearch);
         }
 
+        showRecipes(recipeResult);
         console.log(recipeResult)
         if(recipeResult.length > 0) {
             showRecipes(recipeResult);

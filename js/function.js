@@ -137,11 +137,11 @@ function menuDéroulantUst() {
 }
 
 // SHOW RECIPES IN HTML
-function showRecipes(recipes) {
+function showRecipes(recipescard) {
     var recipeList = document.getElementById("recipes-list");
 
-    for(var i = 0; i < recipes.length; i++) {
-        var recipe = recipes[i];
+    for(var i = 0; i < recipescard.length; i++) {
+        var recipe = recipescard[i];
 
         var recipeCard = document.createElement("div");
         recipeCard.className = "cards col-4";
