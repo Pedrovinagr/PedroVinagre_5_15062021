@@ -139,6 +139,7 @@ function menuDéroulantUst() {
 // SHOW RECIPES IN HTML
 function showRecipes(recipescard) {
     var recipeList = document.getElementById("recipes-list");
+    recipeList.innerHTML = "";
 
     for(var i = 0; i < recipescard.length; i++) {
         var recipe = recipescard[i];
