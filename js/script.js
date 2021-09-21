@@ -101,9 +101,12 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             showRecipes(recipes);
         }
-        console.log(recipeResult)
-        // UPDATE FILTER INGREDIENT
+        // RESRET DATA ARRAY 
         ingredientArray = [];
+        applianceArray = [];
+        ustensilArray = [];
+
+        // UPDATE FILTER INGREDIENT
         for(var i = 0; i < recipeResult.length; i++) {
             var dataFilterIngredients = recipeResult[i].ingredients;
             for (var j = 0; j < dataFilterIngredients.length; j++) {
@@ -113,42 +116,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 } 
             }
         }
-        console.log(ingredientArray)
+
+        // UPDATE FILTER APPLIANCE
+        for (var i = 0; i < recipeResult.length; i++) {
+            var dataFilterAppliances = recipeResult[i].appliance;
+            if(!applianceArray.includes(dataFilterAppliances)) {
+                applianceArray.push(dataFilterAppliances);
+            }
+        }
+
+        // UPDATE FILTER USTENSIL
+        for (var i = 0; i < recipeResult.length; i++) {
+            var dataUstensils = recipeResult[i].ustensils;
+            for (var j = 0; j < dataUstensils.length; j++) {
+                var dataFilterUstensils = dataUstensils[j];
+                if(!ustensilArray.includes(dataFilterUstensils)) {
+                    ustensilArray.push(dataFilterUstensils);
+                }
+            }
+        }
+
+        // INSERT DATA INTO FILTERS
         showIngredients(ingredientArray);
+        showAppliance(applianceArray);
+        showUstensils(ustensilArray);
 
-
-        // // FILTER APPLIANCE
-        // for (var i = 0; i < recipeResult.length; i++) {
-        //     var dataFilterAppliances = recipeResult[i].appliance;
-        //     if(!filterAppliancesResultArray.includes(dataFilterAppliances)) {
-        //         filterAppliancesResultArray.push(dataFilterAppliances);
-        //     }
-        // }
-
-        // // FILTER USTENSIL
-        // for (var i = 0; i < recipeResult.length; i++) {
-        //     var dataUstensils = recipeResult[i].ustensils;
-        //     for (var j = 0; j < dataUstensils.length; j++) {
-        //         var dataFilterUstensils = dataUstensils[j];
-        //         if(!filterUstensilsResultArray.includes(dataFilterUstensils)) {
-        //         filterUstensilsResultArray.push(dataFilterUstensils);
-        //         }
-        //     }
-        // }
-
-        // // INSERT DATA INTO FILTERS
-        
-        // ingredientArrayDisplayInFilter = filterIngredientsResultArray;
-        // newingredientArrayForFilter = filterIngredientsResultArray;
-        // // console.log(ingredientArrayDisplayInFilter)
-        // showIngredients(newingredientArrayForFilter);
-        // // removeIngredientSelectedTag(filterIngredientsResultArray);
-        // // ingredientArrayShown = filterIngredientsResultArray;
-        // applianceArrayDisplayInFilter = filterAppliancesResultArray;
-        // showAppliance(applianceArrayDisplayInFilter);
-
-        // ustensilArrayDisplayInFilter = filterUstensilsResultArray;
-        // showUstensils(ustensilArrayDisplayInFilter);
     });
     
     // SEARCH FILTERS ALGORITHM

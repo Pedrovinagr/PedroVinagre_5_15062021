@@ -74,7 +74,10 @@ function menuDéroulantIng() {
         visibleList = document.getElementById('btn_filter_ing');
         changeChevron = document.createElement("i");
         changeChevron.className = "chevron fas fa-chevron-up";
-        visibleList.appendChild(changeChevron);  
+        visibleList.appendChild(changeChevron);
+        document.getElementById('filter_ingredient').style.height = "auto";
+        document.getElementById('filter_appareil').style.height = "70px";
+        document.getElementById('filter_ustensil').style.height = "70px";
     }
     else{
         var changeChevron = document.getElementById('btn_filter_ing');
@@ -99,7 +102,11 @@ function menuDéroulantApp() {
         visibleList = document.getElementById('btn_filter_app');
         changeChevron = document.createElement("i");
         changeChevron.className = "chevron fas fa-chevron-up";
-        visibleList.appendChild(changeChevron);  
+        visibleList.appendChild(changeChevron);
+        document.getElementById('filter_ingredient').style.height = "70px";
+        document.getElementById('filter_appareil').style.height = "auto";
+        document.getElementById('filter_ustensil').style.height = "70px";
+         
     }
     else{
         var changeChevron = document.getElementById('btn_filter_app');
@@ -124,7 +131,10 @@ function menuDéroulantUst() {
         visibleList = document.getElementById('btn_filter_ust');
         changeChevron = document.createElement("i");
         changeChevron.className = "chevron fas fa-chevron-up";
-        visibleList.appendChild(changeChevron);  
+        visibleList.appendChild(changeChevron);
+        document.getElementById('filter_ingredient').style.height = "70px";
+        document.getElementById('filter_appareil').style.height = "70px";
+        document.getElementById('filter_ustensil').style.height = "auto";  
     }
     else{
         var changeChevron = document.getElementById('btn_filter_ust');
@@ -261,6 +271,7 @@ function showIngredients(ingredientArray) {
 // SHOW FILTER APPLIANCE
 function showAppliance(appliancesArray) {
     var filterAppliance = document.getElementById('appareils_list');
+    filterAppliance.innerHTML = '';
     var applianceInFilterHtmlParent = document.createElement('ul');
 
     for(var i = 0; i < appliancesArray.length; i++) {
@@ -276,6 +287,7 @@ function showAppliance(appliancesArray) {
 // SHOW FILTER USTENSIL
 function showUstensils(usentilsArray) {
     var filterUstensils = document.getElementById('ustensiles_list');
+    filterUstensils.innerHTML = '';
     var ustensilsInFilterHtmlParent = document.createElement('ul');
 
     for(var i = 0; i < usentilsArray.length; i++) {
