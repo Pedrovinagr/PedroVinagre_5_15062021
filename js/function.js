@@ -242,6 +242,7 @@ function showRecipes(recipescard) {
 // SHOW FILTER INGREDIENT
 function showIngredients(ingredientArray) {
     var filterIngredient = document.getElementById('ingredients_list');
+    filterIngredient.innerHTML = '';
     var ingredientInFilterHtmlParent = document.createElement('ul');
     // ingredientInFilterHtmlParent.id = "ingredients_ul"
 

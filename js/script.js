@@ -96,72 +96,116 @@ document.addEventListener("DOMContentLoaded", function() {
             searchAllRecipes(resultOfResearch);
         }
 
-        showRecipes(recipeResult);
-        console.log(recipeResult)
         if(recipeResult.length > 0) {
             showRecipes(recipeResult);
-            console.log(recipeResult)
         } else {
             showRecipes(recipes);
         }
+        console.log(recipeResult)
+        // UPDATE FILTER INGREDIENT
+        ingredientArray = [];
+        for(var i = 0; i < recipeResult.length; i++) {
+            var dataFilterIngredients = recipeResult[i].ingredients;
+            for (var j = 0; j < dataFilterIngredients.length; j++) {
+                var dataFilterIngredient = dataFilterIngredients[j].ingredient;
+                if(!ingredientArray.includes(dataFilterIngredient)) {
+                    ingredientArray.push(dataFilterIngredient);
+                } 
+            }
+        }
+        console.log(ingredientArray)
+        showIngredients(ingredientArray);
+
+
+        // // FILTER APPLIANCE
+        // for (var i = 0; i < recipeResult.length; i++) {
+        //     var dataFilterAppliances = recipeResult[i].appliance;
+        //     if(!filterAppliancesResultArray.includes(dataFilterAppliances)) {
+        //         filterAppliancesResultArray.push(dataFilterAppliances);
+        //     }
+        // }
+
+        // // FILTER USTENSIL
+        // for (var i = 0; i < recipeResult.length; i++) {
+        //     var dataUstensils = recipeResult[i].ustensils;
+        //     for (var j = 0; j < dataUstensils.length; j++) {
+        //         var dataFilterUstensils = dataUstensils[j];
+        //         if(!filterUstensilsResultArray.includes(dataFilterUstensils)) {
+        //         filterUstensilsResultArray.push(dataFilterUstensils);
+        //         }
+        //     }
+        // }
+
+        // // INSERT DATA INTO FILTERS
+        
+        // ingredientArrayDisplayInFilter = filterIngredientsResultArray;
+        // newingredientArrayForFilter = filterIngredientsResultArray;
+        // // console.log(ingredientArrayDisplayInFilter)
+        // showIngredients(newingredientArrayForFilter);
+        // // removeIngredientSelectedTag(filterIngredientsResultArray);
+        // // ingredientArrayShown = filterIngredientsResultArray;
+        // applianceArrayDisplayInFilter = filterAppliancesResultArray;
+        // showAppliance(applianceArrayDisplayInFilter);
+
+        // ustensilArrayDisplayInFilter = filterUstensilsResultArray;
+        // showUstensils(ustensilArrayDisplayInFilter);
     });
     
-    // // SEARCH FILTERS ALGORITHM
-    // const ingredientSearchBar = document.getElementById('search_ingredients');
-    // const applianceSearchBar = document.getElementById('search_appareils');
-    // const ustensilSearchBar = document.getElementById('search_ustensiles')
+    // SEARCH FILTERS ALGORITHM
+    const ingredientSearchBar = document.getElementById('search_ingredients');
+    const applianceSearchBar = document.getElementById('search_appareils');
+    const ustensilSearchBar = document.getElementById('search_ustensiles')
 
-    // var searchResultArrayFromIngredientFilter = [];
-    // var resultForsearchIngredientInFilter = [];
+    var searchResultArrayFromIngredientFilter = [];
+    var resultForsearchIngredientInFilter = [];
 
-    // var searchResultArrayFromApplianceFilter = [];
-    // var resultForsearchApplianceInFilter = [];
+    var searchResultArrayFromApplianceFilter = [];
+    var resultForsearchApplianceInFilter = [];
 
-    // var searchResultArrayFromUstensilFilter = [];
-    // var resultForsearchUstensilInFilter = [];
+    var searchResultArrayFromUstensilFilter = [];
+    var resultForsearchUstensilInFilter = [];
 
-    // // SEARCH FILTER INGREDIENT
-    // ingredientSearchBar.addEventListener('change', function(event) {
-    //     var valueresearchFilter = event.target.value;
-    //     var cleanValueFilter = valueresearchFilter.toLowerCase();
+    // SEARCH FILTER INGREDIENT
+    ingredientSearchBar.addEventListener('change', function(event) {
+        var valueresearchFilter = event.target.value;
 
-    //     if(cleanValueFilter.length >= 3){
-    //         if(cleanValueFilter.indexOf("") != -1) {
-    //             let searchArrayFilter = cleanValueFilter.split(" ");
-    //             for (var i = 0; i < searchArrayFilter.length; i++) {
-    //             let searchWordFilter = searchArrayFilter[i];
-    //                 if(searchWordFilter.length > 2) {
-    //                     for (var j = 0; j < filterIngredientsResultArray.length; j++) {
-    //                         let ingredientListFilter = filterIngredientsResultArray[j].toLowerCase();
-    //                         if(ingredientListFilter.indexOf("") != -1) {
-    //                             let wordIngredientListFilter = ingredientListFilter.split(" ");
-    //                             for (var K = 0; K < wordIngredientListFilter.length; K++) {
-    //                                 let ingredientWordInFilter = wordIngredientListFilter[K];
-    //                                 if(ingredientWordInFilter === searchWordFilter) {
-    //                                     resultForsearchIngredientInFilter.push(j);
-    //                                 }
-    //                             }
-    //                         }
-    //                         else { 
-    //                             if(ingredientListFilter === searchWordFilter) {
-    //                             resultForsearchIngredientInFilter.push(j);
-    //                             }
-    //                         }
-    //                     }
-    //                     for (var i = 0; i < resultForsearchIngredientInFilter.length; i++) {
-    //                         let indexForResultSearchIngredientInFilter = resultForsearchIngredientInFilter[i];
-    //                         let ingredientFilterByIndex = filterIngredientsResultArray[indexForResultSearchIngredientInFilter];
-    //                         searchResultArrayFromIngredientFilter.push(ingredientFilterByIndex);                 
-    //                     }
-                        
-    //                     ingredientArrayDisplayInFilter = searchResultArrayFromIngredientFilter;
-    //                     newingredientArrayForFilter = searchResultArrayFromIngredientFilter;
-    //                     showIngredients(newingredientArrayForFilter);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // });
+        if(valueresearchFilter.length >= 3){
+            var searchArrayFilter = valueresearchFilter.toLowerCase().split(" ");
+            for (var i = 0; i < searchArrayFilter.length; i++) {
+                let searchWordFilter = searchArrayFilter[i];
+
+                if(searchWordFilter.length > 2) {
+                    for (var j = 0; j < ingredientArray.length; j++) {
+                        let ingredientListFilter = ingredientArray[j].toLowerCase().split(" ");
+                        console.log(ingredientListFilter)
+                        // if(ingredientListFilter.indexOf("") != -1) {
+                        //     for (var K = 0; K < ingredientListFilter.length; K++) {
+                        //         let ingredientWordInFilter = ingredientListFilter[K];
+                        //         if(ingredientWordInFilter === searchWordFilter) {
+                        //             resultForsearchIngredientInFilter.push(j);
+                        //         }
+                        //         console.log(resultForsearchIngredientInFilter)
+                        //     }
+                        // }
+                        // else { 
+                        //     if(ingredientListFilter === searchWordFilter) {
+                        //     resultForsearchIngredientInFilter.push(j);
+                        //     }
+                        // }
+                    }
+                    for (var i = 0; i < resultForsearchIngredientInFilter.length; i++) {
+                        let indexForResultSearchIngredientInFilter = resultForsearchIngredientInFilter[i];
+                        let ingredientFilterByIndex = filterIngredientsResultArray[indexForResultSearchIngredientInFilter];
+                        searchResultArrayFromIngredientFilter.push(ingredientFilterByIndex);                 
+                    }
+                    
+                    ingredientArrayDisplayInFilter = searchResultArrayFromIngredientFilter;
+                    newingredientArrayForFilter = searchResultArrayFromIngredientFilter;
+                    showIngredients(newingredientArrayForFilter);
+                }
+            }
+        }
+    });
 
     // // SEARCH FILTER APPLIANCE
     // applianceSearchBar.addEventListener('change', function(event) {
