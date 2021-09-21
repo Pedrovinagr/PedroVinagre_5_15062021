@@ -60,6 +60,45 @@ function searchAllRecipes (dataSearchBar){
     }
     return recipeResult;
 }
+// SEARCH INSIDE RECIPES IN SEARCH BAR
+function searchBarRecipes (dataSearchBar){
+    for(var i = 0; i < recipeResult.length - 1; i++) {
+        var recipe = recipeResult[i];   
+        var ingredientsInRecipe = recipe.ingredients;
+        var nameInRecipe = recipe.name;
+        var descriptionInRecipe = recipe.description;
+
+        for(var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchIngredient = dataSearchBar[j];
+            for(var k = 0; k < ingredientsInRecipe.length; k++) {
+                var ingredientInRecipe = ingredientsInRecipe[k];
+                if(ingredientInRecipe.ingredient == resultSearchIngredient) {
+                    if(!recipeResultFilter.includes(recipe)) {
+                        recipeResultFilter.push(recipe);
+                    }
+                }
+            }
+        }
+        for (var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchNameRecipe = dataSearchBar[j];
+            if (resultSearchNameRecipe == nameInRecipe) {
+                if (!recipeResultFilter.includes(recipe)) {
+                    recipeResultFilter.push(recipe);
+                }
+            }
+        }
+
+        for (var j = 0; j < dataSearchBar.length; j++) {
+            var resultSearchDescriptionRecipe = dataSearchBar[j];
+            if (resultSearchDescriptionRecipe == descriptionInRecipe) {
+                if (!recipeResultFilter.includes(recipe)) {
+                    recipeResultFilter.push(recipe);
+                }
+            }
+        } 
+    }
+    return recipeResultFilter;
+}
 
 // FILTER INGREDIENT
 function menuDéroulantIng() {

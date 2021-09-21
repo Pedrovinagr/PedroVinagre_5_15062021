@@ -7,8 +7,10 @@ var applianceArray = [];
 var ustensilArray = [];
 var timeArray = [];
 var recipeResult = [];
+var recipeResultFilter = [];
 var inputDataOfSearchBar = [];
 var resultOfResearch = [];
+var resultOfResearchFilter = [];
 
 // FONCTION D'AFFICHAGE DES FILTRES
 var chevronDown = document.querySelector('.fa-chevron-down');
