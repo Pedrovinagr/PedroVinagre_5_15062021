@@ -265,6 +265,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var searchResultArrayFromUstensilFilter = [];
     var resultForsearchUstensilInFilter = [];
 
+    // FUNCTIONAL SEARCH BAR INGREDIENT CORRELATED WITH THE MAIN BAR
+    ingredientSearchBar.addEventListener('focus', function(event) {
+        if(centralSearchBar.value ==""){
+            ingredientSearchBar.disabled = true;
+        }
+    });
+
     // SEARCH FILTER INGREDIENT
     ingredientSearchBar.addEventListener('change', function(event) {
         var valueresearchFilter = event.target.value;
@@ -308,6 +315,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+     // FUNCTIONAL SEARCH BAR INGREDIENT CORRELATED WITH THE MAIN BAR
+     applianceSearchBar.addEventListener('focus', function(event) {
+        if(centralSearchBar.value ==""){
+            applianceSearchBar.disabled = true;
+        }
+    });
+
     // SEARCH FILTER APPLIANCE
     applianceSearchBar.addEventListener('change', function(event) {
         var valueresearchFilter = event.target.value;
@@ -348,6 +362,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             }
+        }
+    });
+
+     // FUNCTIONAL SEARCH BAR INGREDIENT CORRELATED WITH THE MAIN BAR
+     ustensilSearchBar.addEventListener('focus', function(event) {
+        if(centralSearchBar.value ==""){
+            ustensilSearchBar.disabled = true;
         }
     });
     
