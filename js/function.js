@@ -60,6 +60,7 @@ function searchAllRecipes (dataSearchBar){
     }
     return recipeResult;
 }
+
 // SEARCH INSIDE RECIPES IN SEARCH BAR
 function searchBarRecipes (dataSearchBar){
     for(var i = 0; i < recipeResult.length - 1; i++) {

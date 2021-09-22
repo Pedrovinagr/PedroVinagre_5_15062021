@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     centralSearchBar.addEventListener('change', function(event) {
 
-        var searchWord = event.target.value;
+        searchWord = event.target.value;
         resultOfResearchNeed(searchWord);
         
         if(inputDataOfSearchBar.length > 0) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showUstensils(ustensilArray);
 
     });
-    
+
     // SEARCH FILTERS ALGORITHM
     const ingredientSearchBar = document.getElementById('search_ingredients');
     const applianceSearchBar = document.getElementById('search_appareils');
@@ -196,8 +196,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 searchBarRecipes(resultOfResearchFilter);
             }
         }
-        if(recipeResult.length > 0) {
-            showRecipes(recipeResultFilter);
+
+        
+        if((centralSearchBar.value !="" && ingredientSearchBar.value != "") || (ingredientSearchBar.value != "" && centralSearchBar.value !="")){
+            
+            console.log(centralSearchBar)
+            console.log(ingredientSearchBar)
+        
+        }
+        
+        if(recipeResultFilter.length > 0) {
+            // showRecipes(recipeResultFilter);
             // RESRET DATA ARRAY
             applianceArray = [];
             ustensilArray = [];

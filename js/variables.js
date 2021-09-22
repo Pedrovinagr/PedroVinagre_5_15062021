@@ -12,6 +12,8 @@ var inputDataOfSearchBar = [];
 var resultOfResearch = [];
 var resultOfResearchFilter = [];
 
+var searchWord = "";
+
 // FONCTION D'AFFICHAGE DES FILTRES
 var chevronDown = document.querySelector('.fa-chevron-down');
 var chevronUp = document.querySelector('.fa-chevron-up');
