@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
     ingredientSearchBar.addEventListener('change', function(event) {
         if(centralSearchBar.value != "") {
             showRecipes(recipeResult);
+            console.log(recipeResultFilter)
         }
         else {
-            dataSearchLoop(ingredientSearchBar);
+            dataSearchBarLoop(ingredientSearchBar);
             showRecipes(recipeResult);
         }
     });
