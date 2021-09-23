@@ -306,10 +306,10 @@ function dataSearchBarLoop(valueInput) {
     var resultForsearchIngredient = [];
     var resultForSearchName = [];
     var resultForSearchDescription = [];
-
+    
     valueInput.addEventListener('change', function(event) {
-
         searchWord = event.target.value;
+        console.log(searchWord)
         resultOfResearchNeed(searchWord);
         
         if(inputDataOfSearchBar.length > 0) {
@@ -561,45 +561,45 @@ function searchAllRecipes (dataSearchBar){
     }
     return recipeResult;
 }
-// // TAG INGREDIENT HTML
-// function createIngredientFilterTag(event) {
-//     var ingredientSelected = event.target.innerText;
-//     collectValueTagIngredient(ingredientSelected);
+// TAG INGREDIENT HTML
+function createIngredientFilterTag(event) {
+    var ingredientSelected = event.target.innerText;
+    collectValueTagIngredient(ingredientSelected);
 
-//     var tagContainer = document.getElementById("ingredients__tag");
-//     var filterIngredient = document.createElement("div");
-//     filterIngredient.classList.add("tag_input");
-//     filterIngredient.id = "ingredients_tag";
-//     var textIngredient = document.createElement("p");
-//     textIngredient.classList.add("text_ingredient");
-//     textIngredient.id = "ingredient_text"
-//     textIngredient.textContent = ingredientSelected;
-//     filterIngredient.appendChild(textIngredient);
-//     tagContainer.appendChild(filterIngredient);
+    var tagContainer = document.getElementById("ingredients__tag");
+    var filterIngredient = document.createElement("div");
+    filterIngredient.classList.add("tag_input");
+    filterIngredient.id = "ingredients_tag";
+    var textIngredient = document.createElement("p");
+    textIngredient.classList.add("text_ingredient");
+    textIngredient.id = "ingredient_text"
+    textIngredient.textContent = ingredientSelected;
+    filterIngredient.appendChild(textIngredient);
+    tagContainer.appendChild(filterIngredient);
 
-//     var iconTag = document.createElement("div");
-//     iconTag.classList.add("icon_tag");
-//     iconTag.id = "remove_ingredient";
-//     var iconImage = document.createElement("i");
+    var iconTag = document.createElement("div");
+    iconTag.classList.add("icon_tag");
+    iconTag.id = "remove_ingredient";
+    var iconImage = document.createElement("i");
 
-//     var listIngredientbeforeTag = document.querySelectorAll('.ingredients');
-//     for (var i = 0; i < listIngredientbeforeTag.length; i++) {
-//        var ingredientListBeforeTag = listIngredientbeforeTag[i].innerText; 
-//        filterIngredientArrayBeforeTag.push(ingredientListBeforeTag);
-//     }
+    var listIngredientbeforeTag = document.querySelectorAll('.ingredients');
+    for (var i = 0; i < listIngredientbeforeTag.length; i++) {
+       var ingredientListBeforeTag = listIngredientbeforeTag[i].innerText; 
+       filterIngredientArrayBeforeTag.push(ingredientListBeforeTag);
+    }
 
-//     iconImage.addEventListener("click", removeTagIngredient);
+    iconImage.addEventListener("click", removeTagIngredient);
 
-//     iconImage.className = "far fa-times-circle";
-//     iconTag.appendChild(iconImage);
-//     filterIngredient.appendChild(iconTag);
+    iconImage.className = "far fa-times-circle";
+    iconTag.appendChild(iconImage);
+    filterIngredient.appendChild(iconTag);
 
-//     var indexOfIngredients = ingredientArrayDisplayInFilter.indexOf(ingredientSelected);
-//     ingredientArrayDisplayInFilter.splice(indexOfIngredients, 1);
-//     showIngredients(ingredientArrayDisplayInFilter);
+    var indexOfIngredients = ingredientArrayDisplayInFilter.indexOf(ingredientSelected);
+    ingredientArrayDisplayInFilter.splice(indexOfIngredients, 1);
+    showIngredients(ingredientArrayDisplayInFilter);
 
-//     iconImage.addEventListener("click", addIngredientFilter);   
-// }
+    iconImage.addEventListener("click", addIngredientFilter);   
+}
 
 // // TAG APPLIANCE HTML
 // function createApplianceFilterTag(event) {

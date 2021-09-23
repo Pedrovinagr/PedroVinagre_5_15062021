@@ -16,16 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     dataSearchBarLoop(centralSearchBar);
     datasearchfilterLoop(ingredientSearchBar);
-    ingredientSearchBar.addEventListener('change', function(event) {
-        if(centralSearchBar.value != "") {
-            showRecipes(recipeResult);
-            console.log(recipeResultFilter)
-        }
-        else {
-            dataSearchBarLoop(ingredientSearchBar);
-            showRecipes(recipeResult);
-        }
-    });
+    if(centralSearchBar.value != "") {
+        showRecipes(recipeResult);
+    }
+    else  {
+        dataSearchBarLoop(ingredientSearchBar);
+    }
+
+
     
     // if(centralSearchBar.value !="" && ingredientSearchBar.value != "") {
             
