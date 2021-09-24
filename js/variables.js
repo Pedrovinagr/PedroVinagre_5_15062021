@@ -3,6 +3,7 @@ var nameArray = [];
 var descriptionArray = [];
 var ingredientsArray = [];
 var ingredientArray = [];
+console.log(ingredientArray)
 var applianceArray = [];
 var ustensilArray = [];
 var timeArray = [];
@@ -33,20 +34,26 @@ for (let i = 0; i < recipes.length; i++) {
     var ingredientsRecipe = recipes[i].ingredients;
     ingredientsArray.push(ingredientsRecipe);
     for (var j = 0; j < ingredientsRecipe.length; j++) {
-        var ingredientRecipe = ingredientsRecipe[j].ingredient;
-        ingredientArray.push(ingredientRecipe); 
+        var ingredientRecipe = ingredientsRecipe[j].ingredient.toLowerCase();
+        if(!ingredientArray.includes(ingredientRecipe)) {
+            ingredientArray.push(ingredientRecipe);
+        }
     }
     
     var descriptionRecipe = recipes[i].description;
     descriptionArray.push(descriptionRecipe);
 
-    var applianceRecipe = recipes[i].appliance;
-    applianceArray.push(applianceRecipe);
+    var applianceRecipe = recipes[i].appliance.toLowerCase();
+    if(!applianceArray.includes(applianceRecipe)) {
+        applianceArray.push(applianceRecipe);
+    }
 
     var ustensilsRecipe = recipes[i].ustensils;
     for (var j = 0; j < ustensilsRecipe.length; j++) {
-        var ustensilRecipe = ustensilsRecipe[j];
-        ustensilArray.push(ustensilRecipe); 
+        var ustensilRecipe = ustensilsRecipe[j].toLowerCase();
+        if(!ustensilArray.includes(ustensilRecipe)){
+            ustensilArray.push(ustensilRecipe); 
+        }  
     }
 
     var timeRecipe = recipes[i].time;
