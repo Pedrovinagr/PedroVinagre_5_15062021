@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     dataSearchBarLoop(centralSearchBar);
     datasearchfilterLoop(ingredientSearchBar);
+    // datasearchfilterAppLoop(applianceSearchBar);
+
+
     if(centralSearchBar.value != "") {
         showRecipes(recipeResult);
     }
     else  {
-        dataSearchBarLoop(ingredientSearchBar);
+        showRecipes(recipes);
+        // dataSearchBarLoop(ingredientSearchBar);
     }
 
 
