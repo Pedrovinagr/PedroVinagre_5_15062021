@@ -8,11 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     showAppliance(applianceArray);
     showUstensils(ustensilArray);
 
-    // SEARCH BAR ALGORITHM
-    const centralSearchBar = document.getElementById('searchbar');
-    const ingredientSearchBar = document.getElementById('search_ingredients');
-    const applianceSearchBar = document.getElementById('search_appareils');
-    const ustensilSearchBar = document.getElementById('search_ustensiles')
 
     dataSearchBarLoop(centralSearchBar);
     datasearchfilterLoop(ingredientSearchBar);

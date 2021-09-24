@@ -14,6 +14,14 @@ var resultOfResearchFilter = [];
 
 var searchWord = "";
 
+
+
+// SEARCH BAR ALGORITHM
+const centralSearchBar = document.getElementById('searchbar');
+const ingredientSearchBar = document.getElementById('search_ingredients');
+const applianceSearchBar = document.getElementById('search_appareils');
+const ustensilSearchBar = document.getElementById('search_ustensiles')
+
 // FONCTION D'AFFICHAGE DES FILTRES
 var chevronDown = document.querySelector('.fa-chevron-down');
 var chevronUp = document.querySelector('.fa-chevron-up');
