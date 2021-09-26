@@ -195,6 +195,24 @@ function menuDéroulantIng() {
         document.getElementById('filter_ingredient').style.height = "auto";
         document.getElementById('filter_appareil').style.height = "70px";
         document.getElementById('filter_ustensil').style.height = "70px";
+
+        var hideListAppliance = document.getElementById('appareils_list')
+        hideListAppliance.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_app');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_app');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
+
+        var hideListUstensil = document.getElementById('ustensiles_list')
+        hideListUstensil.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_ust');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ust');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
     }
     else{
         var changeChevron = document.getElementById('btn_filter_ing');
@@ -223,8 +241,26 @@ function menuDéroulantApp() {
         document.getElementById('filter_ingredient').style.height = "70px";
         document.getElementById('filter_appareil').style.height = "auto";
         document.getElementById('filter_ustensil').style.height = "70px";
-         
+
+        var hideListIngredient = document.getElementById('ingredients_list')
+        hideListIngredient.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_ing');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ing');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
+
+        var hideListUstensil = document.getElementById('ustensiles_list')
+        hideListUstensil.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_ust');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ust');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
     }
+
     else{
         var changeChevron = document.getElementById('btn_filter_app');
         changeChevron.innerHTML = "";
@@ -251,8 +287,27 @@ function menuDéroulantUst() {
         visibleList.appendChild(changeChevron);
         document.getElementById('filter_ingredient').style.height = "70px";
         document.getElementById('filter_appareil').style.height = "70px";
-        document.getElementById('filter_ustensil').style.height = "auto";  
+        document.getElementById('filter_ustensil').style.height = "auto";
+
+        var hideListIngredient = document.getElementById('ingredients_list')
+        hideListIngredient.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_ing');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ing');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
+        
+        var hideListAppliance = document.getElementById('appareils_list')
+        hideListAppliance.className = "motion"
+        var changeChevron = document.getElementById('btn_filter_app');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_app');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
     }
+    
     else{
         var changeChevron = document.getElementById('btn_filter_ust');
         changeChevron.innerHTML = "";
@@ -484,7 +539,6 @@ function datasearchfilterIngLoop (valueInputFilter) {
                 console.log(recipes)
                 console.log(recipeResult)
                 console.log(recipeResultTag)
-                console.log(searchWord)
             } else {
                 if(!document.getElementById('searchbar').value != "") {
                     document.getElementById('non_conf').innerHTML = 'Sélectionnez un ingrédient dans le filtre ou Renseignez un ingredient existant !';
@@ -497,7 +551,6 @@ function datasearchfilterIngLoop (valueInputFilter) {
                     document.getElementById('non_conf').style.fontSize = '0.9rem';
                 }
                 showRecipes(recipeResult);
-                console.log(searchWord)
                 
 
             }
@@ -751,6 +804,15 @@ function createIngredientFilterTag(event) {
 
     iconImage.addEventListener("click", removeTagIngredient);
 
+    var hideListIngredient = document.getElementById('ingredients_list')
+    hideListIngredient.className = "motion"
+    var changeChevron = document.getElementById('btn_filter_ing');
+    changeChevron.innerHTML = "";
+    visibleList = document.getElementById('btn_filter_ing');
+    changeChevron = document.createElement("i");
+    changeChevron.className = "chevron fas fa-chevron-down";
+    visibleList.appendChild(changeChevron);
+
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
     filterIngredient.appendChild(iconTag);
@@ -972,6 +1034,7 @@ function collectValueTagIngredient(value) {
             }
             if(recipeResultTag.length > 0) {
                 showRecipes(recipeResultTag);
+                showIngredients(ingredientInRecipe)
                 console.log(recipes)
                 console.log(recipeResult)
                 console.log(recipeResultTag)
@@ -993,17 +1056,29 @@ function collectValueTagIngredient(value) {
 
                     for(var k = 0; k < ingredientsInRecipe.length; k++) {
                         var ingredientInRecipe = ingredientsInRecipe[k].ingredient.toLowerCase();
-
                         if(ingredientInRecipe === resultTagIngredient) {
                             if(!recipeResultTag.includes(recipe)) {
                                 recipeResultTag.push(recipe);
                             }
                         }
+                        // showIngredients(ingredientInRecipe);
                     }
                 }
             }
             if(recipeResultTag.length > 0) {
                 showRecipes(recipeResultTag);
+                // for(var i = 0; i < recipeResultTag.length; i++) {
+                //     var recipe = recipeResultTag[i];
+                //     var ingredientsInRecipe = recipe.ingredients;
+                //     for (var j = 0; j < ingredientsInRecipe.length; j++) {
+                //         var ingredientInRecipe = ingredientsInRecipe[j].ingredient;
+                //         console.log(ingredientInRecipe)
+                //         showIngredients(ingredientInRecipe)
+                //     }
+
+                // }
+                
+                
                 console.log(recipes)
                 console.log(recipeResult)
                 console.log(recipeResultTag)
