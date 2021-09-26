@@ -3,7 +3,6 @@ var nameArray = [];
 var descriptionArray = [];
 var ingredientsArray = [];
 var ingredientArray = [];
-console.log(ingredientArray)
 var applianceArray = [];
 var ustensilArray = [];
 var timeArray = [];
