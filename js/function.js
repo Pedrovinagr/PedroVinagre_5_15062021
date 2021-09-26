@@ -484,14 +484,22 @@ function datasearchfilterIngLoop (valueInputFilter) {
                 console.log(recipes)
                 console.log(recipeResult)
                 console.log(recipeResultTag)
+                console.log(searchWord)
             } else {
-                document.getElementById('non_conf').innerHTML = 'Sélectionnez un ingrédient dans le filtre ou Renseignez un ingredient existant !'
-                document.getElementById('non_conf').style.color = 'red';
-                document.getElementById('non_conf').style.fontSize = '0.9rem';
+                if(!document.getElementById('searchbar').value != "") {
+                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un ingrédient dans le filtre ou Renseignez un ingredient existant !';
+                    document.getElementById('non_conf').style.color = 'red';
+                    document.getElementById('non_conf').style.fontSize = '0.9rem';
+                }
+                else{
+                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un ingrédient dans le filtre';
+                    document.getElementById('non_conf').style.color = 'green';
+                    document.getElementById('non_conf').style.fontSize = '0.9rem';
+                }
                 showRecipes(recipeResult);
-                console.log(recipes)
-                console.log(recipeResult)
-                console.log(recipeResultTag)
+                console.log(searchWord)
+                
+
             }
         }
 
