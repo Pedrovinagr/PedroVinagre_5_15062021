@@ -8,6 +8,8 @@ var ustensilArray = [];
 var timeArray = [];
 var recipeResult = [];
 var recipeResultFilter = [];
+var recipeResultTag = [];
+
 var inputDataOfSearchBar = [];
 var resultOfResearch = [];
 var resultOfResearchFilter = [];
