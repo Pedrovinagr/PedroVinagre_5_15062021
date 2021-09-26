@@ -307,7 +307,7 @@ function menuDéroulantUst() {
         changeChevron.className = "chevron fas fa-chevron-down";
         visibleList.appendChild(changeChevron);
     }
-    
+
     else{
         var changeChevron = document.getElementById('btn_filter_ust');
         changeChevron.innerHTML = "";
@@ -474,16 +474,18 @@ function dataSearchBarLoop(valueInput) {
 // SEARCH FILTER INGREDIENT
 function datasearchfilterIngLoop (valueInputFilter) {
 
-    var searchResultArrayFromIngredientFilter = [];
     var resultForsearchIngredientInFilter = [];
 
-    var searchResultArrayFromApplianceFilter = [];
-    var resultForsearchApplianceInFilter = [];
-
-    var searchResultArrayFromUstensilFilter = [];
-    var resultForsearchUstensilInFilter = [];
-
     valueInputFilter.addEventListener('change', function(event) {
+
+        var hideListIngredient = document.getElementById('ingredients_list')
+        hideListIngredient.className = "motion is_visible_ing"
+        var changeChevron = document.getElementById('btn_filter_ing');
+        changeChevron.innerHTML = "";
+        visibleList = document.getElementById('btn_filter_ing');
+        changeChevron = document.createElement("i");
+        changeChevron.className = "chevron fas fa-chevron-down";
+        visibleList.appendChild(changeChevron);
 
         var valueresearchFilter = event.target.value;
         if(valueresearchFilter.length >= 3){
