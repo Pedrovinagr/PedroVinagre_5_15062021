@@ -770,13 +770,13 @@ function datasearchfilterUstLoop (valueInputFilter) {
             
             else {
                 if(!document.getElementById('searchbar').value != "") {
-                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un appareil dans le filtre ou Renseignez un appareil existant !';
+                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un ustensile dans le filtre ou Renseignez un ustensile existant !';
                     document.getElementById('non_conf').style.color = 'red';
                     document.getElementById('non_conf').style.fontSize = '0.9rem';
                 }
 
                 else{
-                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un ingrédient dans le filtre';
+                    document.getElementById('non_conf').innerHTML = 'Sélectionnez un ustensile dans le filtre';
                     document.getElementById('non_conf').style.color = 'green';
                     document.getElementById('non_conf').style.fontSize = '0.9rem';
                 }
