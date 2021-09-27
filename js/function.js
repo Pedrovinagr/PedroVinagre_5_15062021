@@ -749,7 +749,6 @@ function datasearchfilterUstLoop (valueInputFilter) {
                     }                 
                 }
                 showUstensils(resultOfResearchFilter);
-                console.log(resultOfResearchFilter)
             }
         }
 
@@ -801,7 +800,6 @@ function datasearchfilterUstLoop (valueInputFilter) {
                     var dataFilterIngredients = dataIngredients[j].ingredient;
                     if(!ingredientArray.includes(dataFilterIngredients)) {
                         ingredientArray.push(dataFilterIngredients);
-                        console.log(ingredientArray)
                     }
                 }
             }
@@ -811,7 +809,6 @@ function datasearchfilterUstLoop (valueInputFilter) {
                 var dataFilterAppliances = recipeResultTag[i].appliance;
                 if(!applianceArray.includes(dataFilterAppliances)) {
                     applianceArray.push(dataFilterAppliances);
-                    console.log(applianceArray)
                 }
             }
 
@@ -919,7 +916,7 @@ function createIngredientFilterTag(event) {
     filterIngredient.id = "ingredients_tag";
     var textIngredient = document.createElement("p");
     textIngredient.classList.add("text_ingredient");
-    textIngredient.id = "ingredient_text"
+    textIngredient.id = "ingredient_text";
     textIngredient.textContent = ingredientSelected;
     filterIngredient.appendChild(textIngredient);
     tagContainer.appendChild(filterIngredient);
@@ -932,7 +929,7 @@ function createIngredientFilterTag(event) {
     iconImage.addEventListener("click", removeTagIngredient);
 
     var hideListIngredient = document.getElementById('ingredients_list')
-    hideListIngredient.className = "motion"
+    hideListIngredient.className = "motion";
     var changeChevron = document.getElementById('btn_filter_ing');
     changeChevron.innerHTML = "";
     visibleList = document.getElementById('btn_filter_ing');
@@ -971,13 +968,16 @@ function createApplianceFilterTag(event) {
     iconTag.classList.add("icon_tag");
     var iconImage = document.createElement("i");
 
-    // var listAppliancebeforeTag = document.querySelectorAll('.appliances');
-    // for (var i = 0; i < listAppliancebeforeTag.length; i++) {
-    //    var applianceListBeforeTag = listAppliancebeforeTag[i].innerText; 
-    //    filterApplianceArrayBeforeTag.push(applianceListBeforeTag);
-    // }
-
     iconImage.addEventListener("click", removeTagAppliance);
+
+    var hideListAppliance = document.getElementById('appareils_list')
+    hideListAppliance.className = "motion";
+    var changeChevron = document.getElementById('btn_filter_ing');
+    changeChevron.innerHTML = "";
+    visibleList = document.getElementById('btn_filter_ing');
+    changeChevron = document.createElement("i");
+    changeChevron.className = "chevron fas fa-chevron-down";
+    visibleList.appendChild(changeChevron);
 
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
@@ -1010,13 +1010,16 @@ function createUstensilFilterTag(event) {
     iconTag.classList.add("icon_tag");
     var iconImage = document.createElement("i");
 
-    // var listUstensilbeforeTag = document.querySelectorAll('.ustensils');
-    // for (var i = 0; i < listUstensilbeforeTag.length; i++) {
-    //    var ustensilListBeforeTag = listUstensilbeforeTag[i].innerText; 
-    //    filterUstensilArrayBeforeTag.push(ustensilListBeforeTag);
-    // }
-
     iconImage.addEventListener("click", removeTagUstensil);
+
+    var hideListUstensil = document.getElementById('ustensiles_list')
+    hideListUstensil.className = "motion";
+    var changeChevron = document.getElementById('btn_filter_ing');
+    changeChevron.innerHTML = "";
+    visibleList = document.getElementById('btn_filter_ing');
+    changeChevron = document.createElement("i");
+    changeChevron.className = "chevron fas fa-chevron-down";
+    visibleList.appendChild(changeChevron);
 
     iconImage.className = "far fa-times-circle";
     iconTag.appendChild(iconImage);
@@ -1123,7 +1126,7 @@ function addUstensilFilter(event){
 }
 
 
-// FONCTION D'AFFICHAGE DES RECETTES PAR RAPPORT AU TAG INGREDIENT
+// FONCTION D'AFFICHAGE DES RECETTES PAR RAPPORT AU TAG
 var ingredientTagValue = [];
 var applianceTagValue = [];
 var ustensilTagValue = [];

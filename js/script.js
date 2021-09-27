@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     dataSearchBarLoop(centralSearchBar);
     datasearchfilterIngLoop(ingredientSearchBar);
     datasearchfilterAppLoop(applianceSearchBar);
+    datasearchfilterUstLoop(ustensilSearchBar);
+
 
     if(centralSearchBar.value != "") {
         showRecipes(recipeResult);
