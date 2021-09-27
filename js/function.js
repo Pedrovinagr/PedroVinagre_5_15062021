@@ -637,7 +637,6 @@ function datasearchfilterAppLoop (valueInputFilter) {
                     }                 
                 }
                 showAppliance(resultOfResearchFilter);
-                console.log(resultOfResearchFilter)
             }
         }
 
@@ -655,7 +654,6 @@ function datasearchfilterAppLoop (valueInputFilter) {
 
             if(recipeResultTag.length > 0) {
                 showRecipes(recipeResultTag);
-                console.log(recipeResultTag)
             } 
             
             else {
@@ -682,7 +680,6 @@ function datasearchfilterAppLoop (valueInputFilter) {
                     console.log(dataFilterIngredients)
                     if(!ingredientArray.includes(dataFilterIngredients)) {
                         ingredientArray.push(dataFilterIngredients);
-                        console.log(ingredientArray)
                     }
                 }
             }
@@ -694,7 +691,6 @@ function datasearchfilterAppLoop (valueInputFilter) {
                     var dataFilterUstensils = dataUstensils[j];
                     if(!ustensilArray.includes(dataFilterUstensils)) {
                         ustensilArray.push(dataFilterUstensils);
-                        console.log(ustensilArray)
                     }
                 }
             }
